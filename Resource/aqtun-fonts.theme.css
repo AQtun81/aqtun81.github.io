@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+/*servername*/
+span[class*="name-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*voice channel users*/
+div[class*="voiceUser-"] div[class*="nameDefault-"],
+div[class*="voiceUser-"] div[class*="nameSpeaking-"],
+div[class*="voiceUser-"] div[class*="nameHovered-"] {
+  transition-duration: 0.6s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-variant-caps: initial;
+}
+
+/*server chat group name normal and hovered*/
+div[class*="nameDefault-"],
+div[class*="nameHovered-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-variant-caps: petite-caps;
+}
+
+/*server chat group text and voice channel*/
+div[class*="nameDefaultText-"],
+div[class*="nameDefaultVoice-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: smaller;
+}
+
+/*server chat group text channel selected*/
+div[class*="nameSelectedText-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: smaller;
+}
+
+/*server chat group text and voice channel hovered*/
+div[class*="nameHoveredText-"],
+div[class*="nameHoveredVoice-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: smaller;
+}
+
+/*chat*/
+h1.old-h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px !important;
+}
+.chat div[class*="titleWrapper-"] {
+  font-family: 'Montserrat', sans-serif;
+}
+.scroller-wrap {
+  font-family: 'Montserrat', sans-serif;
+}
+div[class*="messageCozy-"] div[class*="markup-"] {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px !important;
+  font-weight: 300;
+}
+div[class*="messageCozy-"] time[class*="timestampCozy-"] {
+  font-size: 10.5px;
+}
+div[class*="channelTextArea-"] div[class*="inner-"] textarea[class*="textArea-"] {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*server user list*/
+div[class*="nameTag-"] span[class*="usernameOnline-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
+div[class*="nameTag-"] span[class*="usernameOffline-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.1);
+}
+div[class*="membersWrap-"] div[class*="membersGroup-"] {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-style: normal;
+  font-variant-caps: petite-caps;
+}

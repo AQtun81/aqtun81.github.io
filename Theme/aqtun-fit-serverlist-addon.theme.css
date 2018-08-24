@@ -1,0 +1,40 @@
+//META{"name":"Fit Serverlist Addon","description":"Fit more servers","author":"AQtun81","version":"1.0"}*//
+
+div[class*="guildsWrapper-"] div[class*="guild-"] {
+  height: 25px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guild-"] div[class*="guildInner-"] {
+  height: 25px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guild-"]:first-of-type,
+div[class*="guildsWrapper-"] div[class*="guild-"]:first-of-type div[class*="guildInner-"],
+div[class*="guildsWrapper-"] div[class*="guild-"]:first-of-type div[class*="guildInner-"] a {
+  height: 50px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guild-"] div[class*="guildInner-"] a div {
+  background-position: 0px -12.5px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guild-"] div[class*="guildInner-"] a div[style*="font-size"] {
+  top: -10px;
+  height: 25px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guilds-"] button {
+  border-radius: 12.5px;
+  height: 25px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guilds-"] button span {
+  top: -10px;
+}
+
+div[class*="guildsWrapper-"] div[class*="guild-"] a[class*="guildsError-"] {
+  height: 25px;
+  border-radius: 12.5px;
+  font-size: 15px;
+  content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTS41IDE2aDE3TDkgMSAuNSAxNnptOS41LTJIOHYtMmgydjJ6bTAtM0g4VjdoMnY0eiIvPjwvc3ZnPg0K)
+}

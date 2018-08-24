@@ -1,0 +1,50 @@
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] button[aria-label="User Settings"] > div {
+  content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGZpbGw9IndoaXRlIiBkPSJNMTkuNDMgMTIuOThjLjA0LS4zMi4wNy0uNjQuMDctLjk4cy0uMDMtLjY2LS4wNy0uOThsMi4xMS0xLjY1Yy4xOS0uMTUuMjQtLjQyLjEyLS42NGwtMi0zLjQ2Yy0uMTItLjIyLS4zOS0uMy0uNjEtLjIybC0yLjQ5IDFjLS41Mi0uNC0xLjA4LS43My0xLjY5LS45OGwtLjM4LTIuNjVDMTQuNDYgMi4xOCAxNC4yNSAyIDE0IDJoLTRjLS4yNSAwLS40Ni4xOC0uNDkuNDJsLS4zOCAyLjY1Yy0uNjEuMjUtMS4xNy41OS0xLjY5Ljk4bC0yLjQ5LTFjLS4yMy0uMDktLjQ5IDAtLjYxLjIybC0yIDMuNDZjLS4xMy4yMi0uMDcuNDkuMTIuNjRsMi4xMSAxLjY1Yy0uMDQuMzItLjA3LjY1LS4wNy45OHMuMDMuNjYuMDcuOThsLTIuMTEgMS42NWMtLjE5LjE1LS4yNC40Mi0uMTIuNjRsMiAzLjQ2Yy4xMi4yMi4zOS4zLjYxLjIybDIuNDktMWMuNTIuNCAxLjA4LjczIDEuNjkuOThsLjM4IDIuNjVjLjAzLjI0LjI0LjQyLjQ5LjQyaDRjLjI1IDAgLjQ2LS4xOC40OS0uNDJsLjM4LTIuNjVjLjYxLS4yNSAxLjE3LS41OSAxLjY5LS45OGwyLjQ5IDFjLjIzLjA5LjQ5IDAgLjYxLS4yMmwyLTMuNDZjLjEyLS4yMi4wNy0uNDktLjEyLS42NGwtMi4xMS0xLjY1ek0xMiAxNS41Yy0xLjkzIDAtMy41LTEuNTctMy41LTMuNXMxLjU3LTMuNSAzLjUtMy41IDMuNSAxLjU3IDMuNSAzLjUtMS41NyAzLjUtMy41IDMuNXoiLz4KPC9zdmc+Cg==);
+  transform: scale(0.75);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] button[aria-label="Undeafen"] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZWY1MzUwIiBkPSJNMTYuNSAxMmMwLTEuNzctMS4wMi0zLjI5LTIuNS00LjAzdjIuMjFsMi40NSAyLjQ1Yy4wMy0uMi4wNS0uNDEuMDUtLjYzem0yLjUgMGMwIC45NC0uMiAxLjgyLS41NCAyLjY0bDEuNTEgMS41MUMyMC42MyAxNC45MSAyMSAxMy41IDIxIDEyYzAtNC4yOC0yLjk5LTcuODYtNy04Ljc3djIuMDZjMi44OS44NiA1IDMuNTQgNSA2Ljcxek00LjI3IDNMMyA0LjI3IDcuNzMgOUgzdjZoNGw1IDV2LTYuNzNsNC4yNSA0LjI1Yy0uNjcuNTItMS40Mi45My0yLjI1IDEuMTh2Mi4wNmMxLjM4LS4zMSAyLjYzLS45NSAzLjY5LTEuODFMMTkuNzMgMjEgMjEgMTkuNzNsLTktOUw0LjI3IDN6TTEyIDRMOS45MSA2LjA5IDEyIDguMThWNHoiLz48L3N2Zz4NCg==) !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] button[aria-label="Deafen"] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTMgOXY2aDRsNSA1VjRMNyA5SDN6bTEzLjUgM2MwLTEuNzctMS4wMi0zLjI5LTIuNS00LjAzdjguMDVjMS40OC0uNzMgMi41LTIuMjUgMi41LTQuMDJ6TTE0IDMuMjN2Mi4wNmMyLjg5Ljg2IDUgMy41NCA1IDYuNzFzLTIuMTEgNS44NS01IDYuNzF2Mi4wNmM0LjAxLS45MSA3LTQuNDkgNy04Ljc3cy0yLjk5LTcuODYtNy04Ljc3eiIvPjwvc3ZnPg0K) !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] button[aria-label="Unmute"] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZWY1MzUwIiBkPSJNMTkgMTFoLTEuN2MwIC43NC0uMTYgMS40My0uNDMgMi4wNWwxLjIzIDEuMjNjLjU2LS45OC45LTIuMDkuOS0zLjI4em0tNC4wMi4xN2MwLS4wNi4wMi0uMTEuMDItLjE3VjVjMC0xLjY2LTEuMzQtMy0zLTNTOSAzLjM0IDkgNXYuMThsNS45OCA1Ljk5ek00LjI3IDNMMyA0LjI3bDYuMDEgNi4wMVYxMWMwIDEuNjYgMS4zMyAzIDIuOTkgMyAuMjIgMCAuNDQtLjAzLjY1LS4wOGwxLjY2IDEuNjZjLS43MS4zMy0xLjUuNTItMi4zMS41Mi0yLjc2IDAtNS4zLTIuMS01LjMtNS4xSDVjMCAzLjQxIDIuNzIgNi4yMyA2IDYuNzJWMjFoMnYtMy4yOGMuOTEtLjEzIDEuNzctLjQ1IDIuNTQtLjlMMTkuNzMgMjEgMjEgMTkuNzMgNC4yNyAzeiIvPjwvc3ZnPg0K) !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] button[aria-label="Mute"] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTEyIDE0YzEuNjYgMCAyLjk5LTEuMzQgMi45OS0zTDE1IDVjMC0xLjY2LTEuMzQtMy0zLTNTOSAzLjM0IDkgNXY2YzAgMS42NiAxLjM0IDMgMyAzem01LjMtM2MwIDMtMi41NCA1LjEtNS4zIDUuMVM2LjcgMTQgNi43IDExSDVjMCAzLjQxIDIuNzIgNi4yMyA2IDYuNzJWMjFoMnYtMy4yOGMzLjI4LS40OCA2LTMuMyA2LTYuNzJoLTEuN3oiLz48L3N2Zz4NCg==) !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="NotificationBell"] > g > path {
+  d: path("M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z") !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="NotificationBellOff"] > g > path:first-child {
+  d: path("M20 18.69L7.84 6.14 5.27 3.49 4 4.76l2.8 2.8v.01c-.52.99-.8 2.16-.8 3.42v5l-2 2v1h13.73l2 2L21 19.72l-1-1.03zM12 22c1.11 0 2-.89 2-2h-4c0 1.11.89 2 2 2zm6-7.32V11c0-3.08-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68c-.15.03-.29.08-.42.12-.1.03-.2.07-.3.11h-.01c-.01 0-.01 0-.02.01-.23.09-.46.2-.68.31 0 0-.01 0-.01.01L18 14.68z") !important;
+  fill: #ef5350;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="NotificationBellOff"] > g > path:last-child {
+  fill: none;
+  stroke: none;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="Pin"] > g > path {
+  d: path("M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z") !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="People"] > g > path {
+  d: path("M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z") !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] button[aria-label="User Settings"],
+[class*="iconButtonDefault-"][class*="iconButton-"],
+[class*="iconInactive-"] {
+  opacity: 0.8;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="QuestionMark"] > g > path {
+  d: path("M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z") !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="QuestionMark"] > g {
+  transform: translate(1px) translateY(1px) scale(0.9);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="Mention"] > path {
+  d: path("M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z") !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div > div > span > svg[name="Mention"] {
+  transform: translate(1px) translateY(1px) scale(0.9);
+}

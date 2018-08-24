@@ -1,0 +1,8 @@
+//META{"name":"AQtun's Wide Settings","description":"See more do more","author":"AQtun81","version":"0.1"}*//
+
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region {
+  flex: 0;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .content-column {
+  max-width: initial;
+}

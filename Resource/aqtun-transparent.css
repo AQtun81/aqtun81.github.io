@@ -1,0 +1,234 @@
+:root {
+  --background-color: rgba(0, 0, 0, 0);
+  --background-image: url("");
+  --background-image-opacity: 0.3;
+  --background-image-blur: 0px;
+  --color-text: rgba(255, 255, 255, 0.5);
+  --color-text-hover: rgba(255, 255, 255, 0.75);
+  --color-text-muted: rgba(125, 125, 125, 0.4);
+  --color-text-big-divider: rgba(125, 125, 125, 0.5);
+  --color-main: rgba(125, 125, 125, 0.3);
+  --color-main-hover: rgba(125, 125, 125, 0.5);
+  --color-divider: rgba(0, 0, 0, 0);
+  --color-big-divider: rgba(0, 0, 0, 0);
+}
+
+/*
+:root {
+  --background-color: #1d1f20;
+  --background-image: url("");
+  --background-image-opacity: 0.3;
+  --background-image-blur: 0px;
+  --color-text: rgba(255, 255, 255, 0.5);
+  --color-text-hover: rgba(255, 255, 255, 0.75);
+  --color-text-muted: rgba(125, 125, 125, 0.4);
+  --color-text-big-divider: rgba(125, 125, 125, 0.5);
+  --color-main: rgba(20, 20, 20, 0.3);
+  --color-main-hover: rgba(20, 20, 20, 0.5);
+  --color-divider: rgba(0, 0, 0, 0);
+  --color-big-divider: rgba(0, 0, 0, 0);
+}
+*/
+
+/*
+:root {
+  --background-color: #101010;
+  --background-image: url("https://images.unsplash.com/photo-1432847712612-926caafaa802?ixlib=rb-0.3.5&s=0ebcfd9f47437ac678d86f6f9a98ec96&auto=format&fit=crop&w=1950&q=80");
+  --background-image-opacity: 0.3;
+  --background-image-blur: 0px;
+  --color-text: rgba(255, 255, 255, 0.5);
+  --color-text-hover: rgba(255, 255, 255, 0.75);
+  --color-text-muted: rgba(125, 125, 125, 0.4);
+  --color-text-big-divider: rgba(125, 125, 125, 0.5);
+  --color-main: rgba(255, 255, 255, 0.1);
+  --color-main-hover: rgba(255, 255, 255, 0.2);
+  --color-divider: rgba(0, 0, 0, 0);
+  --color-big-divider: rgba(0, 0, 0, 0);
+}
+*/
+
+body {
+  background-color: var(--background-color);
+}
+
+body::after {
+  content: "";
+  background: var(--background-image);
+  opacity: var(--background-image-opacity);
+  background-size: cover;
+  background-position: center;
+  top: -10px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+  position: absolute;
+  z-index: -1;
+  filter: blur(var(--background-image-blur));
+}
+
+#app-mount,
+#friends > div,
+#app-mount div[class*="titleBar-"] *,
+#app-mount .app div[class*="layers-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="guildsWrapper-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] button,
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="headerBar-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div,
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="content-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="content-"] div[class*="membersWrap-"] div[class*="scrollerWrap-"] div[class*="scroller-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="content-"] .flex-spacer div[class*="messagesWrapper-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="content-"] .flex-spacer form,
+div[layer-id="user-settings"] > .ui-standard-sidebar-view,
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region,
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region {
+  background-color: rgba(0, 0, 0, 0);
+  background: transparent;
+}
+
+#friends {
+  background-color: rgba(0, 0, 0, 0) !important;
+  background: transparent !important;
+}
+
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="channels-"] header[class*="header-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="titleWrapper-"] > div,
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="headerBar-"],
+#friends > div {
+  box-shadow: none;
+}
+.search-bar {
+  box-shadow: none !important;
+}
+
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="content-"] div[class*="membersWrap-"] div[class*="scrollerWrap-"] div[class*="scroller-"] div[class*="member-"]:hover,
+div[class*="channelTextArea-"] div[class*="inner-"],
+div[class*="channels-"] div[class*="contentHoveredText-"],
+#app-mount .app div[class*="titleWrapper-"] .search-bar,
+.search-bar > .search-bar-inner {
+  background-color: var(--color-main);
+}
+.search-bar > .search-bar-inner {
+  border: none;
+}
+
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+  border: 3px solid transparent !important;
+  background-color: rgba(0, 0, 0, 0) !important
+}
+
+.scroller-wrap .scroller::-webkit-scrollbar-thumb {
+  background-color: var(--color-main) !important;
+  border: 3px solid transparent !important;
+}
+
+.scroller-wrap .scroller::-webkit-scrollbar-thumb:active,
+div[class*="channels-"] div[class*="contentSelectedText-"] {
+  background-color: var(--color-main-hover) !important;
+}
+
+hr[class*="dividerEnabled-"][class*="divider-"][aria-hidden="true"] {
+  border-bottom-color: var(--color-divider);
+}
+
+div[class*="messages-"].scroller div[class*="divider-"]::before,
+div[class*="messages-"].scroller div[class*="divider-"] div,
+div[class*="messages-"].scroller div[class*="divider-"] span {
+  background-color: var(--color-big-divider);
+}
+
+div[class*="messages-"].scroller div[class*="divider-"] span {
+  color: var(--color-text-big-divider);
+}
+
+div[class*="channelTextArea-"] {
+  border-top-color: var(--color-main) !important;
+}
+
+div[class*="channels-"] div[class*="nameDefaultVoice-"],
+div[class*="channels-"] div[class*="nameDefaultText-"] {
+  color: var(--color-text);
+}
+div[class*="channels-"] div[class*="nameHoveredVoice-"],
+div[class*="channels-"] div[class*="nameHoveredText-"],
+div[class*="channels-"] div[class*="containerDefault-"] div[class*="nameDefault-"] {
+  color: var(--color-text-hover);
+}
+div[class*="channels-"] div[class*="nameMutedText-"] {
+  color: var(--color-text-muted);
+}
+div[class*="channels-"] div[class*="contentDefaultVoice-"] div[class*="flex-"] > div > div[class*="wrapper-"] {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-text);
+}
+
+div[class*="guildsWrapper-"] div[class*="guilds-"] button,
+div[class*="guildsWrapper-"] div[class*="guilds-"] button span {
+  border-color: var(--color-main);
+  color: var(--color-text);
+  outline-color: var(--color-main);
+}
+div[class*="guildsWrapper-"] div[class*="guilds-"] button:hover,
+div[class*="guildsWrapper-"] div[class*="guilds-"] button span:hover {
+  border-color: var(--color-main-hover);
+  color: var(--color-text-hover);
+  outline-color: var(--color-main-hover);
+}
+div[class*="guildsWrapper-"] div[class*="guilds-"] div[class*="guildSeparator-"]::after {
+  background: var(--color-main);
+}
+
+.btn-friends > a[class*="selectedLink-"],
+div[class*="privateChannels-"] div[class*="channel-"]:hover a[class*="selectedLink-"] {
+  background-color: var(--color-main-hover);
+}
+.private-channels .channel:hover a {
+  background-color: var(--color-main);
+}
+div[class*="privateChannels-"] a[class*="selectedLink-"] {
+  background-color: var(--color-main);
+}
+#friends .tab-bar .tab-bar-item:hover:not(.selected) {
+  background-color: var(--color-main) !important;
+}
+#friends .friends-table .friends-row:hover {
+  background-color: var(--color-main) !important;
+  box-shadow: none !important;
+}
+#friends .friends-table .friends-row .friends-column-actions .friends-action {
+  background-color: var(--color-main-hover) !important;
+}
+button[class*="button-"]:hover {
+  background-color: var(--color-main-hover) !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="dockItem-"]:hover {
+  background-color: var(--color-main-hover);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="dockItem-"]:hover button[class*="lookFilled-"][class*="colorGreen-"] {
+  background-color: transparent;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] {
+  background-color: var(--color-main);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] {
+  background-color: transparent;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] > div[class*="header-"] {
+  background-color: var(--color-main-hover);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="headerText-"] {
+  border-top-color: var(--color-main);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] div[class*="player-"] {
+  border: none;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] div[class*="sectionLine-"] {
+  background-color: var(--color-main);
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] button[class*="lookFilled-"] {
+  background-color: transparent;
+}

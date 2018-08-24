@@ -1,0 +1,6 @@
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region {
+  flex: 0;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .content-column {
+  max-width: initial;
+}
