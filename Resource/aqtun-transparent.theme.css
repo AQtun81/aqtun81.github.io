@@ -86,7 +86,10 @@ body::after {
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="chat-"] div[class*="content-"] .flex-spacer form [class*="typing-"],
 div[layer-id="user-settings"] > .ui-standard-sidebar-view,
 div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region,
-div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region {
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region,
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="dockItem-"]:hover button[class*="lookFilled-"][class*="colorGreen-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] button[class*="lookFilled-"] {
   background-color: rgba(0, 0, 0, 0);
   background: transparent;
 }
@@ -110,7 +113,11 @@ div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region {
 div[class*="channelTextArea-"] div[class*="inner-"],
 div[class*="channels-"] div[class*="contentHoveredText-"],
 #app-mount .app div[class*="titleWrapper-"] .search-bar,
-.search-bar > .search-bar-inner {
+.search-bar > .search-bar-inner,
+.private-channels .channel:hover a,
+div[class*="privateChannels-"] a[class*="selectedLink-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"],
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] div[class*="sectionLine-"] {
   background-color: var(--color-main);
 }
 .search-bar > .search-bar-inner {
@@ -187,12 +194,6 @@ div[class*="guildsWrapper-"] div[class*="guilds-"] div[class*="guildSeparator-"]
 div[class*="privateChannels-"] div[class*="channel-"]:hover a[class*="selectedLink-"] {
   background-color: var(--color-main-hover);
 }
-.private-channels .channel:hover a {
-  background-color: var(--color-main);
-}
-div[class*="privateChannels-"] a[class*="selectedLink-"] {
-  background-color: var(--color-main);
-}
 #friends .tab-bar .tab-bar-item:hover:not(.selected) {
   background-color: var(--color-main) !important;
 }
@@ -200,23 +201,12 @@ div[class*="privateChannels-"] a[class*="selectedLink-"] {
   background-color: var(--color-main) !important;
   box-shadow: none !important;
 }
-#friends .friends-table .friends-row .friends-column-actions .friends-action {
-  background-color: var(--color-main-hover) !important;
-}
+#friends .friends-table .friends-row .friends-column-actions .friends-action,
 button[class*="button-"]:hover {
   background-color: var(--color-main-hover) !important;
 }
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="dockItem-"]:hover {
   background-color: var(--color-main-hover);
-}
-#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="dockItem-"]:hover button[class*="lookFilled-"][class*="colorGreen-"] {
-  background-color: transparent;
-}
-#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] {
-  background-color: var(--color-main);
-}
-#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] {
-  background-color: transparent;
 }
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] > div[class*="header-"] {
   background-color: var(--color-main-hover);
@@ -226,10 +216,4 @@ button[class*="button-"]:hover {
 }
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] div[class*="player-"] {
   border: none;
-}
-#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] div[class*="sectionLine-"] {
-  background-color: var(--color-main);
-}
-#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] button[class*="lookFilled-"] {
-  background-color: transparent;
 }
