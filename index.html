@@ -120,6 +120,25 @@
         flex-grow: 1;
         padding: 20px 20% 20px 10%;
       }
+      blockquote {
+        background: #f9f9f9;
+        border-left: 5px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        white-space: pre;
+        quotes: "\201C""\201D""\2018""\2019";
+      }
+      blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 3em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+      }
+      blockquote p {
+        display: inline;
+      }
       .image {
         background-size: contain;
         background-repeat: no-repeat;
@@ -218,7 +237,11 @@
         <div class="sTitle">Multicolumn serverlist</div>
         <div class="container">
           <div class="image Multicolumn-serverlist"></div>
-          <div class="description">for people with too many servers</div>
+          <div class="description">for people with too many servers <br> you can select amount of columns with: <blockquote>
+:root {
+  --serverlist-column-count: 2;
+}
+          </blockquote> </div>
         </div>
       </div>
       <div>
