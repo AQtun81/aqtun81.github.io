@@ -51,6 +51,9 @@
       .frow {
         flex-direction: row;
       }
+      .fcol {
+        flex-direction: column;
+      }
       .fgrow {
         flex-grow: 1;
       }
@@ -139,6 +142,19 @@
       blockquote p {
         display: inline;
       }
+      blockquote button {
+        float: right;
+        outline: none;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        width: 80px;
+        height: 35px;
+        bottom: 0;
+        font-size: 17px;
+      }
+      blockquote button:hover {
+        cursor: pointer;
+      }
       .image {
         background-size: contain;
         background-repeat: no-repeat;
@@ -180,6 +196,13 @@
       }
       .Multicolumn-serverlist:hover {
         background-image: url(img/Multicolumn-serverlist-after.png);
+      }
+      .Transparent-theme {
+        height: 370px;
+        background-image: url(img/Transparent-theme-before.png);
+      }
+      .Transparent-theme:hover {
+        background-image: url(img/Transparent-theme-after.jpg);
       }
     </style>
   </head>
@@ -241,14 +264,31 @@
 :root {
   --serverlist-column-count: 2;
 }
-          </blockquote> </div>
+<button type="button" name="button" onclick="copy(this.parentElement)">Copy</button>
+          </blockquote></div>
         </div>
       </div>
       <div>
-        <div class="sTitle">Google Material Icons</div>
+        <div class="sTitle">Transparent theme</div>
         <div class="container">
-          <div class="image Material-Icons"></div>
-          <div class="description"> </div>
+          <div class="image Transparent-theme"></div>
+          <div class="description">Theme that's transparent and has multiple customisation options <blockquote>
+:root {
+  --background-color: #101010;
+  --background-image: url("[image url here]");
+  --background-image-opacity: 0.3;
+  --background-image-blur: 0px;
+  --color-text: rgba(255, 255, 255, 0.5);
+  --color-text-hover: rgba(255, 255, 255, 0.75);
+  --color-text-muted: rgba(125, 125, 125, 0.4);
+  --color-text-big-divider: rgba(125, 125, 125, 0.5);
+  --color-main: rgba(255, 255, 255, 0.1);
+  --color-main-hover: rgba(255, 255, 255, 0.2);
+  --color-divider: rgba(0, 0, 0, 0);
+  --color-big-divider: rgba(0, 0, 0, 0);
+}
+<button type="button" name="button" onclick="copy(this.parentElement)">Copy</button>
+          </blockquote></div>
         </div>
       </div>
     </div>
@@ -257,3 +297,17 @@
     </div>
   </body>
 </html>
+<script type="text/javascript">
+  function copy(element) {
+    copyText(element.innerText.replace("Copy", ""));
+  }
+  function copyText(str) {
+    var el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  };
+
+</script>
