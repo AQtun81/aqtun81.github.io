@@ -292,7 +292,7 @@
 :root {
   --serverlist-column-count: 2;
 }
-<button type="button" name="button" onclick="copy(this.parentElement)">Copy</button>
+<button type="button" name="button" onclick="copy(this)">Copy</button>
           </blockquote></div>
         </div>
       </div>
@@ -315,7 +315,7 @@
   --color-divider: rgba(0, 0, 0, 0);
   --color-big-divider: rgba(0, 0, 0, 0);
 }
-<button type="button" name="button" onclick="copy(this.parentElement)">Copy</button>
+<button type="button" name="button" onclick="copy(this)">Copy</button>
           </blockquote></div>
         </div>
       </div>
@@ -359,8 +359,17 @@
   </body>
 </html>
 <script type="text/javascript">
+var lastelement,
+    interval;
   function copy(element) {
-    copyText(element.innerText.replace("Copy", ""));
+    copyText(element.parentElement.innerText.replace("Copy", "").replace("Copied!", ""));
+    element.innerText = "Copied!";
+    lastelement = element;
+    interval = setInterval(removetext, 3000);
+  }
+  function removetext() {
+    lastelement.innerText = "Copy";
+    clearInterval(interval);
   }
   function copyText(str) {
     var el = document.createElement('textarea');
