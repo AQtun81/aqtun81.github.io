@@ -85,6 +85,7 @@
         background-color: white;
         color: rgba(0, 0, 0, 0.75);
         margin-top: 15px;
+        cursor: pointer;
       }
       .grayText {
         color: rgba(0, 0, 0, 0.5) !important
@@ -237,7 +238,7 @@
   <body>
     <div class="titleSlab flex">
       <p class="titleText center">AQtun's Discord themes</p>
-      <a class="center" href="#downloads">Downloads</a>
+      <a class="center" onclick="scrolly(3120)">Downloads</a>
     </div>
     <div id="installation" class="slab flex">
       <p class="title center">Installation:</p>
@@ -379,5 +380,10 @@ var lastelement,
     document.execCommand('copy');
     document.body.removeChild(el);
   };
-
+  function scrolly(y) {
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+  }
 </script>
