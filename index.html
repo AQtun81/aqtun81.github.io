@@ -238,7 +238,7 @@
   <body>
     <div class="titleSlab flex">
       <p class="titleText center">AQtun's Discord themes</p>
-      <a class="center" onclick="scrolly(3120)">Downloads</a>
+      <a class="center" onclick="scrollToId('downloads')">Downloads</a>
     </div>
     <div id="installation" class="slab flex">
       <p class="title center">Installation:</p>
@@ -356,7 +356,7 @@
         <a href="Theme/aqtun-fonts.theme.css" download>Download</a>
       </div>
     </div>
-    <div class="slab"></div>
+    <div class="slab" style="height: 600px;"></div>
   </body>
 </html>
 <script type="text/javascript">
@@ -380,6 +380,14 @@ var lastelement,
     document.execCommand('copy');
     document.body.removeChild(el);
   };
+  function scrollToId(id) {
+    var element = document.getElementById(id),
+        bodyRect = document.body.getBoundingClientRect(),
+        elemRect = element.getBoundingClientRect(),
+        offset = elemRect.top - bodyRect.top;
+
+    scrolly(offset);
+  }
   function scrolly(y) {
     window.scrollTo({
       top: y,
