@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>AQtun's Discord Theme</title>
     <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+      * {
+        font-family: 'Open Sans';
+      }
       body {
         margin: 0;
         padding: 0;
@@ -12,18 +17,212 @@
       }
       .slab {
         width: 100%;
-        height: 300px;
+        min-height: 300px;
+      }
+      .slab > p.title {
+        color: rgba(0, 0, 0, 0.75);
+        font-size: 30px;
+        margin: 0 30%;
+        height: 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+      }
+      .slab > p {
+        color: rgba(0, 0, 0, 0.75);
+        font-size: 22px;
+        padding-top: 20px;
+      }
+      .titleSlab {
+        width: 100%;
+        height: 200px;
+        padding-top: 100px;
+        background: linear-gradient(to top left, #3399ff 0%, #99ffcc 100%);
+      }
+      .titleText {
+        color: white;
+        font-size: 40px;
+        margin: 0;
+        user-select: none;
       }
       .flex {
         display: flex;
         flex: 1;
+        flex-direction: column;
+      }
+      .frow {
         flex-direction: row;
+      }
+      .fgrow {
+        flex-grow: 1;
+      }
+      .center {
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .titleSlab > a {
+        width: 200px;
+        height: 50px;
+        padding-top: 20px;
+        outline: none;
+        border: 2px solid white;
+        border-radius: 35px;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition-duration: 0.25s;
+      }
+      .titleSlab > a:hover {
+        width: 220px;
+        height: 55px;
+        padding-top: 22px;
+        outline: none;
+        border-radius: 38.5px;
+        background-color: white;
+        color: rgba(0, 0, 0, 0.75);
+        margin-top: 15px;
+      }
+      .grayText {
+        color: rgba(0, 0, 0, 0.5) !important
+      }
+      ul > li,
+      ol > li {
+        text-align: left;
+        font-size: 20px;
+      }
+      ul > li > a,
+      ol > li > a,
+      ul > li > a:hover,
+      ol > li > a:hover,
+      #themedesc .description a {
+        text-decoration: underline;
+        color: inherit;
+      }
+      #themedesc .description {
+        flex-grow: 1;
+        flex: 1;
+        padding-left: 30px;
+      }
+      #themedesc > div {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      #themedesc > div > .sTitle {
+        font-size: 22px;
+        text-align: center;
+      }
+      #themedesc > div > .container {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        flex-grow: 1;
+        padding: 20px 20% 20px 10%;
+      }
+      .image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        flex-grow: 1;
+        flex: 2;
+      }
+      .image.Material-Icons {
+        background-image: url(img/Material-Icons-before.png);
+      }
+      .image.Material-Icons:hover {
+        background-image: url(img/Material-Icons-after.png);
+      }
+      .Bigger-Youtube-embed {
+        height: 310px;
+        background-image: url(img/Bigger-Youtube-embed-before.png);
+      }
+      .Bigger-Youtube-embed:hover {
+        background-image: url(img/Bigger-Youtube-embed-after.png);
+      }
+      .Wide-Discord-settings {
+        height: 310px;
+        background-image: url(img/Wide-Discord-settings-before.png);
+      }
+      .Wide-Discord-settings:hover {
+        background-image: url(img/Wide-Discord-settings-after.png);
+      }
+      .Fit-Serverlist {
+        height: 370px;
+        background-image: url(img/Fit-Serverlist-before.png);
+      }
+      .Fit-Serverlist:hover {
+        background-image: url(img/Fit-Serverlist-after.png);
       }
     </style>
   </head>
   <body>
-    <div class="slab flex">
-      Hello There
+    <div class="titleSlab flex">
+      <p class="titleText center">AQtun's Discord themes</p>
+      <a class="center" href="#downloads">Downloads</a>
+    </div>
+    <div id="installation" class="slab flex">
+      <p class="title center">Installation:</p>
+      <p class="center">
+        <ol class="center">
+          <li>install <a href="https://betterdiscord.net/home/">BetterDiscord</a> or <a href="https://rauenzi.github.io/BetterDiscordApp/">Bandaged BetterDiscord</a> </li>
+          <li>download file ending with .theme.css from this site</li>
+          <li>open discord navigate to settings > themes and press "Open Theme Folder" on top</li>
+          <li>move .theme.css file to this folder</li>
+          <li>in discord press ctrl+r, discord will restart</li>
+          <li>enable theme in settings</li>
+          <li>done!</li>
+        </ol>
+      </p>
+    </div>
+    <div id="themedesc" class="slab flex">
+      <p class="title center">Theme Description:</p>
+      <p class="center grayText">hover on image to see difference!</p>
+      <div>
+        <div class="sTitle">Google Material Icons</div>
+        <div class="container">
+          <div class="image Material-Icons"></div>
+          <div class="description">replaces most if not all icons with <a href="https://github.com/google/material-design-icons"> Google's material icons</a> </div>
+        </div>
+      </div>
+      <div>
+        <div class="sTitle">Bigger Youtube embed</div>
+        <div class="container">
+          <div class="image Bigger-Youtube-embed"></div>
+          <div class="description">increases size of youtube embed</div>
+        </div>
+      </div>
+      <div>
+        <div class="sTitle">Wider Discord settings</div>
+        <div class="container">
+          <div class="image Wide-Discord-settings"></div>
+          <div class="description">Widens Discord settings</div>
+        </div>
+      </div>
+      <div>
+        <div class="sTitle">Fit Serverlist</div>
+        <div class="container">
+          <div class="image Fit-Serverlist"></div>
+          <div class="description">Makes servers on serverlist smaller allowing to fit more of them in same space</div>
+        </div>
+      </div>
+      <div>
+        <div class="sTitle">Google Material Icons</div>
+        <div class="container">
+          <div class="image Material-Icons"></div>
+          <div class="description">replaces most if not all icons with <a href="https://github.com/google/material-design-icons"> Google's material icons</a> </div>
+        </div>
+      </div>
+      <div>
+        <div class="sTitle">Google Material Icons</div>
+        <div class="container">
+          <div class="image Material-Icons"></div>
+          <div class="description">replaces most if not all icons with <a href="https://github.com/google/material-design-icons"> Google's material icons</a> </div>
+        </div>
+      </div>
+    </div>
+    <div id="downloads" class="slab flex">
+      <p class="title center">Downloads:</p>
     </div>
   </body>
 </html>
