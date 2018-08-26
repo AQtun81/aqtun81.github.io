@@ -22,7 +22,10 @@ div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="gu
   width: calc(58px * var(--serverlist-column-count));
 }
 div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"]:first-of-type {
-  margin: 0 calc(29px * (var(--serverlist-column-count) - 1));
+  margin: 0 calc(31px * (var(--serverlist-column-count) - 1));
+}
+div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"]#bd-pub-li {
+  margin: 5px calc(31px * (var(--serverlist-column-count) - 1));
 }
 div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] [class*="guild-"][class*="selected-"]::before {
   background: rgba(0, 0, 0, 0) !important;
