@@ -11,41 +11,8 @@
   --color-main-hover: rgba(125, 125, 125, 0.5);
   --color-divider: rgba(0, 0, 0, 0);
   --color-big-divider: rgba(0, 0, 0, 0);
+  --color-accent: #7289da;
 }
-
-/*
-:root {
-  --background-color: #1d1f20;
-  --background-image: url("");
-  --background-image-opacity: 0.3;
-  --background-image-blur: 0px;
-  --color-text: rgba(255, 255, 255, 0.5);
-  --color-text-hover: rgba(255, 255, 255, 0.75);
-  --color-text-muted: rgba(125, 125, 125, 0.4);
-  --color-text-big-divider: rgba(125, 125, 125, 0.5);
-  --color-main: rgba(20, 20, 20, 0.3);
-  --color-main-hover: rgba(20, 20, 20, 0.5);
-  --color-divider: rgba(0, 0, 0, 0);
-  --color-big-divider: rgba(0, 0, 0, 0);
-}
-*/
-
-/*
-:root {
-  --background-color: #101010;
-  --background-image: url("https://images.unsplash.com/photo-1432847712612-926caafaa802?ixlib=rb-0.3.5&s=0ebcfd9f47437ac678d86f6f9a98ec96&auto=format&fit=crop&w=1950&q=80");
-  --background-image-opacity: 0.3;
-  --background-image-blur: 0px;
-  --color-text: rgba(255, 255, 255, 0.5);
-  --color-text-hover: rgba(255, 255, 255, 0.75);
-  --color-text-muted: rgba(125, 125, 125, 0.4);
-  --color-text-big-divider: rgba(125, 125, 125, 0.5);
-  --color-main: rgba(255, 255, 255, 0.1);
-  --color-main-hover: rgba(255, 255, 255, 0.2);
-  --color-divider: rgba(0, 0, 0, 0);
-  --color-big-divider: rgba(0, 0, 0, 0);
-}
-*/
 
 body {
   background-color: var(--background-color);
@@ -89,7 +56,8 @@ div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region,
 div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region,
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="dockItem-"]:hover button[class*="lookFilled-"][class*="colorGreen-"],
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"],
-#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] button[class*="lookFilled-"] {
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] button[class*="lookFilled-"],
+div[layer-id="user-settings"] div.media-engine-video {
   background-color: rgba(0, 0, 0, 0);
   background: transparent;
 }
@@ -216,4 +184,15 @@ button[class*="button-"]:hover {
 }
 #app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] div[class*="activityFeed-"] div[class*="card-"] div[class*="body-"] div[class*="player-"] {
   border: none;
+}
+div[class*="embed-"] div[class*="embedInner-"],
+div[layer-id="user-settings"] div[class*="cardPrimary-"],
+div[layer-id="user-settings"] div[class*="cardPrimaryEditable-"] {
+  background-color: var(--color-main);
+  border-color: rgba(0, 0, 0, 0);
+}
+div[layer-id="user-settings"] div[class*="previewOverlay-"],
+ul.bda-slist > li {
+  background-color: var(--color-main) !important;
+  border-color: rgba(0, 0, 0, 0) !important;
 }
