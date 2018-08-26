@@ -238,3 +238,15 @@ div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[cl
 div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="notificationSettings-"] div[class*="wrapper-"] {
   border-color: var(--color-accent);
 }
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region button.bd-pfbtn,
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region button.bda-settings-button {
+  background-color: var(--color-accent);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .user-settings-games .not-detected {
+  background-color: var(--color-main);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="keybindGroup-"][class*="card-"]:before,
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .user-settings-games .game:before {
+  background-color: var(--color-main);
+  border-color: rgba(0, 0, 0, 0);
+}
