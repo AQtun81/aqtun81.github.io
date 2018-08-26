@@ -11,7 +11,7 @@
   --color-main-hover: rgba(125, 125, 125, 0.5);
   --color-divider: rgba(0, 0, 0, 0);
   --color-big-divider: rgba(0, 0, 0, 0);
-  --color-accent: #7289da;
+  --color-accent: rgb(114, 137, 218);
 }
 
 body {
@@ -195,4 +195,46 @@ div[layer-id="user-settings"] div[class*="previewOverlay-"],
 ul.bda-slist > li {
   background-color: var(--color-main) !important;
   border-color: rgba(0, 0, 0, 0) !important;
+}
+#app-mount .app div[class*="layers-"] div[class*="layer-"] div[class*="container-"] {
+  border-bottom-color: rgba(0, 0, 0, 0);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region button[class*="lookFilled-"][class*="colorBrand-"],
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region span#bd-settings-sidebar div.selected.ui-tab-bar-item,
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .sidebar-region div[class*="item-"][class*="itemSelected-"],
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="switchEnabled-"],
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="barFill-"] {
+  background-color: var(--color-accent);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .ui-switch.checked {
+  background-color: var(--color-accent) !important;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region button[class*="lookOutlined-"][class*="colorBrand-"] {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="notificationSettings-"] label[class*="option-"] {
+  background-color: var(--color-main);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="notificationSettings-"] label[class*="option-"]:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: none;
+  opacity: 1;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="radioGroup-"] div[style*="background-color"] {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="radioGroup-"] div[style*="background-color"] div[class*="checkbox-"] {
+  border-color: var(--color-accent) !important;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="radioGroup-"] div[style*="background-color"] div[class*="checkbox-"] > svg > g > polyline {
+  stroke: var(--color-accent);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="notificationSettings-"] label[class*="selected-"] {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="notificationSettings-"] div[class*="wrapper-"] {
+  border-color: var(--color-accent);
 }
