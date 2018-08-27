@@ -260,3 +260,12 @@ div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[cl
 div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"]:first-of-type div[class*="guildInner-"] {
   background-color: var(--color-accent) !important;
 }
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="row-"] {
+  box-shadow: none;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div.Select-control {
+  border-color: rgba(0, 0, 0, 0);
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="container"] {
+  border-color: rgba(0, 0, 0, 0);
+}
