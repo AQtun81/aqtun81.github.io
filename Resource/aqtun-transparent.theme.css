@@ -250,3 +250,13 @@ div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .user-
   background-color: var(--color-main);
   border-color: rgba(0, 0, 0, 0);
 }
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .user-settings-games .game {
+  box-shadow: none;
+}
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region .user-settings-games .game div[tabindex="0"][class*="button-"],
+div[layer-id="user-settings"] > .ui-standard-sidebar-view .content-region div[class*="keybindGroup-"][class*="card-"] div[tabindex="0"][class*="button-"] {
+  background-color: var(--color-main-hover);
+}
+div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"]:first-of-type div[class*="guildInner-"] {
+  background-color: var(--color-accent) !important;
+}
