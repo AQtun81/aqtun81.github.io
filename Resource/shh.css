@@ -1,23 +1,10 @@
 .layer-3QrUeG.animating {
-  pointer-events: initial !important;
   will-change: transform,opacity;
 }
 
-.modal-1UGdnR,
-.inner-1JeGVc,
-html,
-body,
-.layer-3QrUeG > section,
-.theme-dark .ui-standard-sidebar-view {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
 .layer-3QrUeG {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   transform: none !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0, 1);
+  transition: all 150ms ease-in-out;
 }
 
 .layer-3QrUeG.animating-rRxada {
@@ -25,33 +12,25 @@ body,
 }
 
 .layer-3QrUeG.stop-animations:first-of-type {
-  transform: scale(0.95) !important;
+  transform: scale(0.5) !important;
   opacity: 0 !important;
 }
 
 .layer-3QrUeG + .layer-3QrUeG {
-  transform: scale(1.1) !important;
+  transform: scale(2) !important;
   opacity: 0 !important;
-  pointer-events: none !important;
-  transition: all 300ms cubic-bezier(0.4, 0, 0, 1), opacity 150ms ease;
+  transition: all 150ms ease-in-out, opacity 150ms ease-in-out;
 }
 
 .layer-3QrUeG.stop-animations ~ .layer-3QrUeG {
-  pointer-events: initial !important;
   transform: none !important;
   opacity: 1 !important;
-  animation: pubslayer 500ms cubic-bezier(0.4, 0, 0, 1);
+  animation: openSettings 150ms ease-in-out;
 }
 
-#pubslayerroot .layer-3QrUeG .ui-standard-sidebar-view {
-  animation: pubslayer 0.5s cubic-bezier(0.4, 0, 0, 1);
-  transform: none;
-  opacity: 1;
-}
-
-@keyframes pubslayer {
+@keyframes openSettings {
   0% {
-    transform: scale(1.1);
+    transform: scale(2);
     opacity: 0;
   }
 }
