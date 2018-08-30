@@ -2,35 +2,35 @@
   --serverlist-column-count: 2;
 }
 
-div[class*="guildsWrapper-"] {
+[class*="guildsWrapper-"] {
   width: calc(58px * var(--serverlist-column-count) + 20px);
 }
 
-div[class*="guildsWrapper-"] .scroller-wrap {
+[class*="guildsWrapper-"]>.scroller-wrap {
   width: calc(58px * var(--serverlist-column-count) + 38px);
 }
-div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"] {
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="guild-"] {
   float: left;
-  margin: 8px 8px 0 0;
+  margin: 4px;
 }
-div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="friendsOnline-"] {
-  float: left;
-  width: calc(58px * var(--serverlist-column-count));
-}
-div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guildSeparator-"] {
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="friendsOnline-"] {
   float: left;
   width: calc(58px * var(--serverlist-column-count));
 }
-div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"]:first-of-type {
-  margin: 0 calc(31px * (var(--serverlist-column-count) - 1));
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="guildSeparator-"] {
+  float: left;
+  width: calc(58px * var(--serverlist-column-count));
 }
-div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] div[class*="guild-"]#bd-pub-li {
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>div[class*="guild-"]:first-of-type {
+  margin: 0 calc(4px + 29px * (var(--serverlist-column-count) - 1));
+}
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="guild-"]#bd-pub-li {
   margin: 5px calc(31px * (var(--serverlist-column-count) - 1));
 }
-div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] [class*="guild-"][class*="selected-"]::before {
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="guild-"][class*="selected-"]::before {
   background: rgba(0, 0, 0, 0) !important;
 }
-div[class*="guildsWrapper-"] div[class*="guilds-"] button {
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"] button {
   margin: 8px 8px 0 0;
 }
 [class*="guild-"][class*="unread-"]:before {
