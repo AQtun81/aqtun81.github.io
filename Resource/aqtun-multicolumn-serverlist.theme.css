@@ -46,4 +46,17 @@
   text-align: center;
   font-size: 13px;
   font-family: 'Open Sans';
+  animation-name: notificationShake;
+  animation-duration: 0.75s;
+  animation-timing-function: cubic-bezier(1, 1.24, 0.58,-0.2);
+  animation-iteration-count: infinite;
+}
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="guild-"][class*="selected-"][class*="unread-"]::before {
+  background: #f44336 !important;
+  margin-top: -6px;
+}
+@keyframes notificationShake {
+  0% {transform: rotate(20deg);}
+  50% {transform: rotate(-20deg);}
+  100% {transform: rotate(20deg);}
 }
