@@ -21,6 +21,15 @@
   float: left;
   width: calc(58px * var(--serverlist-column-count));
 }
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="dms-"] {
+    float: left;
+    margin: 0;
+    width: 100%;
+}
+[class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>[class*="dms-"]>[class*="guild-"] {
+    float: left;
+    margin: 4px;
+}
 [class*="guildsWrapper-"]>.scroller-wrap>[class*="guilds-"]>div[class*="guild-"]:first-of-type {
   margin: 0 calc(4px + 29px * (var(--serverlist-column-count) - 1));
 }
