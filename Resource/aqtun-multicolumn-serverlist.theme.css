@@ -33,3 +33,17 @@ div[class*="guildsWrapper-"] .scroller-wrap div[class*="guilds-"] [class*="guild
 div[class*="guildsWrapper-"] div[class*="guilds-"] button {
   margin: 8px 8px 0 0;
 }
+[class*="guild-"][class*="unread-"]:before {
+  background: #f44336 !important;
+  top: 42px;
+  left: 35px;
+  z-index: 20;
+  height: 15px;
+  width: 15px;
+  border-radius: 7.5px;
+  content: "!";
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  font-family: 'Open Sans';
+}
