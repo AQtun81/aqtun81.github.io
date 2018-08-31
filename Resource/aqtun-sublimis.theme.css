@@ -20,7 +20,7 @@
   --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);
   /* Chat Text Settings */
   --color-chat-text: rgba(255, 255, 255, 0.5);
-  --color-chat-text-hover: rgba(255, 255, 255, 0.75);
+  --color-chat-text-link: #0096cf;
   --color-chat-text-muted: rgba(125, 125, 125, 0.4);
   /* Other Text Settings */
   --color-text-big-divider: rgba(255, 255, 255, 0.5);
