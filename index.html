@@ -8,22 +8,22 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   </head>
   <body>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark" style="background-color: #e9ecef;">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light" style="background-color: #e9ecef;">
           <div class="container">
             <a class="navbar-brand text-dark" href="/">AQtun81.github.io</a>
             <div class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link text-dark" href="/">Themes</a>
+                  <a class="nav-link" href="/">Themes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark" href="/">Resources</a>
+                  <a class="nav-link" href="/">Resources</a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fade">
+    <nav id="navbarFixed" class="navbar fixed-top navbar-expand-lg navbar-light bg-light fade">
           <div class="container">
             <a class="navbar-brand" href="/">AQtun81.github.io</a>
             <div class="collapse navbar-collapse">
@@ -33,6 +33,20 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/">Resources</a>
+                </li>
+              </ul>
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link" onclick="scrollToId(installation)" style="display:none">installation</a>
+                  <button type="button" class="btn btn-outline-primary m-1" onclick="scrollToId(installation)">installation</button>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="scrollToId(themes)" style="display:none">themes</a>
+                  <button type="button" class="btn btn-outline-primary m-1" onclick="scrollToId(themes)">themes</button>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="scrollToId(addons)" style="display:none">addons</a>
+                  <button type="button" class="btn btn-outline-primary m-1" onclick="scrollToId(addons)">addons</button>
                 </li>
               </ul>
             </div>
@@ -46,161 +60,163 @@
         <a class="btn btn-primary btn-lg" onclick="scrollToId(addons)" role="button" style="color:white;">Theme Addons</a>
       </div>
     </div>
-    <div  id="installation" class="container">
-      <h1>Installation:</h1>
-      <ol class="list-group list-group-flush">
-        <li class="list-group-item">1. install <a href="https://betterdiscord.net/home/">BetterDiscord</a></li>
-        <li class="list-group-item">2. download file ending with .theme.css from this site</li>
-        <li class="list-group-item">3. open discord navigate to settings > themes and press "Open Theme Folder" on top</li>
-        <li class="list-group-item">4. move .theme.css file to this folder</li>
-        <li class="list-group-item">5. in discord press ctrl+r, discord will restart</li>
-        <li class="list-group-item">6. enable theme in settings</li>
-        <li class="list-group-item">7. done!</li>
-      </ol>
-    </div>
-    <div  id="themes" class="container">
-      <h1>Themes:</h1>
-      <p class="lead">hover on image to compare with stock discord</p>
-      <div class="row mt-5 justify-content-center">
-        <div class="card mb-3">
-          <img class="card-img-top" src="img/Theme/Perspicuum.png" srcAfter="img/Theme/Perspicuum.png" srcBefore="img/Theme/Vanilla.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-          <div class="card-body">
-            <h5 class="card-title">Perspicuum theme</h5>
-            <p class="card-text">Theme that's transparent and has multiple customisation options</p>
-            <a href="Theme/aqtun-perspicuum.theme.css" download class="btn btn-primary">Download</a>
-            <a class="btn btn-outline-primary" data-toggle="collapse" href="#codePerspicuum" role="button" aria-expanded="false" aria-controls="codePerspicuum">Show cusomisation code</a>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="collapse multi-collapse" id="codePerspicuum">
-                  <div class="card card-body">
-                    <blockquote class="blockquote" style="font-size:16px;">
-                      :root {<br>
-                        /* Custom Settings */<br>
-                        --color-accent: #7289da;<br>
-                        /* Background Settings */<br>
-                        --background-color: rgba(0, 0, 0, 0);<br>
-                        --background-image: url();<br>
-                        --background-image-opacity: .3;<br>
-                        --background-image-blur: 0px;<br>
-                        /* Serverlist Text Settings */<br>
-                        --color-serverlist-text: rgba(255, 255, 255, 0.5);<br>
-                        --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);<br>
-                        --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);<br>
-                        /* Chat Text Settings */<br>
-                        --color-chat-text: rgba(255, 255, 255, 0.5);<br>
-                        --color-chat-text-link: #0096cf;<br>
-                        --color-chat-text-muted: rgba(125, 125, 125, 0.4);<br>
-                        /* Other Text Settings */<br>
-                        --color-text-big-divider: rgba(255, 255, 255, 0.75);<br>
-                        --color-text-main: rgba(255, 255, 255, 0.75);<br>
-                        --color-text-secondary: rgba(255, 255, 255, 0.5);<br>
-                        /* Various Background Settings */<br>
-                        --color-main: rgba(125, 125, 125, 0.3);<br>
-                        --color-main-hover: rgba(125, 125, 125, 0.5);<br>
-                        /* Various Settings */<br>
-                        --color-divider: rgba(0, 0, 0, 0);<br>
-                        --color-big-divider: rgba(0, 0, 0, 0);<br>
-                      }
-                      <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
-                    </blockquote>
+    <div  data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+      <div id="installation" class="container">
+        <h1>Installation:</h1>
+        <ol class="list-group list-group-flush">
+          <li class="list-group-item">1. install <a href="https://betterdiscord.net/home/">BetterDiscord</a></li>
+          <li class="list-group-item">2. download file ending with .theme.css from this site</li>
+          <li class="list-group-item">3. open discord navigate to settings > themes and press "Open Theme Folder" on top</li>
+          <li class="list-group-item">4. move .theme.css file to this folder</li>
+          <li class="list-group-item">5. in discord press ctrl+r, discord will restart</li>
+          <li class="list-group-item">6. enable theme in settings</li>
+          <li class="list-group-item">7. done!</li>
+        </ol>
+      </div>
+      <div id="themes" class="container">
+        <h1>Themes:</h1>
+        <p class="lead">hover on image to compare with stock discord</p>
+        <div class="row mt-5 justify-content-center">
+          <div class="card mb-3">
+            <img class="card-img-top" src="img/Theme/Perspicuum.png" srcAfter="img/Theme/Perspicuum.png" srcBefore="img/Theme/Vanilla.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+            <div class="card-body">
+              <h5 class="card-title">Perspicuum theme</h5>
+              <p class="card-text">Theme that's transparent and has multiple customisation options</p>
+              <a href="Theme/aqtun-perspicuum.theme.css" download class="btn btn-primary">Download</a>
+              <a class="btn btn-outline-primary" data-toggle="collapse" href="#codePerspicuum" role="button" aria-expanded="false" aria-controls="codePerspicuum">Show cusomisation code</a>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="codePerspicuum">
+                    <div class="card card-body">
+                      <blockquote class="blockquote" style="font-size:16px;">
+                        :root {<br>
+                          /* Custom Settings */<br>
+                          --color-accent: #7289da;<br>
+                          /* Background Settings */<br>
+                          --background-color: rgba(0, 0, 0, 0);<br>
+                          --background-image: url();<br>
+                          --background-image-opacity: .3;<br>
+                          --background-image-blur: 0px;<br>
+                          /* Serverlist Text Settings */<br>
+                          --color-serverlist-text: rgba(255, 255, 255, 0.5);<br>
+                          --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);<br>
+                          --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);<br>
+                          /* Chat Text Settings */<br>
+                          --color-chat-text: rgba(255, 255, 255, 0.5);<br>
+                          --color-chat-text-link: #0096cf;<br>
+                          --color-chat-text-muted: rgba(125, 125, 125, 0.4);<br>
+                          /* Other Text Settings */<br>
+                          --color-text-big-divider: rgba(255, 255, 255, 0.75);<br>
+                          --color-text-main: rgba(255, 255, 255, 0.75);<br>
+                          --color-text-secondary: rgba(255, 255, 255, 0.5);<br>
+                          /* Various Background Settings */<br>
+                          --color-main: rgba(125, 125, 125, 0.3);<br>
+                          --color-main-hover: rgba(125, 125, 125, 0.5);<br>
+                          /* Various Settings */<br>
+                          --color-divider: rgba(0, 0, 0, 0);<br>
+                          --color-big-divider: rgba(0, 0, 0, 0);<br>
+                        }
+                        <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
+                      </blockquote>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card mb-3">
-          <img class="card-img-top" src="img/Theme/Perspicuum-amplifico.jpg" srcAfter="img/Theme/Perspicuum-amplifico.jpg" srcBefore="img/Theme/Vanilla.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-          <div class="card-body">
-            <h5 class="card-title">Perspicuum amplifico theme</h5>
-            <p class="card-text">Perspicuum amplifico is based upon Perspicuum but adds more changes like: multicolumn serverlist, bigger youtube embed, custom fonts etc.</p>
-            <a href="Theme/aqtun-perspicuum-amplifico.theme.css" download class="btn btn-primary">Download</a>
-            <a class="btn btn-outline-primary" data-toggle="collapse" href="#codePerspicuumAmplifico" role="button" aria-expanded="false" aria-controls="codePerspicuumAmplifico">Show cusomisation code</a>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="collapse multi-collapse" id="codePerspicuumAmplifico">
-                  <div class="card card-body">
-                    <blockquote class="blockquote" style="font-size:16px;">
-                      :root {<br>
-                        /* Custom Settings */<br>
-                        --serverlist-column-count: 2;<br>
-                        --color-accent: #7289da;<br>
-                        /* Background Settings */<br>
-                        --background-color: #101010;<br>
-                        --background-image: url("https://images.unsplash.com/photo-1432847712612-926caafaa802?ixlib=rb-0.3.5&s=0ebcfd9f47437ac678d86f6f9a98ec96&auto=format&fit=crop&w=1950&q=80");<br>
-                        --background-image-opacity: 0.3;<br>
-                        --background-image-blur: 0px;<br>
-                        /* Serverlist Text Settings */<br>
-                        --color-serverlist-text: rgba(255, 255, 255, 0.5);<br>
-                        --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);<br>
-                        --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);<br>
-                        /* Chat Text Settings */<br>
-                        --color-chat-text: rgba(255, 255, 255, 0.5);<br>
-                        --color-chat-text-link: #0096cf;<br>
-                        --color-chat-text-muted: rgba(125, 125, 125, 0.4);<br>
-                        /* Other Text Settings */<br>
-                        --color-text-big-divider: rgba(255, 255, 255, 0.5);<br>
-                        --color-text-main: rgba(255, 255, 255, 0.75);<br>
-                        --color-text-secondary: rgba(255, 255, 255, 0.5);<br>
-                        /* Various Background Settings */<br>
-                        --color-main: rgba(255, 255, 255, 0.1);<br>
-                        --color-main-hover: rgba(255, 255, 255, 0.2);<br>
-                        /* Various Settings */<br>
-                        --color-divider: rgba(0, 0, 0, 0);<br>
-                        --color-big-divider: rgba(0, 0, 0, 0);<br>
-                      }
-                      <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
-                    </blockquote>
+          <div class="card mb-3">
+            <img class="card-img-top" src="img/Theme/Perspicuum-amplifico.jpg" srcAfter="img/Theme/Perspicuum-amplifico.jpg" srcBefore="img/Theme/Vanilla.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+            <div class="card-body">
+              <h5 class="card-title">Perspicuum amplifico theme</h5>
+              <p class="card-text">Perspicuum amplifico is based upon Perspicuum but adds more changes like: multicolumn serverlist, bigger youtube embed, custom fonts etc.</p>
+              <a href="Theme/aqtun-perspicuum-amplifico.theme.css" download class="btn btn-primary">Download</a>
+              <a class="btn btn-outline-primary" data-toggle="collapse" href="#codePerspicuumAmplifico" role="button" aria-expanded="false" aria-controls="codePerspicuumAmplifico">Show cusomisation code</a>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="codePerspicuumAmplifico">
+                    <div class="card card-body">
+                      <blockquote class="blockquote" style="font-size:16px;">
+                        :root {<br>
+                          /* Custom Settings */<br>
+                          --serverlist-column-count: 2;<br>
+                          --color-accent: #7289da;<br>
+                          /* Background Settings */<br>
+                          --background-color: #101010;<br>
+                          --background-image: url("https://images.unsplash.com/photo-1432847712612-926caafaa802?ixlib=rb-0.3.5&s=0ebcfd9f47437ac678d86f6f9a98ec96&auto=format&fit=crop&w=1950&q=80");<br>
+                          --background-image-opacity: 0.3;<br>
+                          --background-image-blur: 0px;<br>
+                          /* Serverlist Text Settings */<br>
+                          --color-serverlist-text: rgba(255, 255, 255, 0.5);<br>
+                          --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);<br>
+                          --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);<br>
+                          /* Chat Text Settings */<br>
+                          --color-chat-text: rgba(255, 255, 255, 0.5);<br>
+                          --color-chat-text-link: #0096cf;<br>
+                          --color-chat-text-muted: rgba(125, 125, 125, 0.4);<br>
+                          /* Other Text Settings */<br>
+                          --color-text-big-divider: rgba(255, 255, 255, 0.5);<br>
+                          --color-text-main: rgba(255, 255, 255, 0.75);<br>
+                          --color-text-secondary: rgba(255, 255, 255, 0.5);<br>
+                          /* Various Background Settings */<br>
+                          --color-main: rgba(255, 255, 255, 0.1);<br>
+                          --color-main-hover: rgba(255, 255, 255, 0.2);<br>
+                          /* Various Settings */<br>
+                          --color-divider: rgba(0, 0, 0, 0);<br>
+                          --color-big-divider: rgba(0, 0, 0, 0);<br>
+                        }
+                        <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
+                      </blockquote>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card mb-3">
-          <img class="card-img-top" src="img/Theme/Sublimis.png" srcAfter="img/Theme/Sublimis.png" srcBefore="img/Theme/Vanilla.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-          <div class="card-body">
-            <h5 class="card-title">Sublimis theme</h5>
-            <p class="card-text">Sublimis is nice, just look at it</p>
-            <a href="Theme/aqtun-sublimis.theme.css" download class="btn btn-primary">Download</a>
-            <a class="btn btn-outline-primary" data-toggle="collapse" href="#codeSublimis" role="button" aria-expanded="false" aria-controls="codeSublimis">Show cusomisation code</a>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="collapse multi-collapse" id="codeSublimis">
-                  <div class="card card-body">
-                    <blockquote class="blockquote" style="font-size:16px;">
-                      :root {<br>
-                        /* Custom Settings */<br>
-                        --serverlist-column-count: 1;<br>
-                        --color-accent: #009688;<br>
-                        /* Background Settings */<br>
-                        --background-color: #1d1d1d;<br>
-                        --background-image: url("https://i.imgur.com/M7CBl8S.png");<br>
-                        --background-image-opacity: 1;<br>
-                        --background-image-blur: 0px;<br>
-                        /* Serverlist Text Settings */<br>
-                        --color-serverlist-text: rgba(255, 255, 255, 0.5);<br>
-                        --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);<br>
-                        --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);<br>
-                        /* Chat Text Settings */<br>
-                        --color-chat-text: rgba(255, 255, 255, 0.5);<br>
-                        --color-chat-text-link: #0096cf;<br>
-                        --color-chat-text-muted: rgba(125, 125, 125, 0.4);<br>
-                        /* Other Text Settings */<br>
-                        --color-text-big-divider: rgba(255, 255, 255, 0.5);<br>
-                        --color-text-main: rgba(255, 255, 255, 0.75);<br>
-                        --color-text-secondary: rgba(255, 255, 255, 0.5);<br>
-                        /* Various Background Settings */<br>
-                        --color-main: rgba(20, 20, 20, 0.3);<br>
-                        --color-main-hover: rgba(20, 20, 20, 0.5);<br>
-                        --color-flat-text: rgba(255, 255, 255, 0.75);<br>
-                        --color-flat-main: rgb(31, 30, 32);<br>
-                        /* Various Settings */<br>
-                        --color-divider: rgba(0, 0, 0, 0);<br>
-                        --color-big-divider: rgba(0, 0, 0, 0);<br>
-                      }
-                      <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
-                    </blockquote>
+          <div class="card mb-3">
+            <img class="card-img-top" src="img/Theme/Sublimis.png" srcAfter="img/Theme/Sublimis.png" srcBefore="img/Theme/Vanilla.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+            <div class="card-body">
+              <h5 class="card-title">Sublimis theme</h5>
+              <p class="card-text">Sublimis is nice, just look at it</p>
+              <a href="Theme/aqtun-sublimis.theme.css" download class="btn btn-primary">Download</a>
+              <a class="btn btn-outline-primary" data-toggle="collapse" href="#codeSublimis" role="button" aria-expanded="false" aria-controls="codeSublimis">Show cusomisation code</a>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="codeSublimis">
+                    <div class="card card-body">
+                      <blockquote class="blockquote" style="font-size:16px;">
+                        :root {<br>
+                          /* Custom Settings */<br>
+                          --serverlist-column-count: 1;<br>
+                          --color-accent: #009688;<br>
+                          /* Background Settings */<br>
+                          --background-color: #1d1d1d;<br>
+                          --background-image: url("https://i.imgur.com/M7CBl8S.png");<br>
+                          --background-image-opacity: 1;<br>
+                          --background-image-blur: 0px;<br>
+                          /* Serverlist Text Settings */<br>
+                          --color-serverlist-text: rgba(255, 255, 255, 0.5);<br>
+                          --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);<br>
+                          --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);<br>
+                          /* Chat Text Settings */<br>
+                          --color-chat-text: rgba(255, 255, 255, 0.5);<br>
+                          --color-chat-text-link: #0096cf;<br>
+                          --color-chat-text-muted: rgba(125, 125, 125, 0.4);<br>
+                          /* Other Text Settings */<br>
+                          --color-text-big-divider: rgba(255, 255, 255, 0.5);<br>
+                          --color-text-main: rgba(255, 255, 255, 0.75);<br>
+                          --color-text-secondary: rgba(255, 255, 255, 0.5);<br>
+                          /* Various Background Settings */<br>
+                          --color-main: rgba(20, 20, 20, 0.3);<br>
+                          --color-main-hover: rgba(20, 20, 20, 0.5);<br>
+                          --color-flat-text: rgba(255, 255, 255, 0.75);<br>
+                          --color-flat-main: rgb(31, 30, 32);<br>
+                          /* Various Settings */<br>
+                          --color-divider: rgba(0, 0, 0, 0);<br>
+                          --color-big-divider: rgba(0, 0, 0, 0);<br>
+                        }
+                        <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
+                      </blockquote>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -208,63 +224,63 @@
           </div>
         </div>
       </div>
-    </div>
-    <div  id="addons" class="container">
-      <h1>Theme Addons:</h1>
-      <p class="lead">hover on image to compare with stock discord</p>
-      <div class="row mt-5 justify-content-center">
-        <div class="card-deck">
-          <div class="card text-center" style="width: 18rem; margin: 8px;">
-            <img class="card-img-top" src="img/Addon/Material-Icons-after.png" alt="no image" srcAfter="img/Addon/Material-Icons-after.png" srcBefore="img/Addon/Material-Icons-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-            <div class="card-body">
-              <h5 class="card-title">Google Material Icons</h5>
-              <p class="card-text">replaces most icons with <a href="https://github.com/google/material-design-icons"> Google's material icons</a> </p>
-              <a href="Theme/aqtun-material-icons.theme.css" download class="btn btn-primary">Download</a>
+      <div id="addons" class="container">
+        <h1>Theme Addons:</h1>
+        <p class="lead">hover on image to compare with stock discord</p>
+        <div class="row mt-5 justify-content-center">
+          <div class="card-deck">
+            <div class="card text-center" style="width: 18rem; margin: 8px;">
+              <img class="card-img-top" src="img/Addon/Material-Icons-after.png" alt="no image" srcAfter="img/Addon/Material-Icons-after.png" srcBefore="img/Addon/Material-Icons-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+              <div class="card-body">
+                <h5 class="card-title">Google Material Icons</h5>
+                <p class="card-text">replaces most icons with <a href="https://github.com/google/material-design-icons"> Google's material icons</a> </p>
+                <a href="Theme/aqtun-material-icons.theme.css" download class="btn btn-primary">Download</a>
+              </div>
+            </div>
+            <div class="card text-center" style="width: 18rem; margin: 8px;">
+              <img class="card-img-top" src="img/Addon/Bigger-Youtube-embed-after.png" alt="no image" srcAfter="img/Addon/Bigger-Youtube-embed-after.png" srcBefore="img/Addon/Bigger-Youtube-embed-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+              <div class="card-body">
+                <h5 class="card-title">Bigger Youtube embed</h5>
+                <p class="card-text">increases size of youtube embed </p>
+                <a href="Theme/aqtun-youtube-embed.theme.css" download class="btn btn-primary">Download</a>
+              </div>
+            </div>
+            <div class="card text-center" style="width: 18rem; margin: 8px;">
+              <img class="card-img-top" src="img/Addon/Wide-Discord-settings-after.png" alt="no image" srcAfter="img/Addon/Wide-Discord-settings-after.png" srcBefore="img/Addon/Wide-Discord-settings-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+              <div class="card-body">
+                <h5 class="card-title">Wider Discord settings</h5>
+                <p class="card-text">Widens Discord settings</p>
+                <a href="Theme/aqtun-wide-settings.theme.css" download class="btn btn-primary">Download</a>
+              </div>
             </div>
           </div>
-          <div class="card text-center" style="width: 18rem; margin: 8px;">
-            <img class="card-img-top" src="img/Addon/Bigger-Youtube-embed-after.png" alt="no image" srcAfter="img/Addon/Bigger-Youtube-embed-after.png" srcBefore="img/Addon/Bigger-Youtube-embed-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-            <div class="card-body">
-              <h5 class="card-title">Bigger Youtube embed</h5>
-              <p class="card-text">increases size of youtube embed </p>
-              <a href="Theme/aqtun-youtube-embed.theme.css" download class="btn btn-primary">Download</a>
+          <div class="card-deck">
+            <div class="card text-center" style="width: 18rem; margin: 8px;">
+              <img class="card-img-top" src="img/Addon/Fit-Serverlist-after.png" alt="no image" srcAfter="img/Addon/Fit-Serverlist-after.png" srcBefore="img/Addon/Fit-Serverlist-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+              <div class="card-body">
+                <h5 class="card-title">Fit Serverlist</h5>
+                <p class="card-text">Makes servers on serverlist smaller allowing to fit more of them in same space</p>
+                <a href="Theme/aqtun-fit-serverlist-addon.theme.css" download class="btn btn-primary">Download</a>
+              </div>
             </div>
-          </div>
-          <div class="card text-center" style="width: 18rem; margin: 8px;">
-            <img class="card-img-top" src="img/Addon/Wide-Discord-settings-after.png" alt="no image" srcAfter="img/Addon/Wide-Discord-settings-after.png" srcBefore="img/Addon/Wide-Discord-settings-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-            <div class="card-body">
-              <h5 class="card-title">Wider Discord settings</h5>
-              <p class="card-text">Widens Discord settings</p>
-              <a href="Theme/aqtun-wide-settings.theme.css" download class="btn btn-primary">Download</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-deck">
-          <div class="card text-center" style="width: 18rem; margin: 8px;">
-            <img class="card-img-top" src="img/Addon/Fit-Serverlist-after.png" alt="no image" srcAfter="img/Addon/Fit-Serverlist-after.png" srcBefore="img/Addon/Fit-Serverlist-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-            <div class="card-body">
-              <h5 class="card-title">Fit Serverlist</h5>
-              <p class="card-text">Makes servers on serverlist smaller allowing to fit more of them in same space</p>
-              <a href="Theme/aqtun-fit-serverlist-addon.theme.css" download class="btn btn-primary">Download</a>
-            </div>
-          </div>
-          <div class="card text-center" style="width: 18rem; margin: 8px;">
-            <img class="card-img-top" src="img/Addon/Multicolumn-serverlist-after.png" alt="no image" srcAfter="img/Addon/Multicolumn-serverlist-after.png" srcBefore="img/Addon/Multicolumn-serverlist-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
-            <div class="card-body">
-              <h5 class="card-title">Multicolumn serverlist</h5>
-              <p class="card-text">for people with too many servers <br> you can adjust amount of columns with:</p>
-              <a href="Theme/aqtun-multicolumn-serverlist.theme.css" download class="btn btn-primary">Download</a>
-              <a class="btn btn-outline-primary mt-3" data-toggle="collapse" href="#codeMulticolumnServerlist" role="button" aria-expanded="false" aria-controls="codeMulticolumnServerlist">Show cusomisation code</a>
-              <div class="row mt-3">
-                <div class="col">
-                  <div class="collapse multi-collapse" id="codeMulticolumnServerlist">
-                    <div class="card card-body">
-                      <blockquote class="blockquote" style="font-size:16px;">
-                        :root {<br>
-                          --serverlist-column-count: 2;<br>
-                        }
-                        <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
-                      </blockquote>
+            <div class="card text-center" style="width: 18rem; margin: 8px;">
+              <img class="card-img-top" src="img/Addon/Multicolumn-serverlist-after.png" alt="no image" srcAfter="img/Addon/Multicolumn-serverlist-after.png" srcBefore="img/Addon/Multicolumn-serverlist-before.png" alt="no image :(" onmouseover="hoverCompareImg(this);" onmouseout="unhoverCompareImg(this);">
+              <div class="card-body">
+                <h5 class="card-title">Multicolumn serverlist</h5>
+                <p class="card-text">for people with too many servers <br> you can adjust amount of columns with:</p>
+                <a href="Theme/aqtun-multicolumn-serverlist.theme.css" download class="btn btn-primary">Download</a>
+                <a class="btn btn-outline-primary mt-3" data-toggle="collapse" href="#codeMulticolumnServerlist" role="button" aria-expanded="false" aria-controls="codeMulticolumnServerlist">Show cusomisation code</a>
+                <div class="row mt-3">
+                  <div class="col">
+                    <div class="collapse multi-collapse" id="codeMulticolumnServerlist">
+                      <div class="card card-body">
+                        <blockquote class="blockquote" style="font-size:16px;">
+                          :root {<br>
+                            --serverlist-column-count: 2;<br>
+                          }
+                          <button type="button" class="btn btn-outline-primary mt-3 float-right" onclick="copy(this)">Copy</button>
+                        </blockquote>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -309,5 +325,13 @@
           behavior: "smooth"
         });
       }
+      window.addEventListener('scroll', function(e) {
+        var navbarFixed = document.getElementById("navbarFixed");
+        if (window.scrollY > 56) {
+          navbarFixed.classList.add("show");
+        } else {
+          navbarFixed.classList.remove("show");
+        }
+      });
   </script>
 </html>
