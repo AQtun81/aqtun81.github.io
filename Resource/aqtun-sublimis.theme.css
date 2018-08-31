@@ -6,25 +6,34 @@
 @import url('https://aqtun81.github.io/Resource/aqtun-youtube-embed.theme.css');
 
 :root {
+  /* Custom Settings */
+  --serverlist-column-count: 1;
+  --color-accent: #009688;
+  /* Background Settings */
   --background-color: #1d1d1d;
   --background-image: url("https://i.imgur.com/M7CBl8S.png");
   --background-image-opacity: 1;
   --background-image-blur: 0px;
-  --color-text: rgba(255, 255, 255, 0.5);
-  --color-text-hover: rgba(255, 255, 255, 0.75);
-  --color-text-muted: rgba(125, 125, 125, 0.4);
+  /* Serverlist Text Settings */
+  --color-serverlist-text: rgba(255, 255, 255, 0.5);
+  --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);
+  --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);
+  /* Chat Text Settings */
+  --color-chat-text: rgba(255, 255, 255, 0.5);
+  --color-chat-text-hover: rgba(255, 255, 255, 0.75);
+  --color-chat-text-muted: rgba(125, 125, 125, 0.4);
+  /* Other Text Settings */
   --color-text-big-divider: rgba(255, 255, 255, 0.5);
+  --color-text-main: rgba(255, 255, 255, 0.75);
+  --color-text-secondary: rgba(255, 255, 255, 0.5);
+  /* Various Background Settings */
   --color-main: rgba(20, 20, 20, 0.3);
   --color-main-hover: rgba(20, 20, 20, 0.5);
-  --color-divider: rgba(0, 0, 0, 0);
-  --color-big-divider: rgba(0, 0, 0, 0);
-  --serverlist-column-count: 1;
-  --color-accent: #009688;
-}
-
-:root {
   --color-flat-text: rgba(255, 255, 255, 0.75);
   --color-flat-main: rgb(31, 30, 32);
+  /* Various Settings */
+  --color-divider: rgba(0, 0, 0, 0);
+  --color-big-divider: rgba(0, 0, 0, 0);
 }
 body::after {
   width: calc(240px + 58px * var(--serverlist-column-count) + 30px);
