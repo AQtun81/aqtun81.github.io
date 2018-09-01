@@ -36,7 +36,7 @@
   --color-big-divider: rgba(0, 0, 0, 0);
 }
 body::after {
-  width: calc(240px + 58px * var(--serverlist-column-count) + 30px);
+  width: calc(240px + 58px * var(--serverlist-column-count) + 30px + var(--background-image-blur));
 }
 #app-mount .app div[class*=layers-] div[class*=layer-] div[class*=container-] div[class*=chat-],
 #app-mount .app div[class*=layers-] div[class*=layer-] div[class*=container-] #friends {
