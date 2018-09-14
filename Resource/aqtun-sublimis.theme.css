@@ -33,7 +33,7 @@
   --color-flat-main: rgb(31, 30, 32);
   /* Various Settings */
   --color-divider: rgba(0, 0, 0, 0);
-  --color-big-divider: rgba(0, 0, 0, 0);
+  --color-big-divider: rgb(31, 30, 32);
 }
 body::after {
   width: calc(240px + 58px * var(--serverlist-column-count) + 30px + var(--background-image-blur));
