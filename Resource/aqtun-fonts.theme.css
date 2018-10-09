@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 /*servername*/
 span[class*="name-"] {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-style: italic;
+}
+
+/*chat username*/
+span[class*="name-"][class*="username-"] {
+  font-weight: 400;
 }
 
 /*voice channel users*/
@@ -62,7 +67,7 @@ h1.old-h1 {
   font-family: 'Montserrat', sans-serif;
 }
 div[class*="messageCozy-"] div[class*="markup-"] {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 16px !important;
   font-weight: 300;
 }
@@ -70,7 +75,7 @@ div[class*="messageCozy-"] time[class*="timestampCozy-"] {
   font-size: 10.5px;
 }
 div[class*="channelTextArea-"] div[class*="inner-"] textarea[class*="textArea-"] {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /*server user list*/
