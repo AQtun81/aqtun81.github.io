@@ -1,6 +1,6 @@
-#app-mount .app>[class*=layers-]>[class*=layer-]>.ui-standard-sidebar-view>.sidebar-region {
+#app-mount .app>[class*=layers-]>[class*=layer-]>[class*=standardSidebarView-]>.sidebar-region {
   flex: 0;
 }
-#app-mount .app>[class*=layers-]>[class*=layer-]>.ui-standard-sidebar-view>.content-region .content-column {
+#app-mount .app>[class*=layers-]>[class*=layer-]>[class*=standardSidebarView-]>.content-region .content-column {
   max-width: initial;
 }
