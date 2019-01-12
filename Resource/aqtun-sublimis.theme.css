@@ -43,6 +43,9 @@ body::after {
     background-color: var(--color-flat-main) !important;
 }
 #app-mount .app div[class*=layers-] div[class*=layer-] div[class*=container-] div[class*=activityFeed-],
+#app-mount .app div[class*=layers-] div[class*=layer-] div[class*=container-] div[class*=gameLibrary-],
+#app-mount .app div[class*=layers-] div[class*=layer-] div[class*=container-] div[class*=applicationStore-],
+#app-mount .app div[class*=layers-] div[class*=layer-] div[class*=container-] .container-3gCOGc,
 #app-mount .app>[class*=layers-]>[class*=layer-]>div>[class*=standardSidebarView-]>[class*=contentRegion-] {
   background-color: var(--color-flat-main);
 }
