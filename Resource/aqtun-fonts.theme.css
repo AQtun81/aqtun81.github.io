@@ -1,96 +1,73 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,600,600i,700,700i,800,800i');
 
-/*servername*/
-span[class*="name-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+
+.name-3YKhmS {
+  font-weight: 100;
   font-style: italic;
+  font-size: 21px;
+  font-family: 'Quicksand', sans-serif !important;
 }
 
-/*chat username*/
-span[class*="name-"][class*="username-"] {
-  font-weight: 400;
-}
-
-/*voice channel users*/
-div[class*="voiceUser-"] div[class*="nameDefault-"],
-div[class*="voiceUser-"] div[class*="nameSpeaking-"],
-div[class*="voiceUser-"] div[class*="nameHovered-"] {
-  transition-duration: 0.6s;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-variant-caps: initial;
-}
-
-/*server chat group name normal and hovered*/
-div[class*="nameDefault-"],
-div[class*="nameHovered-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-variant-caps: petite-caps;
-}
-
-/*server chat group text and voice channel*/
-div[class*="nameDefaultText-"],
-div[class*="nameDefaultVoice-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  font-size: smaller;
-}
-
-/*server chat group text channel selected*/
-div[class*="nameSelectedText-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  font-size: smaller;
-}
-
-/*server chat group text and voice channel hovered*/
-div[class*="nameHoveredText-"],
-div[class*="nameHoveredVoice-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  font-size: smaller;
-}
-
-/*chat*/
-h1.old-h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px !important;
-}
-.chat div[class*="titleWrapper-"] {
-  font-family: 'Montserrat', sans-serif;
-}
-.scroller-wrap {
-  font-family: 'Montserrat', sans-serif;
-}
-div[class*="messageCozy-"] div[class*="markup-"] {
+.markup-2BOw-j {
   font-family: 'Quicksand', sans-serif;
   font-size: 16px !important;
   font-weight: 300;
 }
-div[class*="messageCozy-"] time[class*="timestampCozy-"] {
-  font-size: 10.5px;
-}
-div[class*="channelTextArea-"] div[class*="inner-"] textarea[class*="textArea-"] {
+
+.username-_4ZSMR {
   font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
 }
 
-/*server user list*/
-div[class*="nameTag-"] span[class*="usernameOnline-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
+.timestampCozy-2hLAPV {
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.2);
+  transition-duration: 0.3s;
 }
-div[class*="nameTag-"] span[class*="usernameOffline-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.1);
+
+.timestampCozy-2hLAPV:hover {
+  background-color: rgb(48, 48, 48);
+  color: rgba(255, 255, 255, 0.5);
 }
-div[class*="membersWrap-"] div[class*="membersGroup-"] {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11.5px;
-  font-style: normal;
-  font-variant-caps: petite-caps;
+
+.username-1cB_5E {
+  font-family: Quicksand, sans-serif;
+  font-weight: 500;
+}
+
+.usernameOffline-3VSVLk {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dividerContent-2L12VI {
+  font-family: Quicksand, sans-serif;
+}
+
+.nameDefault-2s3kbY,
+.nameHovered-21k1eo,
+.nameSpeaking-3UhoEZ {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  transition-duration: 0.3s;
+}
+
+.nameConnectedText-3CzNQn,
+.nameConnectedVoice-MHUX5F,
+.nameDefaultText-24KCy5,
+.nameDefaultVoice-3WUH7s,
+.nameHoveredText-1uO31y,
+.nameHoveredVoice-YJ1Vfd,
+.nameLockedText-3pqQcL,
+.nameLockedVoice-26MhB1,
+.nameMutedText-3Vj4bM,
+.nameMutedVoice-3oxyQZ,
+.nameSelectedText-sp_EUw,
+.nameSelectedVoice-1qSph5,
+.nameUnreadText-DfkrI4,
+.nameUnreadVoice-EVo-wI {
+  font-family: Quicksand, sans-serif;
+  font-size: 16px;
 }

@@ -74,7 +74,8 @@ body::after {
 .theme-dark .applicationStore-1pNvnv,
 .theme-dark .container-3gCOGc,
 .searchBar-2_Yu-C,
-.theme-dark .root-1BQpZw {
+.theme-dark .root-1BQpZw,
+.container-1UB9sr {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -87,7 +88,8 @@ body::after {
 .searchBar-2_Yu-C .searchBarInner-1_Tg2R,
 .channel-2QD9_O.selected-1HYmZZ a,
 .theme-dark .cardPrimaryOutline-29Ujqw,
-.theme-dark .codeRedemptionRedirect-1wVR4b {
+.theme-dark .codeRedemptionRedirect-1wVR4b,
+.theme-dark .wrapper-35wsBm {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -125,7 +127,10 @@ body::after {
   .theme-dark .status-2kJpnA,
   .theme-light .status-2kJpnA,
   .theme-dark .card-FDVird:before,
-  .theme-dark .cardPrimaryOutline-29Ujqw {
+  .theme-dark .cardPrimaryOutline-29Ujqw,
+  .channel-2QD9_O.selected-1HYmZZ .status-1ibiUI,
+  .channel-2QD9_O .status-1ibiUI,
+  .theme-dark .wrapper-35wsBm {
     border-color: transparent !important;
   }
 
