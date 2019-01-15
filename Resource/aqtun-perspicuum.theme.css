@@ -73,7 +73,8 @@ body::after {
 .theme-dark .header-39GIC8,
 .theme-dark .applicationStore-1pNvnv,
 .theme-dark .container-3gCOGc,
-.searchBar-2_Yu-C {
+.searchBar-2_Yu-C,
+.theme-dark .root-1BQpZw {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -84,7 +85,9 @@ body::after {
 .theme-dark .inner-zqa7da,
 .theme-dark .search-2oPWTC .searchBar-3dMhjb,
 .searchBar-2_Yu-C .searchBarInner-1_Tg2R,
-.channel-2QD9_O.selected-1HYmZZ a {
+.channel-2QD9_O.selected-1HYmZZ a,
+.theme-dark .cardPrimaryOutline-29Ujqw,
+.theme-dark .codeRedemptionRedirect-1wVR4b {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -95,7 +98,8 @@ body::after {
 .contentSelectedVoice-1WDIBM:active,
 .theme-dark .member-3W1lQa:hover .content-OzHfo4,
 .channel-2QD9_O.selected-1HYmZZ a,
-.channel-2QD9_O:hover a {
+.channel-2QD9_O:hover a,
+.theme-dark .card-FDVird:before {
   background: var(--color-main-hover) !important;
   background-color: var(--color-main-hover) !important;
 }
@@ -114,8 +118,15 @@ body::after {
   .theme-dark .container-1nZlH6,
   .theme-dark .bda-slist li,
   .searchBar-2_Yu-C .searchBarInner-1_Tg2R,
-  .theme-dark .markup-2BOw-j pre {
-    border: 0 !important;
+  .theme-dark .markup-2BOw-j pre,
+  .theme-dark .input-cIJ7To,
+  .theme-dark .input-cIJ7To:hover,
+  .theme-dark .status-2s6iDp,
+  .theme-dark .status-2kJpnA,
+  .theme-light .status-2kJpnA,
+  .theme-dark .card-FDVird:before,
+  .theme-dark .cardPrimaryOutline-29Ujqw {
+    border-color: transparent !important;
   }
 
   /* --- REMOVE DIVIDERS --- */
