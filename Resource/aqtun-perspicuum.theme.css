@@ -195,6 +195,22 @@ body::after {
     color: var(--color-accent);
     border-color: var(--color-accent-hover)
   }
+  
+  .guild-1EfMGQ:hover .guildInner-3DSoA4 {
+    background-color: var(--color-accent) !important;
+    border-radius: 15px !important
+  }
+
+  .guild-1EfMGQ .guildInner-3DSoA4 {
+    background-color: #2f3136 !important;
+    border-radius: 25px !important;
+    transition-duration: .3s
+  }
+
+  .guild-1EfMGQ.selected-ML3OIq .guildInner-3DSoA4 {
+    background-color: var(--color-accent) !important;
+    border-radius: 15px !important
+  }
 
   /* --- CHANGE SCROLLERS --- */
 
