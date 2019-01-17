@@ -176,6 +176,7 @@ body::after {
   .theme-dark #bd-settings-sidebar .ui-tab-bar-item.selected,
   #bd-settingspane-container .ui-switch-item .ui-switch-wrapper .ui-switch.checked,
   .bd-pfbtn,
+  .bda-slist .bda-footer button,
   .tabBar-1E2ExX .primary-3j8BhM {
     background-color: var(--color-accent) !important;
   }
@@ -195,7 +196,7 @@ body::after {
     color: var(--color-accent);
     border-color: var(--color-accent-hover)
   }
-  
+
   .guild-1EfMGQ:hover .guildInner-3DSoA4 {
     background-color: var(--color-accent) !important;
     border-radius: 15px !important
@@ -210,6 +211,10 @@ body::after {
   .guild-1EfMGQ.selected-ML3OIq .guildInner-3DSoA4 {
     background-color: var(--color-accent) !important;
     border-radius: 15px !important
+  }
+
+  .foreground-2aE44H {
+    stroke: var(--color-accent);
   }
 
   /* --- CHANGE SCROLLERS --- */
