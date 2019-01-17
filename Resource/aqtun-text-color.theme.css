@@ -6,7 +6,10 @@
 --color-channel-text-muted: rgba(125, 125, 125, 0.4);
 /* Chat Text Settings */
 --color-chat-text: rgba(255, 255, 255, 0.85);
---color-chat-text-link: #0096cf
+--color-chat-text-link: #1dbcf9;
+/* Friends Text */
+--color-friend-text: rgba(255, 255, 255, 0.6);
+--color-friend-text-hover: rgba(255, 255, 255, 1);
 }
 
 .nameDefaultText-24KCy5, .nameDefaultVoice-3WUH7s, .nameLockedText-3pqQcL, .nameLockedVoice-26MhB1 {
@@ -33,4 +36,12 @@
 
 .theme-dark .markup-2BOw-j a {
   color: var(--color-chat-text-link);
+}
+
+.name-2WpE7M {
+  color: var(--color-friend-text);
+}
+
+.channel-2QD9_O:hover .name-2WpE7M {
+  color: var(--color-friend-text-hover);
 }

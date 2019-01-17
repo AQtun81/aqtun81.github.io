@@ -6,6 +6,7 @@
   --background-image-opacity: .3;
   --background-image-blur: 0;
   --color-accent: #7289da;
+  --color-accent-hover: #6478bd;
   --color-main: rgba(125, 125, 125, 0.3);
   --color-main-hover: rgba(125, 125, 125, 0.5);
   /* --- text colors --- */
@@ -163,6 +164,37 @@ body::after {
 .theme-dark .divider-3gKybi:not(.dividerRed-MKoLlr) .dividerContent-2L12VI {
   color: var(--color-text-big-divider);
 }
+
+  /* --- CHANGE ACCENT COLORS --- */
+
+  .side-8zPYf6 .itemSelected-1qLhcL,
+  .lookFilled-1Gx00P.colorBrand-3pXr91,
+  .themeDefault-24hCdX.valueChecked-m-4IJZ,
+  .barFill-23-gu-,
+  .cardPrimaryEditable-3KtE4g[style*="rgb(114, 137, 218)"],
+  .selected-mKYnfr.option-n0icdO,
+  .theme-dark #bd-settings-sidebar .ui-tab-bar-item.selected,
+  #bd-settingspane-container .ui-switch-item .ui-switch-wrapper .ui-switch.checked,
+  .bd-pfbtn,
+  .tabBar-1E2ExX .primary-3j8BhM {
+    background-color: var(--color-accent) !important;
+  }
+
+  .lookFilled-1Gx00P.colorBrand-3pXr91:hover,
+  .option-n0icdO:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .lookOutlined-3sRXeN.colorBrand-3pXr91,
+  .wrapper-3jrx9n {
+    color: var(--color-accent);
+    border-color: var(--color-accent)
+  }
+
+  .lookOutlined-3sRXeN.colorBrand-3pXr91:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent-hover)
+  }
 
   /* --- CHANGE SCROLLERS --- */
 
