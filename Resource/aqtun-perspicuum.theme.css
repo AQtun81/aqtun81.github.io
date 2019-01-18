@@ -269,3 +269,9 @@ body::after {
   width: 70%;
   margin: 0 auto;
 }
+
+  /* --- STATIC COLORS --- */
+
+  .mobileIndicator-329Gd6 {
+    color: #d0d0d0 !important;
+  }
