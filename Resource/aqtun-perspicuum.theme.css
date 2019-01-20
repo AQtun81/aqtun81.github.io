@@ -10,15 +10,17 @@
   --color-main: rgba(125, 125, 125, 0.3);
   --color-main-hover: rgba(125, 125, 125, 0.5);
   --color-flat-popup: rgb(32, 34, 38);
-  /* --- text colors --- */
-  --color-serverlist-text: rgba(255, 255, 255, 0.5);
-  --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);
-  --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);
-  --color-chat-text: rgba(255, 255, 255, 0.5);
-  --color-chat-text-link: #0096cf;
-  --color-chat-text-muted: rgba(125, 125, 125, 0.4);
-  --color-text-main: rgba(255, 255, 255, 0.75);
-  --color-text-secondary: rgba(255, 255, 255, 0.5);
+  /* Server Channel List Text Settings */
+  --color-channel-text: rgba(255, 255, 255, 0.5);
+  --color-channel-text-selected: rgba(255, 255, 255, 0.9);
+  --color-channel-text-hover: rgba(255, 255, 255, 0.75);
+  --color-channel-text-muted: rgba(125, 125, 125, 0.4);
+  /* Chat Text Settings */
+  --color-chat-text: rgba(255, 255, 255, 0.85);
+  --color-chat-text-link: #1dbcf9;
+  /* Friends Text */
+  --color-friend-text: rgba(255, 255, 255, 0.6);
+  --color-friend-text-hover: rgba(255, 255, 255, 1);
   /* --- divider colors --- */
   --color-text-big-divider: rgba(255, 255, 255, 0.75);
   --color-divider: rgba(0, 0, 0, 0);

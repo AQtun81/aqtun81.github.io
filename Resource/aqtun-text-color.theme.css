@@ -12,7 +12,11 @@
 --color-friend-text-hover: rgba(255, 255, 255, 1);
 }
 
-.nameDefaultText-24KCy5, .nameDefaultVoice-3WUH7s, .nameLockedText-3pqQcL, .nameLockedVoice-26MhB1 {
+.nameDefaultText-24KCy5,
+.nameDefaultVoice-3WUH7s,
+.nameLockedText-3pqQcL,
+.nameLockedVoice-26MhB1,
+.nameDefault-2s3kbY {
   color: var(--color-channel-text);
 }
 
@@ -20,7 +24,9 @@
   color: var(--color-channel-text-selected);
 }
 
-.nameHoveredText-1uO31y {
+.nameHoveredText-1uO31y,
+.nameHovered-21k1eo,
+.nameSpeaking-3UhoEZ {
   color: var(--color-channel-text-hover);
 }
 
