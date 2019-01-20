@@ -9,6 +9,7 @@
   --color-accent-hover: #6478bd;
   --color-main: rgba(125, 125, 125, 0.3);
   --color-main-hover: rgba(125, 125, 125, 0.5);
+  --color-flat-popup: rgb(32, 34, 38);
   /* --- text colors --- */
   --color-serverlist-text: rgba(255, 255, 255, 0.5);
   --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);
@@ -82,7 +83,17 @@ body::after {
 .article-3kb3qm,
 .mediaFade-1SdEfL,
 .description-3rB3Rp,
-.tileMedia-24cT6_ {
+.tileMedia-24cT6_,
+.react-datepicker,
+.react-datepicker__header,
+.option-96V44q:after,
+.searchAnswer-3Dz2-q,
+.searchFilter-2ESiM3,
+.searchResult-3pzFAB:before,
+.searchResult-3pzFAB:after,
+.searchHeader-1l-wpR,
+.searchResult-3pzFAB .searchResultMessage-2VxO12.hit-NLlWXA,
+.channelSeparator-1X1FuH .channelName-1QajIf {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -100,7 +111,9 @@ body::after {
 .theme-dark .card-7JP0BX,
 .carousel-2WxMes,
 .applicationTile-1Goy1W,
-.tileMedia-1q3guD {
+.tileMedia-1q3guD,
+.jumpToPresentBar-9P20AM,
+.hasMore-3e72_v button {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -115,7 +128,9 @@ body::after {
 .theme-dark .card-FDVird:before,
 .theme-dark .friendsTable-133bsv .friendsRow-2yicud:hover,
 .theme-dark .topPill-30KHOu .item-PXvHYJ:hover:not(.itemSelected-1qLhcL):not(.primary-3j8BhM),
-.rowWrapperActive-2L7i9f {
+.rowWrapperActive-2L7i9f,
+.theme-dark .side-8zPYf6 .itemDefault-3Jdr52:hover,
+.theme-dark #bd-settings-sidebar .ui-tab-bar-item:hover {
   background: var(--color-main-hover) !important;
   background-color: var(--color-main-hover) !important;
 }
@@ -124,6 +139,23 @@ body::after {
   background: radial-gradient(ellipse at top,rgba(54,57,63,0),var(--color-main)),
               linear-gradient(90deg,var(--color-main) 0,rgba(54,57,63,0) 40%,rgba(54,57,63,0) 60%,var(--color-main)),
               linear-gradient(0deg,var(--color-main) 0,rgba(54,57,63,0) 25%) !important;
+}
+
+.theme-dark .container-3ayLPN,
+.theme-dark .calendarPicker-2yf6Ci .react-datepicker__day--disabled,
+.theme-dark .calendarPicker-2yf6Ci .react-datepicker__day--outside-month {
+  background-color: var(--color-flat-popup) !important;
+  background: var(--color-flat-popup) !important;
+}
+
+.theme-dark .option-96V44q.selected-rZcOL- {
+  background-color: var(--color-flat-popup);
+  background: var(--color-flat-popup);
+}
+
+.theme-dark .searchResultsWrap-2DKFzt {
+  background-color: var(--color-flat-popup) !important;
+  background: var(--color-flat-popup) !important;
 }
 
   /* --- REMOVE BORDERS --- */
@@ -154,7 +186,19 @@ body::after {
   .container-1UB9sr,
   .player-1kJMbj,
   .distributionApplicationsActions-3D2_kD,
-  .premiumApplicationsHeader-Zmkm5e {
+  .premiumApplicationsHeader-Zmkm5e,
+  .channelTextArea-rNsIhG,
+  .hasMore-3e72_v button,
+  .react-datepicker__current-month,
+  .theme-dark .datePicker--XZbmJ .datePickerHint-3Q1Udw,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__navigation.react-datepicker__navigation--next,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__navigation.react-datepicker__navigation--previous,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__day,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__week .react-datepicker__day:last-of-type,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__week:last-of-type .react-datepicker__day,
+  .theme-dark .resultsGroup-r_nuzN:before,
+  .theme-dark .searchResult-3pzFAB .searchResultMessage-2VxO12.hit-NLlWXA,
+  .theme-dark .channelSeparator-1X1FuH:before {
     border-color: transparent !important;
   }
 
@@ -202,8 +246,14 @@ body::after {
   #bd-settingspane-container .ui-switch-item .ui-switch-wrapper .ui-switch.checked,
   .bd-pfbtn,
   .bda-slist .bda-footer button,
-  .tabBar-1E2ExX .primary-3j8BhM {
+  .tabBar-1E2ExX .primary-3j8BhM,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__day.react-datepicker__day--selected:after,
+  .theme-dark .datePicker--XZbmJ .datePickerHint-3Q1Udw .hintValue-29ny8Z,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__day.react-datepicker__day--selected:hover,
+  .theme-dark .calendarPicker-2yf6Ci .react-datepicker__day:hover,
+  .theme-dark .datePicker--XZbmJ .datePickerHint-3Q1Udw .hintValue-29ny8Z:hover {
     background-color: var(--color-accent) !important;
+    background: var(--color-accent) !important;
   }
 
   .lookFilled-1Gx00P.colorBrand-3pXr91:hover,
@@ -268,6 +318,14 @@ body::after {
 .splash-3K76bN {
   width: 70%;
   margin: 0 auto;
+}
+
+.jumpToPresentBar-9P20AM {
+  border-radius: 5px !important;
+}
+
+.theme-dark .searchResultsWrap-2DKFzt {
+  border-top-left-radius: 15px;
 }
 
   /* --- STATIC COLORS --- */
