@@ -8,7 +8,7 @@
   --color-accent: #7289da;
   --color-accent-hover: #6478bd;
   --color-positive: #43b581;
-  --color-negative: red;
+  --color-negative: #e94f4f;
   --color-main: rgba(125, 125, 125, 0.3);
   --color-main-hover: rgba(125, 125, 125, 0.5);
   --color-flat-popup: rgb(32, 34, 38);
@@ -184,7 +184,6 @@ body::after {
   .input-cIJ7To:hover,
   .status-2s6iDp,
   .status-2kJpnA,
-  .theme-light .status-2kJpnA,
   .card-FDVird:before,
   .cardPrimaryOutline-29Ujqw,
   .channel-2QD9_O.selected-1HYmZZ .status-1ibiUI,
@@ -304,6 +303,28 @@ body::after {
 
   .avatarSpeaking-1wJCNq {
     box-shadow: 0px 0px 0px 1.5px var(--color-positive) !important;
+  }
+
+  .lookFilled-1Gx00P.colorGreen-29iAKY,
+  .lookFilled-1Gx00P.colorGreen-29iAKY:hover,
+  .lookFilled-1Gx00P.hoverGreen-1gjdJc.hasHover-3X1-zV:hover {
+    background-color: var(--color-positive) !important;
+  }
+
+  .lookOutlined-3sRXeN.colorRed-1TFJan,
+  .lookOutlined-3sRXeN.colorRed-1TFJan:hover {
+    color: var(--color-negative);
+    border-color: var(--color-negative);
+  }
+
+  .itemDefault-3Jdr52[style*="rgb(240, 71, 71)"] {
+    color: var(--color-negative) !important;
+  }
+
+  .lookFilled-1Gx00P.colorRed-1TFJan,
+  .lookFilled-1Gx00P.colorRed-1TFJan:hover,
+  .friendsTable-133bsv .friendsRow-2yicud .friendsColumnActions-1LT3_M .friendsAction-__WNE9.friendsActionRemove-qu8nnl:hover {
+    background-color: var(--color-negative) !important;
   }
 
   /* --- CHANGE SCROLLERS --- */

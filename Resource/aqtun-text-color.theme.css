@@ -17,37 +17,39 @@
 .nameLockedText-3pqQcL,
 .nameLockedVoice-26MhB1,
 .nameDefault-2s3kbY {
-  color: var(--color-channel-text);
+  color: var(--color-channel-text) !important;
 }
 
 .nameConnectedText-3CzNQn, .nameConnectedVoice-MHUX5F, .nameSelectedText-sp_EUw, .nameSelectedVoice-1qSph5 {
-  color: var(--color-channel-text-selected);
+  color: var(--color-channel-text-selected) !important;
 }
 
 .nameHoveredText-1uO31y,
 .nameHovered-21k1eo,
 .nameSpeaking-3UhoEZ {
-  color: var(--color-channel-text-hover);
+  color: var(--color-channel-text-hover) !important;
 }
 
 .nameMutedText-3Vj4bM, .nameMutedVoice-3oxyQZ {
-  color: var(--color-channel-text-muted);
+  color: var(--color-channel-text-muted) !important;
 }
 
-.theme-dark .embedDescription-1Cuq9a, .theme-dark .embedFieldValue-nELq2s,
-.theme-dark .embedFooterText-28V_Wb, .theme-dark .embedProvider-3k5pfl,
-.theme-dark .markup-2BOw-j {
-  color: var(--color-chat-text);
+.embedDescription-1Cuq9a,
+.embedFieldValue-nELq2s,
+.embedFooterText-28V_Wb,
+.embedProvider-3k5pfl,
+.markup-2BOw-j {
+  color: var(--color-chat-text) !important;
 }
 
-.theme-dark .markup-2BOw-j a {
-  color: var(--color-chat-text-link);
+.markup-2BOw-j a {
+  color: var(--color-chat-text-link) !important;
 }
 
 .name-2WpE7M {
-  color: var(--color-friend-text);
+  color: var(--color-friend-text) !important;
 }
 
 .channel-2QD9_O:hover .name-2WpE7M {
-  color: var(--color-friend-text-hover);
+  color: var(--color-friend-text-hover !important);
 }
