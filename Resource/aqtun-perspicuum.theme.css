@@ -147,7 +147,12 @@ body::after {
               linear-gradient(90deg,var(--color-main) 0,rgba(54,57,63,0) 40%,rgba(54,57,63,0) 60%,var(--color-main)),
               linear-gradient(0deg,var(--color-main) 0,rgba(54,57,63,0) 25%) !important;
 }
-
+.container-2x5lvQ section,
+.container-2x5lvQ header,
+.menu-Sp6bN1,
+.item-1GzJrl:hover,
+.searchResultsWrap-2DKFzt,
+.option-96V44q.selected-rZcOL-,
 .container-3ayLPN,
 .calendarPicker-2yf6Ci .react-datepicker__day--disabled,
 .calendarPicker-2yf6Ci .react-datepicker__day--outside-month {
@@ -155,14 +160,8 @@ body::after {
   background: var(--color-flat-popup) !important;
 }
 
-.option-96V44q.selected-rZcOL- {
-  background-color: var(--color-flat-popup) !important;
-  background: var(--color-flat-popup) !important;
-}
-
-.searchResultsWrap-2DKFzt {
-  background-color: var(--color-flat-popup) !important;
-  background: var(--color-flat-popup) !important;
+.popout-2GtBL-:after {
+  border-top-color: var(--color-flat-popup) !important;
 }
 
   /* --- REMOVE BORDERS --- */
@@ -204,7 +203,8 @@ body::after {
   .calendarPicker-2yf6Ci .react-datepicker__week:last-of-type .react-datepicker__day,
   .resultsGroup-r_nuzN:before,
   .searchResult-3pzFAB .searchResultMessage-2VxO12.hit-NLlWXA,
-  .channelSeparator-1X1FuH:before {
+  .channelSeparator-1X1FuH:before,
+  .separator-2zcjq8 {
     border-color: transparent !important;
   }
 
@@ -257,7 +257,8 @@ body::after {
   .datePicker--XZbmJ .datePickerHint-3Q1Udw .hintValue-29ny8Z,
   .calendarPicker-2yf6Ci .react-datepicker__day.react-datepicker__day--selected:hover,
   .calendarPicker-2yf6Ci .react-datepicker__day:hover,
-  .datePicker--XZbmJ .datePickerHint-3Q1Udw .hintValue-29ny8Z:hover {
+  .datePicker--XZbmJ .datePickerHint-3Q1Udw .hintValue-29ny8Z:hover,
+  .noticeInfo-3_iTE1 {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
@@ -351,8 +352,12 @@ body::after {
 }
 
 .splash-3K76bN {
-  width: 70% !important;
+  width: 64% !important;
   margin: 0 auto !important;
+}
+
+.noticeInfo-3_iTE1 {
+  border-radius: 0px !important;
 }
 
 .jumpToPresentBar-9P20AM {
