@@ -121,7 +121,8 @@ body::after {
 .jumpToPresentBar-9P20AM,
 .hasMore-3e72_v button,
 .news-2GDtLJ,
-.wrapper-29NfPK {
+.wrapper-29NfPK,
+.tile-2OwFgW {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -358,11 +359,11 @@ body::after {
   /* --- CHANGE SIZES --- */
 
 .splashPlaceholder-1ev-9c {
-  height: 220px !important;
+  height: 200px !important;
 }
 
 .splash-3K76bN {
-  width: 64% !important;
+  width: 58% !important;
   margin: 0 auto !important;
 }
 
