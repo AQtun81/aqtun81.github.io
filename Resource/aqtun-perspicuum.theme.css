@@ -98,7 +98,8 @@ body::after {
 .searchHeader-1l-wpR,
 .searchResult-3pzFAB .searchResultMessage-2VxO12.hit-NLlWXA,
 .channelSeparator-1X1FuH .channelName-1QajIf,
-.divider-3gKybi {
+.divider-3gKybi,
+.video-1FfuMD {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -119,7 +120,8 @@ body::after {
 .tileMedia-1q3guD,
 .jumpToPresentBar-9P20AM,
 .hasMore-3e72_v button,
-.news-2GDtLJ {
+.news-2GDtLJ,
+.wrapper-29NfPK {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -155,7 +157,10 @@ body::after {
 .option-96V44q.selected-rZcOL-,
 .container-3ayLPN,
 .calendarPicker-2yf6Ci .react-datepicker__day--disabled,
-.calendarPicker-2yf6Ci .react-datepicker__day--outside-month {
+.calendarPicker-2yf6Ci .react-datepicker__day--outside-month,
+.modal-3HD5ck,
+.footer-2yfCgX,
+.wrapper-29NfPK.minimum-2d6zH6 .actions-2vadYq .center-1Vp33r {
   background-color: var(--color-flat-popup) !important;
   background: var(--color-flat-popup) !important;
 }
@@ -204,7 +209,9 @@ body::after {
   .resultsGroup-r_nuzN:before,
   .searchResult-3pzFAB .searchResultMessage-2VxO12.hit-NLlWXA,
   .channelSeparator-1X1FuH:before,
-  .separator-2zcjq8 {
+  .separator-2zcjq8,
+  .checked-3_4uQ9,
+  .wrapper-29NfPK.minimum-2d6zH6 .actions-2vadYq .center-1Vp33r {
     border-color: transparent !important;
   }
 
@@ -212,7 +219,8 @@ body::after {
 
   .divider-3573oO,
   .guildSeparator-1X4GQ1:after,
-  .sectionLine-JjseS9 {
+  .sectionLine-JjseS9,
+  .checkboxContainer-2vV9zd:before {
     background: 0 !important;
     background-color: transparent !important;
   }
@@ -258,7 +266,8 @@ body::after {
   .calendarPicker-2yf6Ci .react-datepicker__day.react-datepicker__day--selected:hover,
   .calendarPicker-2yf6Ci .react-datepicker__day:hover,
   .datePicker--XZbmJ .datePickerHint-3Q1Udw .hintValue-29ny8Z:hover,
-  .noticeInfo-3_iTE1 {
+  .noticeInfo-3_iTE1,
+  .checkbox-1ix_J3[style*="rgb(114, 137, 218)"] {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
@@ -302,7 +311,8 @@ body::after {
 
   /* --- CHANGE POSITIVE AND NEGATIVE COLORS --- */
 
-  .avatarSpeaking-1wJCNq {
+  .avatarSpeaking-1wJCNq,
+  .speaking-oCqYMI {
     box-shadow: 0px 0px 0px 1.5px var(--color-positive) !important;
   }
 
@@ -373,4 +383,7 @@ body::after {
   .mobileIndicator-329Gd6,
   .purchaseUnitOperatingSystem-cnbJPz {
     color: #d0d0d0 !important;
+  }
+  svg[name="Checkmark"] g polyline {
+    stroke: #d0d0d0 !important;
   }
