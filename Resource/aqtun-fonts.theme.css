@@ -92,7 +92,7 @@
 
 .container-2x5lvQ section p {
   font-weight: 100;
-  font-family: 'Quicksand';
+  font-family: 'Quicksand', sans-serif;
   font-size: 13px;
   color: hsla(0,0%,100%,.5);
 }
@@ -104,6 +104,23 @@
 }
 
 .label-1Y-LW5 {
-  font-family: 'Quicksand';
+  font-family: 'Quicksand', sans-serif;
   font-size: 14px;
+}
+
+#bd-settingspane-container .scroller-wrap .scroller {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+}
+
+.theme-dark .bda-slist .bda-header {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+#bd-settings-sidebar .ui-tab-bar-item,
+.side-8zPYf6 .item-PXvHYJ {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
 }
