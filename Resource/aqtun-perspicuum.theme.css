@@ -4,7 +4,7 @@
   --background-color: rgba(0, 0, 0, 0);
   --background-image: url();
   --background-image-opacity: .3;
-  --background-image-blur: 0;
+  --background-image-blur: 0px;
   --color-accent: #7289da;
   --color-accent-hover: #6478bd;
   --color-positive: #43b581;
@@ -12,6 +12,7 @@
   --color-main: rgba(125, 125, 125, 0.3);
   --color-main-hover: rgba(125, 125, 125, 0.5);
   --color-flat-popup: rgb(32, 34, 38);
+  --blur-flat-popup: 0px;
   /* Server Channel List Text Settings */
   --color-channel-text: rgba(255, 255, 255, 0.5);
   --color-channel-text-selected: rgba(255, 255, 255, 0.9);
@@ -173,6 +174,7 @@ body::after {
 .footer-1fjuF6 {
   background-color: var(--color-flat-popup) !important;
   background: var(--color-flat-popup) !important;
+  -webkit-backdrop-filter: blur(var(--blur-flat-popup));
 }
 
 .popout-2GtBL-:after {
