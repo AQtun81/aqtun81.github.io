@@ -59,7 +59,7 @@ body::after {
 .layer-3QrUeG,
 .layers-3iHuyZ,
 .container-2lgZY8,
-.guildsWrapper-5TJh6A,
+.wrapper-1Rf91z,
 .channels-Ie2l6A,
 .chat-3bRxxu,
 .chat-3bRxxu form,
@@ -104,7 +104,8 @@ body::after {
 .header-ykumBX,
 .footer-1kmXd4,
 .messageGroupWrapper-o-Zw7G,
-.actionButtons-1sUUug {
+.actionButtons-1sUUug,
+.circleIconButton-jET_ig {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -233,7 +234,7 @@ body::after {
   /* --- REMOVE DIVIDERS --- */
 
   .divider-3573oO,
-  .guildSeparator-1X4GQ1:after,
+  .guildSeparator-3s64Iy:after,
   .sectionLine-JjseS9,
   .checkboxContainer-2vV9zd:before {
     background: 0 !important;
@@ -304,18 +305,21 @@ body::after {
     border-color: var(--color-accent-hover) !important;
   }
 
-  .guild-1EfMGQ:hover .guildInner-3DSoA4 {
+  .container-1ETFDs:hover .wrapper-2lTRaf,
+  .container-2td-dC:hover .wrapper-2lTRaf {
     background-color: var(--color-accent) !important;
     border-radius: 15px !important;
   }
 
-  .guild-1EfMGQ .guildInner-3DSoA4 {
+  .container-1ETFDs .wrapper-2lTRaf,
+  .container-2td-dC .wrapper-2lTRaf {
     background-color: #2f3136 !important;
     border-radius: 25px !important;
     transition-duration: .3s !important;
   }
 
-  .guild-1EfMGQ.selected-ML3OIq .guildInner-3DSoA4 {
+  .container-1ETFDs.selected-nT-gM3 .wrapper-2lTRaf,
+  .container-2td-dC.selected-nT-gM3 .wrapper-2lTRaf {
     background-color: var(--color-accent) !important;
     border-radius: 15px !important;
   }
@@ -404,6 +408,12 @@ body::after {
   .purchaseUnitOperatingSystem-cnbJPz {
     color: #d0d0d0 !important;
   }
+
   svg[name="Checkmark"] g polyline {
     stroke: #d0d0d0 !important;
+  }
+
+  .circleIconButton-jET_ig {
+    border-color: #ababab !important;
+    color: #ababab !important;
   }
