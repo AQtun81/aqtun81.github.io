@@ -10,6 +10,7 @@
   width: calc(58px * var(--serverlist-column-count) + 38px);
 }
 .container-2td-dC,
+.container-1aNBdK,
 .circleIconButton-jET_ig {
   float: left;
   margin: 4px;
@@ -22,6 +23,7 @@
 .guildSeparator-3s64Iy {
   float: left;
   width: calc(58px * var(--serverlist-column-count));
+  margin: 0;
 }
 .container-1ETFDs {
   margin: 0 calc(4px + 29px * (var(--serverlist-column-count) - 1)) !important;
