@@ -105,7 +105,9 @@ body::after {
 .footer-1kmXd4,
 .messageGroupWrapper-o-Zw7G,
 .actionButtons-1sUUug,
-.circleIconButton-jET_ig {
+.circleIconButton-jET_ig,
+.pageWrapper-1PgVDX,
+.message-2qRu38 {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -172,7 +174,9 @@ body::after {
 .wrapper-29NfPK.minimum-2d6zH6 .actions-2vadYq .center-1Vp33r,
 .messagesPopoutWrap-1MQ1bW,
 .body-3iLsc4,
-.footer-1fjuF6 {
+.footer-1fjuF6,
+.searchBox-3Y2Vi7,
+.wrapper-39oAo3 {
   background-color: var(--color-flat-popup) !important;
   background: var(--color-flat-popup) !important;
   -webkit-backdrop-filter: blur(var(--blur-flat-popup));

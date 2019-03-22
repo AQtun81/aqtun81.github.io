@@ -5,9 +5,16 @@
 .wrapper-1Rf91z {
   width: calc(58px * var(--serverlist-column-count) + 20px);
 }
-
 .wrapper-1Rf91z>.scrollerWrap-2lJEkd {
   width: calc(58px * var(--serverlist-column-count) + 38px);
+}
+.scroller-2TZvBN > div {
+  float: left;
+}
+.container-11WMXy {
+  margin: 0;
+  width: 58px;
+  height: 58px;
 }
 .container-2td-dC,
 .container-1aNBdK,
