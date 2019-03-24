@@ -46,7 +46,13 @@
   color: var(--color-chat-text-link) !important;
 }
 
-.name-2WpE7M {
+.name-2WpE7M,
+.icon-1IKq3C,
+.textCell-1aBIUP,
+.friendsColumnStatus-ZH4ho2,
+.friendsColumnName-1zBOKm,
+.friendsColumn-eVHFqJ,
+.header-39GIC8 {
   color: var(--color-friend-text) !important;
 }
 
