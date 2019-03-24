@@ -10,15 +10,18 @@
 }
 .scroller-2TZvBN > div {
   float: left;
+  margin: 4px;
+}
+.circleIconButton-jET_ig {
+  margin: 0;
 }
 .container-11WMXy {
-  margin: 0;
-  width: 58px;
-  height: 58px;
+  margin: 4px;
+  width: 50px;
+  height: 50px;
 }
 .container-2td-dC,
-.container-1aNBdK,
-.circleIconButton-jET_ig {
+.container-1aNBdK {
   float: left;
   margin: 4px;
 }
