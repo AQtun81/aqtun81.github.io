@@ -337,6 +337,14 @@ body::after {
     stroke: var(--color-accent) !important;
   }
 
+  .hasMore-3e72_v button {
+    color: var(--color-accent) !important;
+  }
+
+  .verifiedInner-DViLz0.banner-1TiK82 {
+    fill: var(--color-accent) !important;
+  }
+
 
   /* --- CHANGE POSITIVE AND NEGATIVE COLORS --- */
 
