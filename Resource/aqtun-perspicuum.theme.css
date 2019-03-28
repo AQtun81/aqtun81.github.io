@@ -5,6 +5,10 @@
   --background-image: url();
   --background-image-opacity: .3;
   --background-image-blur: 0px;
+  --background-image-saturation: 100%;
+  --background-image-hue: 0deg;
+  --background-image-contrast: 100%;
+  --background-image-brightness: 100%;
   --color-accent: #7289da;
   --color-accent-hover: #6478bd;
   --color-positive: #43b581;
@@ -31,7 +35,7 @@
 }
 
 body {
-  background-color: var(--background-color)
+  background: var(--background-color)
 }
 
 body::after {
@@ -46,7 +50,7 @@ body::after {
   right: calc(-1 * var(--background-image-blur));
   position: absolute;
   z-index: -1;
-  filter: blur(var(--background-image-blur))
+  filter: blur(var(--background-image-blur)) saturate(var(--background-image-saturation)) hue-rotate(var(--background-image-hue)) contrast(var(--background-image-contrast)) brightness(var(--background-image-brightness))
 }
 
 * {
