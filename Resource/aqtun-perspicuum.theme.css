@@ -77,7 +77,7 @@ body::after {
 .contentRegion-3nDuYy,
 .sidebarRegion-VFTUkN,
 .guildsAdd-21_IdK,
-.activityFeed-28jde9,
+.activityFeed-1C0EmJ,
 .gameLibrary-TTDw4Y,
 .headerBar-UHpsPw,
 .header-39GIC8,
@@ -116,6 +116,10 @@ body::after {
   background-color: transparent !important;
 }
 
+.layout-1cQCv2 {
+  background-image: none !important;
+}
+
   /* --- CHANGE BACKGROUNDS --- */
 
 .embedInner-1-fpTo,
@@ -136,7 +140,11 @@ body::after {
 .wrapper-29NfPK,
 .tile-2OwFgW,
 .jumpButton-3DTcS_,
-.quickMessage-1yeL4E {
+.quickMessage-1yeL4E,
+.outer-2IVh5n,
+.wrapper-3UweLa,
+.unwrapped-37iUtM,
+.recentlyPlayedContainer-2F3MqS {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -154,7 +162,8 @@ body::after {
 .rowWrapperActive-2L7i9f,
 .side-8zPYf6 .itemDefault-3Jdr52:hover,
 #bd-settings-sidebar .ui-tab-bar-item:hover,
-.newsLink-38Naqi:hover {
+.newsLink-38Naqi:hover,
+.popoutContainer-3WC9HR:hover {
   background: var(--color-main-hover) !important;
   background-color: var(--color-main-hover) !important;
 }
@@ -180,7 +189,8 @@ body::after {
 .body-3iLsc4,
 .footer-1fjuF6,
 .searchBox-3Y2Vi7,
-.wrapper-39oAo3 {
+.wrapper-39oAo3,
+.popout-3G62UL {
   background-color: var(--color-flat-popup) !important;
   background: var(--color-flat-popup) !important;
   -webkit-backdrop-filter: blur(var(--blur-flat-popup));
@@ -244,7 +254,8 @@ body::after {
   .divider-3573oO,
   .guildSeparator-3s64Iy:after,
   .sectionLine-JjseS9,
-  .checkboxContainer-2vV9zd:before {
+  .checkboxContainer-2vV9zd:before,
+  .separator-1N1EBC {
     background: 0 !important;
     background-color: transparent !important;
   }
