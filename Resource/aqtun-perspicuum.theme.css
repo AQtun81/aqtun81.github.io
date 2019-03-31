@@ -308,7 +308,8 @@ body::after {
   .checkbox-1ix_J3[style*="rgb(114, 137, 218)"],
   .lookFilled-1Gx00P.hoverBrand-1_Fxlk.hasHover-3X1-zV:hover,
   .wanderingCubesItem-WPXqao,
-  .newMessagesBar-mujexs {
+  .newMessagesBar-mujexs,
+  .running-ol_ES1 {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
