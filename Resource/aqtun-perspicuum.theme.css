@@ -113,7 +113,8 @@ body::after {
 .pageWrapper-1PgVDX,
 .message-2qRu38,
 .inset-GQDQYw,
-.section-3TvauS {
+.section-3TvauS,
+.section-2VKIPC {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -146,7 +147,8 @@ body::after {
 .outer-2IVh5n,
 .wrapper-3UweLa,
 .unwrapped-37iUtM,
-.recentlyPlayedContainer-2F3MqS {
+.recentlyPlayedContainer-2F3MqS,
+.tile-QA_yMc {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -413,15 +415,6 @@ body::after {
 }
 
   /* --- CHANGE SIZES --- */
-
-.splashPlaceholder-1ev-9c {
-  height: 200px !important;
-}
-
-.splash-3K76bN {
-  width: 58% !important;
-  margin: 0 auto !important;
-}
 
 .noticeInfo-3_iTE1 {
   border-radius: 0px !important;
