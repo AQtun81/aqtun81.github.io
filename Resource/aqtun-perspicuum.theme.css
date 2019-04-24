@@ -314,7 +314,8 @@ body::after {
   .lookFilled-1Gx00P.hoverBrand-1_Fxlk.hasHover-3X1-zV:hover,
   .wanderingCubesItem-WPXqao,
   .newMessagesBar-mujexs,
-  .running-ol_ES1 {
+  .running-ol_ES1,
+  .acronym-2mOFsV:hover {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
