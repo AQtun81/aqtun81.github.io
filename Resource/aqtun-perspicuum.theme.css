@@ -315,7 +315,8 @@ body::after {
   .wanderingCubesItem-WPXqao,
   .newMessagesBar-mujexs,
   .running-ol_ES1,
-  .acronym-2mOFsV:hover {
+  .acronym-2mOFsV:hover,
+  .acronym-2mOFsV.selected-bZ3Lue {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }

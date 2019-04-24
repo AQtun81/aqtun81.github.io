@@ -2,75 +2,23 @@
   --serverlist-column-count: 2;
 }
 
+.item-2hkk8m {
+  background: 0 !important;
+  background-color: 0 !important;
+}
+
+.scrollerWrap-1IAIlv,
 .wrapper-1Rf91z {
-  width: calc(58px * var(--serverlist-column-count) + 20px);
+  width: calc(56px * var(--serverlist-column-count) + 8px);
 }
-.wrapper-1Rf91z>.scrollerWrap-2lJEkd {
-  width: calc(58px * var(--serverlist-column-count) + 38px);
-}
-.scroller-2TZvBN > div {
+
+.listItem-2P_4kh {
+  margin-left: 8px;
+  justify-content: left;
   float: left;
-  margin: 4px;
+  width: 48px;
 }
-.circleIconButton-jET_ig {
-  margin: 0;
-}
-.container-11WMXy {
-  margin: 4px;
-  width: 50px;
-  height: 50px;
-}
-.container-2td-dC,
-.container-1aNBdK {
-  float: left;
-  margin: 4px;
-}
-.friendsOnline-2JkivW {
-  float: left !important;
-  width: calc(58px * var(--serverlist-column-count)) !important;
-  margin: 0 !important;
-}
-.guildSeparator-3s64Iy {
-  float: left;
-  width: calc(58px * var(--serverlist-column-count));
-  margin: 0;
-}
-.container-1ETFDs {
-  margin: 0 calc(4px + 29px * (var(--serverlist-column-count) - 1)) !important;
-}
-.container-1ETFDs>.wrapper-2lTRaf {
-  margin: 0 !important;
-}
-.container-2td-dC#bd-pub-li {
-  margin: 5px calc(31px * (var(--serverlist-column-count) - 1));
-}
-.container-2td-dC.selected-nT-gM3::before {
-  background: rgba(0, 0, 0, 0) !important;
-}
-.container-2td-dC[class*="unread-"]:before {
-  background: #f44336 !important;
-  top: 42px;
-  left: 35px;
-  z-index: 20;
-  height: 15px;
-  width: 15px;
-  border-radius: 7.5px;
-  content: "!";
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  font-family: 'Open Sans';
-  animation-name: notificationShake;
-  animation-duration: 0.75s;
-  animation-timing-function: cubic-bezier(1, 1.24, 0.58,-0.2);
-  animation-iteration-count: infinite;
-}
-.container-2td-dC.selected-nT-gM3[class*="unread-"]::before {
-  background: #f44336 !important;
-  margin-top: -6px;
-}
-@keyframes notificationShake {
-  0% {transform: rotate(20deg);}
-  50% {transform: rotate(-20deg);}
-  100% {transform: rotate(20deg);}
+
+.listItem-2P_4kh:nth-child(2) {
+  display: none !important;
 }
