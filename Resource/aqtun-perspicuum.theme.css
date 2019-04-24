@@ -316,7 +316,8 @@ body::after {
   .newMessagesBar-mujexs,
   .running-ol_ES1,
   .acronym-2mOFsV:hover,
-  .acronym-2mOFsV.selected-bZ3Lue {
+  .acronym-2mOFsV.selected-bZ3Lue,
+  .button-OhfaWu.selected-wSa2KV {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
