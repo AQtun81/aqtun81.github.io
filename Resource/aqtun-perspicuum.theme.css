@@ -114,7 +114,8 @@ body::after {
 .message-2qRu38,
 .inset-GQDQYw,
 .section-3TvauS,
-.section-2VKIPC {
+.section-2VKIPC,
+.children-19S4PO:after {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -167,7 +168,9 @@ body::after {
 .side-8zPYf6 .itemDefault-3Jdr52:hover,
 #bd-settings-sidebar .ui-tab-bar-item:hover,
 .newsLink-38Naqi:hover,
-.popoutContainer-3WC9HR:hover {
+.popoutContainer-3WC9HR:hover,
+.wrapper-1ucjTd.modeSelected-1zApJ_ .content-3at_AU,
+.wrapper-1ucjTd.modeSelected-1zApJ_:hover .content-3at_AU {
   background: var(--color-main-hover) !important;
   background-color: var(--color-main-hover) !important;
 }

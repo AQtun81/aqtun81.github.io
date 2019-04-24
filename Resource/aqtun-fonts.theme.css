@@ -41,7 +41,9 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.dividerContent-2L12VI {
+.dividerContent-2L12VI,
+.membersGroup-v9BXpm,
+.activity-1IYsbk strong {
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -66,7 +68,8 @@
 .nameSelectedText-sp_EUw,
 .nameSelectedVoice-1qSph5,
 .nameUnreadText-DfkrI4,
-.nameUnreadVoice-EVo-wI {
+.nameUnreadVoice-EVo-wI,
+.name-3_Dsmg {
   font-family: 'Quicksand', sans-serif;
   font-size: 15px;
 }
@@ -123,4 +126,15 @@
 .side-8zPYf6 .item-PXvHYJ {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
+}
+
+.numberBadge-2s8kKX {
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.name-IbjUBS {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
 }
