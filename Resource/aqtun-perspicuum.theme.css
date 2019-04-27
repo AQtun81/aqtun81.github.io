@@ -372,7 +372,7 @@ body::after {
 
   /* --- CHANGE POSITIVE AND NEGATIVE COLORS --- */
 
-  .avatarSpeaking-1wJCNq,
+  .avatarSpeaking-3MqCHL,
   .speaking-oCqYMI {
     box-shadow: 0px 0px 0px 1.5px var(--color-positive) !important;
   }
@@ -432,6 +432,11 @@ body::after {
 
 .searchResultsWrap-2DKFzt {
   border-top-left-radius: 15px !important;
+}
+
+.avatarSmall-2CW6I1 {
+  height: 22px;
+  width: 22px;
 }
 
   /* --- STATIC COLORS --- */
