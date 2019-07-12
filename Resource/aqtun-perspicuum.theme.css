@@ -116,7 +116,9 @@ body::after {
 .section-3TvauS,
 .section-2VKIPC,
 .children-19S4PO:after,
-.container-1r6BKw {
+.container-1r6BKw,
+.container-3baos1,
+.container-1giJp5 {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -253,7 +255,8 @@ body::after {
   .wrapper-29NfPK.minimum-2d6zH6 .actions-2vadYq .center-1Vp33r,
   .messagesPopoutWrap-1MQ1bW,
   .messageGroupWrapper-o-Zw7G,
-  .quickMessage-1yeL4E {
+  .quickMessage-1yeL4E,
+  .container-1giJp5 {
     border-color: transparent !important;
   }
 
