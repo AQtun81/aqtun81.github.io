@@ -152,7 +152,9 @@ body::after {
 .wrapper-3UweLa,
 .unwrapped-37iUtM,
 .recentlyPlayedContainer-2F3MqS,
-.tile-QA_yMc {
+.tile-QA_yMc,
+.folderIconWrapper-226oVY,
+.expandedFolderBackground-2sPsd- {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -173,7 +175,9 @@ body::after {
 .newsLink-38Naqi:hover,
 .popoutContainer-3WC9HR:hover,
 .wrapper-1ucjTd.modeSelected-1zApJ_ .content-3at_AU,
-.wrapper-1ucjTd.modeSelected-1zApJ_:hover .content-3at_AU {
+.wrapper-1ucjTd.modeSelected-1zApJ_:hover .content-3at_AU,
+.folderIconWrapper-226oVY:hover,
+.expandedFolderBackground-2sPsd-.hover-2ji_A7 {
   background: var(--color-main-hover) !important;
   background-color: var(--color-main-hover) !important;
 }
