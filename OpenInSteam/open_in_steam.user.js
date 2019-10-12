@@ -11,7 +11,7 @@
 (function() {
     'use strict';
 
-    document.getElementById("SubscribeItemBtn").parentElement.innerHTML += '<a onclick="ViewOnSteam();" class="btn_green_white_innerfade btn_border_2px btn_medium " style="right: 156px;width: 126px;"><span class="subscribeText" style="padding-left: 15px;"><div id="SubscribeItemOptionAdd" class="subscribeOption subscribe selected">Open in steam</div></span></a>';
+    document.getElementById("SubscribeItemBtn").parentElement.innerHTML += '<a onclick="ViewOnSteam();" class="btn_green_white_innerfade btn_border_2px btn_medium " style="right: 156px;width: 130px;"><span class="subscribeText" style="padding-left: 15px;"><div id="SubscribeItemOptionAdd" class="subscribeOption subscribe selected">Open in steam</div></span></a>';
 
 })();
 
