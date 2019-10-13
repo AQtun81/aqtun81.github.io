@@ -1,0 +1,221 @@
+/* COLOR SCHEME
+----------------------------------------------------*/
+
+:root {
+  --background-color: rgb(255, 255, 255);
+  --background-color-70: rgba(255, 255, 255, 0.7);
+  --background-color-50: rgba(255, 255, 255, 0.5);
+  --background-color-30: rgba(255, 255, 255, 0.3);
+  --background-low-contrast: rgb(249, 249, 249);
+  --background-contrast: rgb(244, 244, 244);
+  --text: #222;
+  --link: #1EAEDB;
+  --link-hover: #0FA0CE;
+}
+
+/* COMMON
+----------------------------------------------------*/
+
+* {
+  transition-duration: 0.25s;
+}
+
+HTML {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 2rem;
+}
+
+.separator {
+    position: relative;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.separator::before {
+    content: '';
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 240px;
+    height: 2px;
+    background-color: var(--text);
+    transform: translateX(-50%);
+  }
+
+.border.separator::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    background-color: var(--text);
+    transform: translateX(-50%);
+  }
+
+  .separator.border {
+      padding: 1em;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+      border: 3px var(--text) solid;
+  }
+
+  .contrast:not(.low) {
+    background-color: var(--background-contrast);
+  }
+
+  .contrast.low {
+    background-color: var(--background-low-contrast);
+  }
+
+  .container {
+    padding-top: 10px;
+  }
+
+/* TOGGLES
+----------------------------------------------------*/
+
+.toggle {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+}
+
+.toggle:hover {
+  z-index: 999;
+}
+
+.toggle#settingsButton {
+  padding-bottom: 10px;
+}
+
+.toggle#settingsButton:hover {
+  transform: scale(2) translateY(-2px);
+}
+
+.toggle#addButton {
+  padding-top: 10px;
+  top: 54px;
+}
+
+.toggle#addButton:hover {
+  transform: scale(2) translateY(2px);
+}
+
+.toggle#closeAddButton:hover, .toggle#closeSettingsButton:hover {
+  transform: scale(2);
+}
+
+/* SPEEDDIAL BACKGROUND
+----------------------------------------------------*/
+
+body {
+  background: linear-gradient(to top right, #ff9 0%, #fcc 100%);
+  overflow-x: hidden;
+}
+
+
+/* SPEEDDIAL MENUS
+----------------------------------------------------*/
+
+@keyframes openMenu {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.menu {
+  position: fixed;
+  background: white;
+  width: 560px;
+  height: 260px;
+  padding: 20px;
+  left: calc(50% - 300px);
+  top: calc(50% - 150px);
+  border-radius: 5px;
+  box-shadow: #888 0px 0px 2px;
+  animation-fill-mode: forwards;
+  animation-name: closeMenu;
+  animation-duration: 0s;
+  animation-timing-function: ease-in-out;
+}
+
+.menu h5 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+
+/* WEBSITE TILES
+----------------------------------------------------*/
+
+#websites {
+  display: flex;
+  flex-flow: wrap;
+  padding: 0 50px;
+  margin: 0 auto;
+  width: 370px;
+}
+
+@media screen and (max-width: 470px) { #websites { width: 370px; } }
+@media screen and (min-width: 840px) { #websites { width: 740px; } }
+@media screen and (min-width: 1210px) { #websites { width: 1110px;  } }
+@media screen and (min-width: 1580px) { #websites { width: 1480px; } }
+@media screen and (min-width: 1950px) { #websites { width: 1850px; } }
+@media screen and (min-width: 2320px) { #websites { width: 2220px; } }
+@media screen and (min-width: 2690px) { #websites { width: 2590px; } }
+@media screen and (min-width: 3060px) { #websites { width: 2960px; } }
+@media screen and (min-width: 3430px) { #websites { width: 3330px; } }
+
+.tile {
+  display: flex;
+  width: 350px;
+  height: 200px;
+  background: #ff6363;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.tile h4 {
+  text-align: center;
+  margin: auto;
+  align-self: center;
+}

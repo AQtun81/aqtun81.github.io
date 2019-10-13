@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Speeddial</title>
+  <meta name="description" content="">
+  <meta name="author" content="AQtun">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="text/javascript">
+    function getCookie(name) {
+      var cookies = document.cookie.split('; ');
+      for (var cookie of cookies) {
+        cookie = cookie.split('=');
+        if (cookie[0] == name) {
+          return cookie[1];
+        }
+      }
+      return null;
+    }
+
+    function deleteCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    function addCookie(name, value) {
+      var date = new Date();
+      date.setTime(date.getTime() + (2592000000));
+      document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    }
+  </script>
+</head>
+<body>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <header>
+    <h1 class="separator title">injected humour</h1>
+  </header>
+  <div id="websites"></div>
+
+  <script type="text/javascript">
+    var websitesElement = document.getElementById('websites');
+    function displayWebsiteTile(name, url) {
+      websitesElement.innerHTML += '<div class="tile" href="' + url + '" onclick="openUrl(this.attributes[1].nodeValue)"><h4>' + name + '</h4></div>';
+    }
+
+    if (localStorage.getItem("websites") != null) {
+      var localWebsites = localStorage.getItem("websites").split(',');
+      for (website of localWebsites) {
+        website = website.split('=');
+        displayWebsiteTile(website[0], website[1])
+      }
+    }
+  </script>
+
+  <img id="settingsButton" class="toggle" onclick="openSettings()" src="img/settings.svg">
+  <img id="addButton" class="toggle" onclick="openAddMenu()" src="img/add.svg">
+  <div id="add" class="menu">
+    <img id="closeAddButton" onclick="closeAddMenu()" src="img/close.svg" class="toggle">
+    <h5>add website</h5>
+    <label>Name</label>
+    <input class="u-full-width" type="text" placeholder="google" id="add-name">
+    <label>URL</label>
+    <input class="u-full-width" type="url" placeholder="https://www.google.com/" id="add-url">
+    <button onclick="addWebsite()">Add</button>
+  </div>
+  <div id="settings" class="menu">
+    <img id="closeSettingsButton" onclick="closeSettings()" src="img/close.svg" class="toggle">
+    <h5>settings</h5>
+    <label>Background</label>
+    <input class="u-full-width" type="text" placeholder="url(), color, gradient">
+    <button>Apply</button>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript">
+
+    /* OPENING AND CLOSING MENUS
+    ---------------------------------------------*/
+
+    var addMenu = document.getElementById("add");
+    var settings = document.getElementById("settings");
+    var addMenuOpen = false;
+    var settingsOpen = false;
+
+    function openAddMenu() {
+      if (addMenuOpen) {
+        closeAddMenu();
+      } else {
+        addMenuOpen = true;
+        addMenu.style.animationName = "openMenu";
+        addMenu.style.animationDuration = "0.25s";
+        if (settingsOpen) {
+          closeSettings();
+        }
+      }
+    }
+
+    function closeAddMenu() {
+      addMenu.style.animationName = "closeMenu";
+      addMenu.style.animationDuration = "0.25s";
+      addMenuOpen = false;
+      document.getElementById("add-name").value = "";
+      document.getElementById("add-url").value = "";
+    }
+
+    function openSettings() {
+      if (settingsOpen) {
+        closeSettings();
+      } else {
+        settingsOpen = true;
+        settings.style.animationName = "openMenu";
+        settings.style.animationDuration = "0.25s";
+        if (addMenuOpen) {
+          closeAddMenu();
+        }
+      }
+    }
+
+    function closeSettings() {
+      settings.style.animationName = "closeMenu";
+      settings.style.animationDuration = "0.25s";
+      settingsOpen = false;
+    }
+
+    /* ADDING WEBSITES
+    ---------------------------------------------*/
+
+    function addWebsite() {
+      var name = document.getElementById("add-name").value;
+      var url = document.getElementById("add-url").value;
+      if (localStorage.getItem("websites") != null) {
+        localStorage.setItem('websites', localStorage.getItem('websites') + ',' + name + '=' + url);
+      } else {
+        localStorage.setItem('websites', name + '=' + url);
+      }
+      closeAddMenu();
+      displayWebsiteTile(name, url);
+    }
+
+    function removeWebsiteTile(name, url) {
+
+    }
+
+    function removeWebsite(name, url) {
+      if (!localStorage.getItem('websites').endsWith((name + '=' + url))) {
+        localStorage.setItem('websites', localStorage.getItem('websites').replace(name + '=' + url + ',', ''));
+        removeWebsiteTile(name, url);
+      } else {
+        if (localStorage.getItem('websites').search(',') > -1) {
+          localStorage.setItem('websites', localStorage.getItem('websites').replace(new RegExp(',' + name + '=' + url + '$'), ''));
+          removeWebsiteTile(name, url);
+        } else if (localStorage.getItem('websites') == name + '=' + url) {
+          localStorage.removeItem('websites');
+          removeWebsiteTile(name, url);
+        }
+      }
+    }
+
+    /* SEARCH
+    ---------------------------------------------*/
+
+    function openUrl(url) {
+      window.open(url, "_self")
+    }
+
+  </script>
+</body>
+</html>
