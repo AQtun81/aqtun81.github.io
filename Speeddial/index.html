@@ -16,6 +16,7 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro&amp;display=swap" rel="stylesheet">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -55,6 +56,35 @@
   <div id="websites"></div>
 
   <script type="text/javascript">
+    function getHost(url) {
+      var result = url.match(/([^:\/\s]+)/g)[1];
+      if (result.startsWith('www.')) {
+        return result.substring(4, result.length)
+      }
+      return result
+    }
+
+    var targetName,
+        targetUrl;
+
+    function addContextMenuEvent(element) {
+      element.addEventListener('contextmenu', function(ev) {
+          var menu = document.getElementById('contextMenu');
+          ev.preventDefault();
+          targetName = this.firstChild.innerText;
+          targetUrl = this.attributes[1].nodeValue;
+
+          document.getElementById('contextMenuEdit').children[1].innerText = "Edit " + targetName;
+          document.getElementById('contextMenuRemove').children[1].innerText = "Remove " + targetName;
+          document.getElementById('removeWebsiteButton').innerText = "Remove " + targetName;
+
+          menu.style.display = "block";
+          menu.style.left = ev.clientX + 'px';
+          menu.style.top = ev.clientY + window.scrollY + 'px';
+          return false;
+      }, false);
+    }
+
     var websitesElement = document.getElementById('websites');
     function displayWebsiteTile(name, url) {
       websitesElement.innerHTML += '<div class="tile" href="' + url + '" onclick="openUrl(this.attributes[1].nodeValue)"><h4>' + name + '</h4></div>';
@@ -67,6 +97,14 @@
         displayWebsiteTile(website[0], website[1])
       }
     }
+
+    function refreshContextMenuEvents() {
+      for (tile of document.getElementsByClassName('tile')) {
+        addContextMenuEvent(tile);
+      }
+    }
+
+    refreshContextMenuEvents();
   </script>
 
   <img id="settingsButton" class="toggle" onclick="openSettings()" src="img/settings.svg">
@@ -80,6 +118,11 @@
     <input class="u-full-width" type="url" placeholder="https://www.google.com/" id="add-url">
     <button onclick="addWebsite()">Add</button>
   </div>
+  <div id="remove" class="menu">
+    <h5>are you sure?</h5>
+    <img id="closeRemoveButton" onclick="closeRemoveMenu()" src="img/close.svg" class="toggle">
+    <button id="removeWebsiteButton" onclick="removeWebsite(targetName, targetUrl); closeRemoveMenu()">Remove ...</button>
+  </div>
   <div id="settings" class="menu">
     <img id="closeSettingsButton" onclick="closeSettings()" src="img/close.svg" class="toggle">
     <h5>settings</h5>
@@ -87,16 +130,40 @@
     <input class="u-full-width" type="text" placeholder="url(), color, gradient">
     <button>Apply</button>
   </div>
+  <div id="contextMenu">
+    <table class="u-full-width" style="margin: 0;">
+      <tbody>
+        <tr>
+          <td id="contextMenuAdd" onclick="openAddMenu()"><img src="img/add.svg"><bdo>Add New</bdo></td>
+        </tr>
+        <tr>
+          <td id="contextMenuEdit" onclick="openEditMenu()"><img src="img/edit.svg"><bdo>Edit</bdo></td>
+        </tr>
+        <tr>
+          <td id="contextMenuRemove" onclick="openRemoveMenu()"><img src="img/delete.svg"><bdo>Remove</bdo></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript">
+
+    /* CONTEXT MENU
+    ---------------------------------------------*/
+
+    document.addEventListener('mouseup', function(ev) {
+      document.getElementById('contextMenu').style.display = "none";
+    }, false);
 
     /* OPENING AND CLOSING MENUS
     ---------------------------------------------*/
 
     var addMenu = document.getElementById("add");
     var settings = document.getElementById("settings");
+    var removeMenu = document.getElementById('remove');
     var addMenuOpen = false;
     var settingsOpen = false;
 
@@ -140,6 +207,16 @@
       settingsOpen = false;
     }
 
+    function openRemoveMenu() {
+      removeMenu.style.animationName = "openMenu";
+      removeMenu.style.animationDuration = "0.25s";
+    }
+
+    function closeRemoveMenu() {
+      removeMenu.style.animationName = "closeMenu";
+      removeMenu.style.animationDuration = "0.25s";
+    }
+
     /* ADDING WEBSITES
     ---------------------------------------------*/
 
@@ -153,10 +230,12 @@
       }
       closeAddMenu();
       displayWebsiteTile(name, url);
+      refreshContextMenuEvents();
     }
 
     function removeWebsiteTile(name, url) {
-
+      websitesElement.innerHTML = websitesElement.innerHTML.replace('<div class="tile" href="' + url + '" onclick="openUrl(this.attributes[1].nodeValue)"><h4>' + name + '</h4></div>', '');
+      refreshContextMenuEvents();
     }
 
     function removeWebsite(name, url) {
@@ -181,6 +260,9 @@
       window.open(url, "_self")
     }
 
+  </script>
+  <script type="text/javascript">
+    var imageDatabase = ['google.com', 'youtube.com', 'music.youtube.com']
   </script>
 </body>
 </html>
