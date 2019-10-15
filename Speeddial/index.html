@@ -56,14 +56,6 @@
   <div id="websites"></div>
 
   <script type="text/javascript">
-    function getHost(url) {
-      var result = url.match(/([^:\/\s]+)/g)[1];
-      if (result.startsWith('www.')) {
-        return result.substring(4, result.length)
-      }
-      return result
-    }
-
     var targetName,
         targetUrl;
 
@@ -72,7 +64,7 @@
           var menu = document.getElementById('contextMenu');
           ev.preventDefault();
           targetName = this.firstChild.innerText;
-          targetUrl = this.attributes[1].nodeValue;
+          targetUrl = this.attributes.href.nodeValue;
 
           document.getElementById('contextMenuEdit').children[1].innerText = "Edit " + targetName;
           document.getElementById('contextMenuRemove').children[1].innerText = "Remove " + targetName;
@@ -87,7 +79,7 @@
 
     var websitesElement = document.getElementById('websites');
     function displayWebsiteTile(name, url) {
-      websitesElement.innerHTML += '<div class="tile" href="' + url + '" onclick="openUrl(this.attributes[1].nodeValue)"><h4>' + name + '</h4></div>';
+      websitesElement.innerHTML += '<div class="tile" href="' + url + '" onclick="openUrl(this.attributes.href.nodeValue)"><h4>' + name + '</h4></div>';
     }
 
     if (localStorage.getItem("websites") != null) {
@@ -128,6 +120,8 @@
     <h5>settings</h5>
     <label>Background</label>
     <input class="u-full-width" type="text" placeholder="url(), color, gradient">
+    <input type="radio" name="showImages" value="false">
+    <input type="radio" name="showImages" value="true">
     <button>Apply</button>
   </div>
   <div id="contextMenu">
@@ -193,7 +187,7 @@
         closeSettings();
       } else {
         settingsOpen = true;
-        settings.style.animationName = "openMenu";
+        settings.style.animationName = "openSettings";
         settings.style.animationDuration = "0.25s";
         if (addMenuOpen) {
           closeAddMenu();
@@ -202,7 +196,7 @@
     }
 
     function closeSettings() {
-      settings.style.animationName = "closeMenu";
+      settings.style.animationName = "closeSettings";
       settings.style.animationDuration = "0.25s";
       settingsOpen = false;
     }
@@ -234,7 +228,15 @@
     }
 
     function removeWebsiteTile(name, url) {
-      websitesElement.innerHTML = websitesElement.innerHTML.replace('<div class="tile" href="' + url + '" onclick="openUrl(this.attributes[1].nodeValue)"><h4>' + name + '</h4></div>', '');
+      var tiles = document.getElementsByClassName('tile');
+      for (tile of tiles) {
+        if (tile.children[0].innerText == name) {
+          if (tile.attributes.href.nodeValue == url) {
+            tile.remove();
+            return
+          }
+        }
+      }
       refreshContextMenuEvents();
     }
 
@@ -262,7 +264,47 @@
 
   </script>
   <script type="text/javascript">
-    var imageDatabase = ['google.com', 'youtube.com', 'music.youtube.com']
+    function getHost(url) {
+      var result = url.match(/([^:\/\s]+)/g);
+      if (result[0] == undefined || result[0] == null) {
+        return
+      }
+      if (result[1] == undefined || result[1] == null) {
+        if (result[0].match('.://')) {
+          return
+        }
+        return result[0]
+      }
+      if (result[1].startsWith('www.')) {
+        return result[1].substring(4, result[1].length)
+      }
+      return result[1]
+    }
+
+    var logoDatabase = ['google.com', 'youtube.com', 'music.youtube.com', 'twitter.com'];
+
+    function isWebsiteLogoAvailable(host) {
+      for (logo of logoDatabase) {
+        if (host == logo) {
+          return true
+        }
+      }
+      return false
+    }
+
+    function setWebsiteLogo(element, host) {
+      if (isWebsiteLogoAvailable(host)) {
+        element.style.backgroundImage = 'url("img/logo/' + host + '.png")';
+        element.classList.add('image');
+      }
+    }
+
+    var tiles = document.getElementsByClassName('tile');
+    for (tile of tiles) {
+      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
+    }
+
+
   </script>
 </body>
 </html>
