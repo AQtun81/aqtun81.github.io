@@ -224,6 +224,8 @@
       }
       closeAddMenu();
       displayWebsiteTile(name, url);
+      tile = document.getElementsByClassName('tile')[document.getElementsByClassName('tile').length - 1];
+      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
       refreshContextMenuEvents();
     }
 
@@ -281,7 +283,7 @@
       return result[1]
     }
 
-    var logoDatabase = ['google.com', 'youtube.com', 'music.youtube.com', 'twitter.com'];
+    var logoDatabase = ['google.com', 'youtube.com', 'music.youtube.com', 'twitter.com', 'docs.google.com', 'imdb.com', 'mail.google.com', 'reddit.com', 'twitch.tv'];
 
     function isWebsiteLogoAvailable(host) {
       for (logo of logoDatabase) {
