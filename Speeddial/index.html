@@ -332,6 +332,9 @@
         for (i = 0; text.replace(/[^" "]/g, "").length > 0; i += 1) {
           text = text.replace(" ", "+");
         }
+        for (var i = 0; i < text.replace("#", "%23").length; i++) {
+          text = text.replace("#", "%23");
+        }
       }
       SearchGoogle(text);// to be improved
     }
