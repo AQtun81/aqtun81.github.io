@@ -98,7 +98,7 @@ tbody > tr:last-of-type > td {
 ----------------------------------------------------*/
 
 .toggle {
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 0px;
   padding: 20px;
@@ -137,8 +137,12 @@ tbody > tr:last-of-type > td {
 ----------------------------------------------------*/
 
 body {
-  background: linear-gradient(to top right, #ff9 0%, #fcc 100%);
+  /*background: linear-gradient(to top right, #ff9 0%, #fcc 100%);*/
+  background-color: Rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to top right, #949bfd 0%, #cff 100%);
   overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -172,7 +176,7 @@ body {
   left: calc(50% - 300px);
   top: calc(50% - 150px);
   border-radius: 5px;
-  box-shadow: #888 0px 0px 2px;
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
   animation-fill-mode: forwards;
   animation-name: closeMenu;
   animation-duration: 0s;
@@ -222,6 +226,7 @@ body {
   padding: 0 50px;
   margin: 0 auto;
   width: 370px;
+  padding-top: 95px;
 }
 
 @media screen and (max-width: 470px) { #websites { width: 370px; } }
@@ -238,7 +243,7 @@ body {
   display: flex;
   width: 350px;
   height: 200px;
-  background: #ff6363;
+  background: #fffb;
   border-radius: 5px;
   margin: 10px;
   cursor: pointer;
@@ -251,7 +256,6 @@ body {
 }
 
 .tile.image {
-  background-color: white;
   background-image: url('img/logo/youtube.com.png');
   background-size: 100%;
 }
@@ -280,17 +284,67 @@ body {
   z-index: 1;
 }
 
-td {
+#contextMenu td {
   padding: 12px !important;
   cursor: pointer;
 }
 
-td:hover {
+#contextMenu td:hover {
   background: var(--background-contrast);
 }
 
-td > img {
+#contextMenu td > img {
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 2px;
+}
+
+/* SEARCH
+----------------------------------------------------*/
+
+#searchBody {
+  padding: 25px 0;
+  margin: 0;
+  height: 45px;
+}
+
+#search {
+  margin: 0 auto;
+  width: calc(100% - 128px);
+  max-width: 770px;
+  height: 45px;
+  background: #fffb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition-duration: .2s;
+}
+
+.searchIcon {
+  z-index: 500;
+  user-select: none;
+  float: right;
+  padding: 10.5px;
+  width: 24px;
+  height: 24px;
+}
+
+#search input {
+  float: left;
+  width: calc(100% - 45px);
+  height: 45px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+#search td {
+  padding: 12px 15px;
+  cursor: pointer;
+}
+
+#search td:not(td:first-of-type) {
+  cursor: pointer;
 }
