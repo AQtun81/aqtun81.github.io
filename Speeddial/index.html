@@ -26,7 +26,7 @@
             <tr>
               <td style="padding: 0px;">
                 <input id="searchInput" onkeyup="getQueryWikipedia(this.value)" type="text" placeholder="Search with Google"> <!-- // to be improved -->
-                <img class="searchIcon" src="img/search.svg" onclick="SearchGoogle(document.getElementById('searchInput').value)">
+                <img id="searchIcon" src="img/search.svg" onclick="SearchGoogle(document.getElementById('searchInput').value)">
               </td>
             </tr>
             <tr>
@@ -68,14 +68,22 @@
           document.getElementById('removeWebsiteButton').innerText = "Remove " + targetName;
 
           menu.style.display = "block";
-          menu.style.left = ev.clientX + 'px';
-          if (ev.clientY + window.scrollY > window.innerHeight - 200) {
-            menu.style.top = ev.clientY + window.scrollY - 155 + 'px';
+          menu.style.left = ev.pageX + 'px';
+          if (ev.clientY > window.innerHeight - 200) {
+            menu.style.top = ev.pageY - 155 + 'px';
           } else {
-            menu.style.top = ev.clientY + window.scrollY + 'px';
+            menu.style.top = ev.pageY + 'px';
           }
           return false;
       }, false);
+    }
+
+    function addMiddlemouseEvent(element) {
+      element.addEventListener('mouseup', e => {
+      	if (e.button == 1) {
+          openUrlNewTab(element.attributes.href.nodeValue);
+        }
+      });
     }
 
     var websitesElement = document.getElementById('websites');
@@ -97,7 +105,14 @@
       }
     }
 
+    function refreshMiddlemouseEvents() {
+      for (tile of document.getElementsByClassName('tile')) {
+        addMiddlemouseEvent(tile);
+      }
+    }
+
     refreshContextMenuEvents();
+    refreshMiddlemouseEvents();
   </script>
 
   <img id="settingsButton" class="toggle" onclick="openSettings()" src="img/settings.svg">
@@ -119,11 +134,24 @@
   <div id="settings" class="menu">
     <img id="closeSettingsButton" onclick="closeSettings()" src="img/close.svg" class="toggle">
     <h5>settings</h5>
-    <label>Background</label>
-    <input class="u-full-width" type="text" placeholder="url(), color, gradient">
-    <input type="radio" name="showImages" value="false">
-    <input type="radio" name="showImages" value="true">
-    <button>Apply</button>
+    <div>
+      <label>Background</label>
+      <input id="backgroundInput" class="u-full-width" type="text" placeholder="url(), color, gradient">
+      <label>Background Blur</label>
+      <input id="backgroundBlurRange" type="range" min="0" max="100" value="0">
+      <h6 id="blurAmountText">0px</h6>
+    </div>
+    <div>
+      <label>Theme</label>
+      <input id="radioLightTheme" type="radio" name="theme" onchange="themePreview()"> Light Theme<br>
+      <input id="radioDarkTheme" type="radio" name="theme" onchange="themePreview()"> Dark Theme<br>
+    </div>
+    <div>
+      <label>Background Buttons</label>
+      <input id="radioLightBackgroundButtons" type="radio" name="backgroundButtons" onchange="backgroundButtonPreview()"> Light<br>
+      <input id="radioDarkBackgroundButtons" type="radio" name="backgroundButtons" onchange="backgroundButtonPreview()"> Dark<br>
+    </div>
+    <button onclick="applySettings(); closeSettings()">Apply</button>
   </div>
   <div id="contextMenu">
     <table class="u-full-width" style="margin: 0;">
@@ -192,12 +220,98 @@
           closeAddMenu();
         }
       }
+      document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
+      document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
+
+      if (window.localStorage.getItem('theme') == 'dark') {
+        document.getElementById('radioDarkTheme').checked = true;
+        document.getElementById('radioLightTheme').checked = false;
+      } else {
+        document.getElementById('radioLightTheme').checked = true;
+        document.getElementById('radioDarkTheme').checked = false;
+      }
+
+      if (window.localStorage.getItem('backgroundButtons') == 'light') {
+        document.getElementById('radioLightBackgroundButtons').checked = true;
+        document.getElementById('radioDarkBackgroundButtons').checked = false;
+      } else {
+        document.getElementById('radioDarkBackgroundButtons').checked = true;
+        document.getElementById('radioLightBackgroundButtons').checked = false;
+      }
+
+      blurRangeUpdate(document.getElementById('backgroundBlurRange').value);
+      document.getElementById('backgroundBlurRange').addEventListener('mousemove', blurRangeUpdate);
     }
 
     function closeSettings() {
       settings.style.animationName = "closeSettings";
       settings.style.animationDuration = "0.25s";
       settingsOpen = false;
+      document.getElementById('backgroundBlurRange').removeEventListener('mousemove', blurRangeUpdate);
+      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+      if (window.localStorage.getItem('backgroundButtons') == 'light') {
+        displayLightBackgroundButtons();
+      } else {
+        displayDarkBackgroundButtons();
+      }
+      if (window.localStorage.getItem('theme') == 'light') {
+        displayLightTheme();
+        refreshImageTiles();
+      } else {
+        displayDarkTheme();
+        refreshImageTiles();
+      }
+    }
+
+    function applySettings() {
+      if (document.getElementById('radioLightTheme').checked) {
+        window.localStorage.setItem('theme', 'light');
+        displayLightTheme();
+        refreshImageTiles();
+      } else {
+        window.localStorage.setItem('theme', 'dark');
+        displayDarkTheme();
+        refreshImageTiles();
+      }
+
+      if (document.getElementById('backgroundInput').value != '') {
+        window.localStorage.setItem('background', document.getElementById('backgroundInput').value);
+        document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
+      }
+      window.localStorage.setItem('backgroundBlur', document.getElementById('backgroundBlurRange').value + "px");
+      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+
+      if (document.getElementById('radioDarkBackgroundButtons').checked) {
+        window.localStorage.setItem('backgroundButtons', 'dark');
+        displayDarkBackgroundButtons();
+      } else {
+        window.localStorage.setItem('backgroundButtons', 'light');
+        displayLightBackgroundButtons();
+      }
+    }
+
+    function blurRangeUpdate() {
+      var blur = document.getElementById('backgroundBlurRange').value + 'px';
+      document.getElementById('blurAmountText').innerText = blur;
+      document.documentElement.style.setProperty('--background-blur', blur);
+    }
+
+    function backgroundButtonPreview() {
+      if (document.getElementById('radioDarkBackgroundButtons').checked) {
+        displayDarkBackgroundButtons();
+      } else {
+        displayLightBackgroundButtons();
+      }
+    }
+
+    function themePreview() {
+      if (document.getElementById('radioDarkTheme').checked) {
+        displayDarkTheme();
+        refreshImageTilesPreview('dark');
+      } else {
+        displayLightTheme();
+        refreshImageTilesPreview('light');
+      }
     }
 
     function openRemoveMenu() {
@@ -208,6 +322,71 @@
     function closeRemoveMenu() {
       removeMenu.style.animationName = "closeMenu";
       removeMenu.style.animationDuration = "0.25s";
+    }
+
+
+
+    /* THEME
+    ---------------------------------------------*/
+
+    function displayDarkTheme() {
+      document.documentElement.style.setProperty('--background-color', "#000b");
+      document.documentElement.style.setProperty('--background-color-popup', "#222");
+      document.documentElement.style.setProperty('--icon-color', "#fff");
+      document.documentElement.style.setProperty('--background-low-contrast', "rgb(40, 40, 40)");
+      document.documentElement.style.setProperty('--background-contrast', "rgb(49, 49, 49)");
+      document.documentElement.style.setProperty('--table-border', "#3e3e3e");
+      document.documentElement.style.setProperty('--text', "#ddd");
+      document.documentElement.style.setProperty('--text-low-contrast', "#ccc");
+      document.documentElement.style.setProperty('--text-contrast', "#aaa");
+
+      document.getElementById('closeSettingsButton').src = 'img/close-dark.svg';
+      document.getElementById('closeAddButton').src = 'img/close-dark.svg';
+      document.getElementById('closeRemoveButton').src = 'img/close-dark.svg';
+      document.getElementById('searchIcon').src = 'img/search-dark.svg';
+
+      document.getElementById('contextMenuAdd').firstElementChild.src = 'img/add-dark.svg';
+      document.getElementById('contextMenuEdit').firstElementChild.src = 'img/edit-dark.svg';
+      document.getElementById('contextMenuRemove').firstElementChild.src = 'img/delete-dark.svg';
+    }
+
+    function displayLightTheme() {
+      document.documentElement.style.setProperty('--background-color', "#fffb");
+      document.documentElement.style.setProperty('--background-color-popup', "#fff");
+      document.documentElement.style.setProperty('--icon-color', "#000");
+      document.documentElement.style.setProperty('--background-low-contrast', "rgb(249, 249, 249)");
+      document.documentElement.style.setProperty('--background-contrast', "rgb(244, 244, 244)");
+      document.documentElement.style.setProperty('--table-border', "#e1e1e1");
+      document.documentElement.style.setProperty('--text', "#222");
+      document.documentElement.style.setProperty('--text-low-contrast', "#333");
+      document.documentElement.style.setProperty('--text-contrast', "#555");
+
+      document.getElementById('closeSettingsButton').src = 'img/close.svg';
+      document.getElementById('closeAddButton').src = 'img/close.svg';
+      document.getElementById('closeRemoveButton').src = 'img/close.svg';
+      document.getElementById('searchIcon').src = 'img/search.svg';
+
+      document.getElementById('contextMenuAdd').firstElementChild.src = 'img/add.svg';
+      document.getElementById('contextMenuEdit').firstElementChild.src = 'img/edit.svg';
+      document.getElementById('contextMenuRemove').firstElementChild.src = 'img/delete.svg';
+    }
+
+    if (window.localStorage.getItem('theme') == 'dark') {
+      displayDarkTheme();
+    }
+
+    function displayDarkBackgroundButtons() {
+      document.getElementById('addButton').src = 'img/add.svg';
+      document.getElementById('settingsButton').src = 'img/settings.svg';
+    }
+
+    function displayLightBackgroundButtons() {
+      document.getElementById('addButton').src = 'img/add-dark.svg';
+      document.getElementById('settingsButton').src = 'img/settings-dark.svg';
+    }
+
+    if (window.localStorage.getItem('backgroundButtons') == 'light') {
+      displayLightBackgroundButtons();
     }
 
     /* WEBSITE TILES
@@ -226,6 +405,7 @@
       tile = document.getElementsByClassName('tile')[document.getElementsByClassName('tile').length - 1];
       setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
       refreshContextMenuEvents();
+      refreshMiddlemouseEvents();
     }
 
     function removeWebsiteTile(name, url) {
@@ -239,6 +419,7 @@
         }
       }
       refreshContextMenuEvents();
+      refreshMiddlemouseEvents();
     }
 
     function removeWebsite(name, url) {
@@ -263,58 +444,9 @@
       window.open(url, "_self")
     }
 
-    function getHost(url) {
-      var result = url.match(/([^:\/\s]+)/g);
-      if (result[0] == undefined || result[0] == null) {
-        return
-      }
-      if (result[1] == undefined || result[1] == null) {
-        if (result[0].match('.://')) {
-          return
-        }
-        return result[0]
-      }
-      if (result[1].startsWith('www.')) {
-        return result[1].substring(4, result[1].length)
-      }
-      return result[1]
-    }
-
-    var logoDatabase = ['google.com',
-                        'youtube.com',
-                        'music.youtube.com',
-                        'twitter.com',
-                        'docs.google.com',
-                        'imdb.com',
-                        'mail.google.com',
-                        'reddit.com',
-                        'twitch.tv',
-                        'translate.google.com',
-                        'morele.net',
-                        'genius.com',
-                        'rap.genius.com',
-                        'wikipedia.org',
-                        'xda-developers.com'];
-
-    function isWebsiteLogoAvailable(host) {
-      for (logo of logoDatabase) {
-        if (host == logo) {
-          return true
-        }
-      }
-      return false
-    }
-
-    function setWebsiteLogo(element, host) {
-      if (isWebsiteLogoAvailable(host)) {
-        element.style.backgroundImage = 'url("img/logo/' + host + '.png")';
-        element.classList.add('image');
-      }
-    }
-
-    var tiles = document.getElementsByClassName('tile');
-    for (tile of tiles) {
-      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
+    function openUrlNewTab(url) {
+      var tab = window.open(url, '_blank');
+      tab.focus();
     }
 
     function Search(text) {
@@ -349,13 +481,130 @@
       }
     }
 
+    function getHost(url) {
+      var result = url.match(/([^:\/\s]+)/g);
+      if (result[0] == undefined || result[0] == null) {
+        return
+      }
+      if (result[1] == undefined || result[1] == null) {
+        if (result[0].match('.://')) {
+          return
+        }
+        return result[0]
+      }
+      if (result[1].startsWith('www.')) {
+        return result[1].substring(4, result[1].length)
+      }
+      return result[1]
+    }
+
+    /* WEBSITE LOGOS
+    ---------------------------------------------*/
+
+    var themedLogoDatabase = [
+                            /*A*/
+                            /*B*/
+                            /*C*/
+                            /*D*/'docs.google.com',
+                            /*E*/
+                            /*F*/
+                            /*G*/'genius.com',
+                            /*H*/
+                            /*I*/
+                            /*J*/
+                            /*K*/
+                            /*L*/
+                            /*M*/'music.youtube.com',
+                            /*N*/
+                            /*O*/
+                            /*P*/
+                            /*Q*/
+                            /*R*/'reddit.com', 'rap.genius.com',
+                            /*S*/
+                            /*T*/
+                            /*U*/
+                            /*V*/
+                            /*W*/'wikipedia.org',
+                            /*X*/
+                            /*Y*/'youtube.com'
+                            /*Z*/
+                            ];
+
+    var logoDatabase = [
+                            /*A*/
+                            /*B*/
+                            /*C*/
+                            /*D*/
+                            /*E*/
+                            /*F*/
+                            /*G*/'google.com',
+                            /*H*/
+                            /*I*/'imdb.com',
+                            /*J*/
+                            /*K*/
+                            /*L*/
+                            /*M*/'mail.google.com', 'morele.net',
+                            /*N*/
+                            /*O*/
+                            /*P*/
+                            /*Q*/
+                            /*R*/
+                            /*S*/
+                            /*T*/'twitter.com', 'twitch.tv', 'translate.google.com',
+                            /*U*/
+                            /*V*/
+                            /*W*/
+                            /*X*/'xda-developers.com'
+                            /*Y*/
+                            /*Z*/
+                            ];
+
+    function isWebsiteLogoAvailable(host, theme) {
+      for (logo of logoDatabase) {
+        if (host == logo) {
+          return [true, 'url("img/logo/' + host + '.png")']
+        }
+      }
+      for (logo of themedLogoDatabase) {
+        if (host == logo) {
+          return [true, 'url("img/logo/' + theme + '/' + host + '.png")']
+        }
+      }
+      return [false, null]
+    }
+
+    function setWebsiteLogo(element, host, theme) {
+      var response = isWebsiteLogoAvailable(host, theme);
+      if (response[0]) {
+        element.style.backgroundImage = response[1];
+        element.classList.add('image');
+      }
+    }
+
+    function refreshImageTiles() {
+      var tiles = document.getElementsByClassName('tile');
+      for (tile of tiles) {
+        setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue), window.localStorage.getItem('theme'));
+      }
+    }
+
+    function refreshImageTilesPreview(theme) {
+      var tiles = document.getElementsByClassName('tile');
+      for (tile of tiles) {
+        setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue), theme);
+      }
+    }
+    refreshImageTiles(); // to be improved
+    document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
+    document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+
+    /* SEARCH SUGGESTIONS
+    ---------------------------------------------*/
+
     function SearchSuggestion(text) {
       document.getElementById('searchInput').value = text;
       Search(text);
     }
-
-    /* SEARCH SUGGESTIONS
-    ---------------------------------------------*/
 
     function showSuggestions(suggestions) {
       var elements = document.getElementById('search').firstElementChild.firstElementChild.children;

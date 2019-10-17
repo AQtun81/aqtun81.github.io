@@ -2,16 +2,39 @@
 ----------------------------------------------------*/
 
 :root {
-  --background-color: rgb(255, 255, 255);
-  --background-color-70: rgba(255, 255, 255, 0.7);
-  --background-color-50: rgba(255, 255, 255, 0.5);
-  --background-color-30: rgba(255, 255, 255, 0.3);
+  --background-color: #fffb;
+  --background-color-popup: #fff;
+  --icon-color: #000;
   --background-low-contrast: rgb(249, 249, 249);
   --background-contrast: rgb(244, 244, 244);
+  --table-border: #e1e1e1;
   --text: #222;
+  --text-low-contrast: #333;
+  --text-contrast: #555;
   --link: #1EAEDB;
   --link-hover: #0FA0CE;
+  --background: linear-gradient(to top right, #949bfd 0%, #cff 100%);
+  --background-blur: 0px;
 }
+
+/*
+  --background-color: #000b;
+  --background-color-popup: #222;
+  --icon-color: #fff;
+  --background-low-contrast: rgb(249, 249, 249);
+  --background-contrast: rgb(244, 244, 244);
+  --table-border: #3e3e3e;
+  --text: #ddd;
+  --text-low-contrast: #ccc;
+  --text-contrast: #aaa;
+*/
+
+/*
+291px
+242px
+
+51px + (count * 49px)
+*/
 
 /* COMMON
 ----------------------------------------------------*/
@@ -36,6 +59,27 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
+}
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+  background-color: var(--background-color);
+  border: var(--background-low-contrast);
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
+  color: var(--text-low) !important;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  color: var(--text-low-contrast) !important;
+}
+
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+  border: none;
+}
+
+th, td {
+  border-bottom-color: var(--table-border);
 }
 
 tbody > tr:last-of-type > td {
@@ -137,12 +181,27 @@ tbody > tr:last-of-type > td {
 ----------------------------------------------------*/
 
 body {
-  /*background: linear-gradient(to top right, #ff9 0%, #fcc 100%);*/
-  background-color: Rgba(0, 0, 0, 0.25);
-  background: linear-gradient(to top right, #949bfd 0%, #cff 100%);
+  background-color: Rgb(0, 0, 0);
+  /*background: linear-gradient(to top right, #949bfd 0%, #cff 100%);*/
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(-1 * var(--background-blur));
+    top: calc(-1 * var(--background-blur));
+    right: calc(-1 * var(--background-blur));
+    bottom: calc(-1 * var(--background-blur));
+    z-index: -1;
+    display: block;
+    background: var(--background);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(var(--background-blur));
 }
 
 
@@ -169,7 +228,7 @@ body {
 
 .menu {
   position: fixed;
-  background: var(--background-color);
+  background: var(--background-color-popup);
   width: 560px;
   height: 260px;
   padding: 20px;
@@ -243,7 +302,7 @@ body {
   display: flex;
   width: 350px;
   height: 200px;
-  background: #fffb;
+  background: var(--background-color);
   border-radius: 5px;
   margin: 10px;
   cursor: pointer;
@@ -271,7 +330,7 @@ body {
 #contextMenu {
   position: absolute;
   width: 185px;
-  background-color: var(--background-color);
+  background-color: var(--background-color-popup);
   display: none;
   animation-name: contextmenu;
   animation-duration: 0.1s;
@@ -313,13 +372,13 @@ body {
   width: calc(100% - 128px);
   max-width: 770px;
   height: 45px;
-  background: #fffb;
+  background: var(--background-color);
   border-radius: 10px;
   overflow: hidden;
   transition-duration: .2s;
 }
 
-.searchIcon {
+#searchIcon {
   z-index: 500;
   user-select: none;
   float: right;

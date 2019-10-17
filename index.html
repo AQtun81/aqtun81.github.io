@@ -28,27 +28,6 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <script type="text/javascript">
-    function getCookie(name) {
-      var cookies = document.cookie.split('; ');
-      for (var cookie of cookies) {
-        cookie = cookie.split('=');
-        if (cookie[0] == name) {
-          return cookie[1];
-        }
-      }
-      return null;
-    }
-
-    function deleteCookie(name) {
-      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    }
-
-    function addCookie(name, value) {
-      var date = new Date();
-      date.setTime(date.getTime() + (2592000000));
-      document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
-    }
-
     function lightTheme() {
       document.documentElement.style.setProperty('--background-color', "rgb(255, 255, 255)");
       document.documentElement.style.setProperty('--background-color-70', "rgba(255, 255, 255, 0.7)");
@@ -73,20 +52,20 @@
       document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
     }
 
-    if (getCookie('theme') == null) {
-      addCookie('theme', 'light');
-    } else if (getCookie('theme') == 'dark') {
+    if (window.localStorage.getItem('theme') == null) {
+      window.localStorage.setItem('theme', 'light');
+    } else if (window.localStorage.getItem('theme') == 'dark') {
       darkTheme();
     }
 
     function switchTheme() {
-      if (getCookie('theme') == 'light') {
-        addCookie('theme', 'dark');
+      if (window.localStorage.getItem('theme') == 'light') {
+        window.localStorage.setItem('theme', 'dark');
         darkTheme();
         document.getElementById("toDarkTheme").style.display = "none";
         document.getElementById("toLightTheme").style.display = "block";
       } else {
-        addCookie('theme', 'light');
+        window.localStorage.setItem('theme', 'light');
         lightTheme();
         document.getElementById("toLightTheme").style.display = "none";
         document.getElementById("toDarkTheme").style.display = "block";
@@ -103,7 +82,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <header style="background: linear-gradient(to top right, #3399ff 0%, #00ffcc 100%);padding: 0;margin: 0;line-height: 0;">
-    <h1 class="separator title">injected humour</h1>
+    <h1 class="separator title">separator title</h1>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
       <defs>
       <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" style="transition-duration: unset;"></path>
@@ -116,11 +95,13 @@
       </g>
       </svg>
   </header>
-  <h1 class="separator border">FAAK OF MATE</h1>
+  <header class="separatorborder">
+    <h1 class="separator border">separator border</h1>
+  </header>
   <header class="low contrast">
     <div class="container">
       <div class="row">
-        <h4>Sum Text to read</h4>
+        <h4>Lorem Ipsum</h4>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Oops dropped a <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
       </div>
     </div>
@@ -128,7 +109,7 @@
   <header class="contrast">
     <div class="container">
         <h3 class="section-heading">Skeleton Images</h3>
-        <p class="section-description">NOICE. SPOOK.</p>
+        <p class="section-description">section-description</p>
         <div class="row">
           <div class="one-half column category">
             <img class="u-max-full-width" src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
@@ -152,7 +133,7 @@
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script type="text/javascript">
-  if (getCookie('theme') == 'dark') {
+  if (window.localStorage.getItem('theme') == 'dark') {
     document.getElementById("toDarkTheme").style.display = "none";
     document.getElementById("toLightTheme").style.display = "block";
   }

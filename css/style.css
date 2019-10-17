@@ -16,15 +16,12 @@
 /* COMMON
 ----------------------------------------------------*/
 
-* {
-  transition-duration: 0.25s;
-}
-
 HTML {
   min-height: 100%;
 }
 
 body {
+  transition-duration: 0.25s;
   background-color: var(--background-color);
   color: var(--text);
 }
@@ -39,6 +36,17 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
+}
+
+header.separatorborder {
+    background-color: var(--background-color);
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin: 0;
+}
+
+header.separator::before {
+    background-color: transparent;
 }
 
 .separator {
