@@ -25,7 +25,7 @@
           <tbody>
             <tr>
               <td style="padding: 0px;">
-                <input id="searchInput" onkeyup="getQueryWikipedia(this.value)" type="text" placeholder="Search with Google"> <!-- // to be improved -->
+                <input id="searchInput" onkeyup="getQueryGooglegetQueryGoogle(this.value)" type="text" placeholder="Search with Google"> <!-- // to be improved -->
                 <img id="searchIcon" src="img/search.svg" onclick="SearchGoogle(document.getElementById('searchInput').value)">
               </td>
             </tr>
@@ -664,10 +664,10 @@
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          console.log(JSON.parse(this.responseText));
+          showSuggestions(JSON.parse(this.responseText)[1]);
         }
       };
-      xmlhttp.open("GET", "http://suggestqueries.google.com/complete/search?client=firefox&q=" + q, true);
+      xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://suggestqueries.google.com/complete/search?client=firefox&q=" + q + true);
       xmlhttp.send();
     }
 
@@ -675,10 +675,10 @@
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          console.log(JSON.parse(this.responseText));
+          showSuggestions(JSON.parse(this.responseText)[1]);
         }
       };
-      xmlhttp.open("GET", "http://suggestqueries.google.com/complete/search?client=firefox&q=" + q + "&hl=" + lang, true);
+      xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://suggestqueries.google.com/complete/search?client=firefox&q=" + q + "&hl=" + lang, true);
       xmlhttp.send();
     }
 
@@ -691,10 +691,10 @@
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          console.log(JSON.parse(this.responseText));
+          showSuggestions(JSON.parse(this.responseText)[1]);
         }
       };
-      xmlhttp.open("GET", "https://ac.duckduckgo.com/ac/?q=" + q + "&type=list", true);
+      xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://ac.duckduckgo.com/ac/?q=" + q + "&type=list", true);
       xmlhttp.send();
     }
 
@@ -726,7 +726,7 @@
           console.log(JSON.parse(this.responseText));
         }
       };
-      xmlhttp.open("GET", "https://sugg.search.yahoo.net/sg/?output=jsonp&nresults=10&command=" + q, true);
+      xmlhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://sugg.search.yahoo.net/sg/?output=jsonp&nresults=10&command=" + q, true);
       xmlhttp.send();
     }
 

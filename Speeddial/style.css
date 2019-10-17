@@ -302,6 +302,7 @@ body::before {
 
 .tile.image h4 {
   color: transparent;
+  user-select: none;
 }
 
 
