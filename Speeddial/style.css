@@ -17,25 +17,6 @@
   --background-blur: 0px;
 }
 
-/*
-  --background-color: #000b;
-  --background-color-popup: #222;
-  --icon-color: #fff;
-  --background-low-contrast: rgb(249, 249, 249);
-  --background-contrast: rgb(244, 244, 244);
-  --table-border: #3e3e3e;
-  --text: #ddd;
-  --text-low-contrast: #ccc;
-  --text-contrast: #aaa;
-*/
-
-/*
-291px
-242px
-
-51px + (count * 49px)
-*/
-
 /* COMMON
 ----------------------------------------------------*/
 
@@ -62,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
-  background-color: var(--background-color);
+  background-color: var(--background-contrast);
   border: var(--background-low-contrast);
 }
 
