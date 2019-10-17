@@ -136,7 +136,7 @@
     <h5>settings</h5>
     <div>
       <label>Background</label>
-      <input id="backgroundInput" class="u-full-width" type="text" placeholder="url(), color, gradient">
+      <input id="backgroundInput" class="u-full-width" type="text" placeholder="direct link, color, gradient" onchange="backgroundPreview()">
       <label>Background Blur</label>
       <input id="backgroundBlurRange" type="range" min="0" max="100" value="0">
       <h6 id="blurAmountText">0px</h6>
@@ -221,7 +221,11 @@
         }
       }
       document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
-      document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
+      if (window.localStorage.getItem('background').startsWith('url("')) {
+        document.getElementById('backgroundInput').value = window.localStorage.getItem('background').substr(5, window.localStorage.getItem('background').length - 7);
+      } else {
+        document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
+      }
 
       if (window.localStorage.getItem('theme') == 'dark') {
         document.getElementById('radioDarkTheme').checked = true;
@@ -261,6 +265,7 @@
         displayDarkTheme();
         refreshImageTiles();
       }
+      document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
     }
 
     function applySettings() {
@@ -275,7 +280,19 @@
       }
 
       if (document.getElementById('backgroundInput').value != '') {
-        window.localStorage.setItem('background', document.getElementById('backgroundInput').value);
+        var background = document.getElementById('backgroundInput').value;
+        if (background.search('http') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpeg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.png') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.webp') != -1) {
+          background = 'url("' + background + '")';
+        }
+        window.localStorage.setItem('background', background);
         document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
       }
       window.localStorage.setItem('backgroundBlur', document.getElementById('backgroundBlurRange').value + "px");
@@ -294,6 +311,24 @@
       var blur = document.getElementById('backgroundBlurRange').value + 'px';
       document.getElementById('blurAmountText').innerText = blur;
       document.documentElement.style.setProperty('--background-blur', blur);
+    }
+
+    function backgroundPreview() {
+      if (document.getElementById('backgroundInput').value != '') {
+        var background = document.getElementById('backgroundInput').value;
+        if (background.search('http') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpeg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.png') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.webp') != -1) {
+          background = 'url("' + background + '")';
+        }
+        document.documentElement.style.setProperty('--background', background);
+      }
     }
 
     function backgroundButtonPreview() {
