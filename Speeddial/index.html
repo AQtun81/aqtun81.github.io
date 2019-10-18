@@ -220,11 +220,15 @@
           closeAddMenu();
         }
       }
-      document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
-      if (window.localStorage.getItem('background').startsWith('url("')) {
-        document.getElementById('backgroundInput').value = window.localStorage.getItem('background').substr(5, window.localStorage.getItem('background').length - 7);
-      } else {
-        document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
+      if (window.localStorage.getItem('backgroundBlur') != null) {
+        document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
+      }
+      if (window.localStorage.getItem('background') != null) {
+        if (window.localStorage.getItem('background').startsWith('url("')) {
+          document.getElementById('backgroundInput').value = window.localStorage.getItem('background').substr(5, window.localStorage.getItem('background').length - 7);
+        } else {
+          document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
+        }
       }
 
       if (window.localStorage.getItem('theme') == 'dark') {
@@ -258,11 +262,11 @@
       } else {
         displayDarkBackgroundButtons();
       }
-      if (window.localStorage.getItem('theme') == 'light') {
-        displayLightTheme();
+      if (window.localStorage.getItem('theme') == 'dark') {
+        displayDarkTheme();
         refreshImageTiles();
       } else {
-        displayDarkTheme();
+        displayLightTheme();
         refreshImageTiles();
       }
       document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
