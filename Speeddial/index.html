@@ -53,7 +53,9 @@
   <div id="websites"></div>
 
   <script type="text/javascript">
-    document.getElementById('searchInput').placeholder = "Search with " + window.localStorage.getItem('searchEngine');
+    if (window.localStorage.getItem('searchEngine') != null || window.localStorage.getItem('searchEngine') != undefined) {
+      document.getElementById('searchInput').placeholder = "Search with " + window.localStorage.getItem('searchEngine');
+    }
 
     var targetName,
         targetUrl;
