@@ -16,6 +16,77 @@
   <link rel="stylesheet" href="../css/skeleton.css">
   <link rel="stylesheet" href="style.css">
 
+  <script type="text/javascript">
+    /* THEME
+    ---------------------------------------------*/
+
+    function displayDarkTheme(themeIcons) {
+      document.documentElement.style.setProperty('--background-color', "#000b");
+      document.documentElement.style.setProperty('--background-color-popup', "#222");
+      document.documentElement.style.setProperty('--icon-color', "#fff");
+      document.documentElement.style.setProperty('--background-low-contrast', "rgb(40, 40, 40)");
+      document.documentElement.style.setProperty('--background-contrast', "rgb(15, 15, 15)");
+      document.documentElement.style.setProperty('--table-border', "#3e3e3e");
+      document.documentElement.style.setProperty('--text', "#ddd");
+      document.documentElement.style.setProperty('--text-low-contrast', "#ccc");
+      document.documentElement.style.setProperty('--text-contrast', "#aaa");
+
+      if (themeIcons) {
+        document.getElementById('closeSettingsButton').src = 'img/close-dark.svg';
+        document.getElementById('closeAddButton').src = 'img/close-dark.svg';
+        document.getElementById('closeRemoveButton').src = 'img/close-dark.svg';
+        document.getElementById('searchIcon').src = 'img/search-dark.svg';
+
+        document.getElementById('contextMenuAdd').firstElementChild.src = 'img/add-dark.svg';
+        document.getElementById('contextMenuEdit').firstElementChild.src = 'img/edit-dark.svg';
+        document.getElementById('contextMenuRemove').firstElementChild.src = 'img/delete-dark.svg';
+      }
+
+    }
+
+    function displayLightTheme(themeIcons) {
+      document.documentElement.style.setProperty('--background-color', "#fffb");
+      document.documentElement.style.setProperty('--background-color-popup', "#fff");
+      document.documentElement.style.setProperty('--icon-color', "#000");
+      document.documentElement.style.setProperty('--background-low-contrast', "rgb(249, 249, 249)");
+      document.documentElement.style.setProperty('--background-contrast', "rgb(244, 244, 244)");
+      document.documentElement.style.setProperty('--table-border', "#e1e1e1");
+      document.documentElement.style.setProperty('--text', "#222");
+      document.documentElement.style.setProperty('--text-low-contrast', "#333");
+      document.documentElement.style.setProperty('--text-contrast', "#555");
+
+      if (themeIcons) {
+        document.getElementById('closeSettingsButton').src = 'img/close.svg';
+        document.getElementById('closeAddButton').src = 'img/close.svg';
+        document.getElementById('closeRemoveButton').src = 'img/close.svg';
+        document.getElementById('searchIcon').src = 'img/search.svg';
+
+        document.getElementById('contextMenuAdd').firstElementChild.src = 'img/add.svg';
+        document.getElementById('contextMenuEdit').firstElementChild.src = 'img/edit.svg';
+        document.getElementById('contextMenuRemove').firstElementChild.src = 'img/delete.svg';
+      }
+
+    }
+
+    if (window.localStorage.getItem('theme') == 'dark') {
+      displayDarkTheme(false);
+    }
+
+    function displayDarkBackgroundButtons() {
+      document.getElementById('addButton').src = 'img/add.svg';
+      document.getElementById('settingsButton').src = 'img/settings.svg';
+    }
+
+    function displayLightBackgroundButtons() {
+      document.getElementById('addButton').src = 'img/add-dark.svg';
+      document.getElementById('settingsButton').src = 'img/settings-dark.svg';
+    }
+
+    if (window.localStorage.getItem('backgroundButtons') == 'light') {
+      displayLightBackgroundButtons();
+    }
+  </script>
+
 </head>
 <body onkeypress="return SearchKey(event)">
   <header style="position: fixed; width: 100%;">
@@ -51,8 +122,10 @@
     </div>
   </header>
   <div id="websites"></div>
-
   <script type="text/javascript">
+    /* CONTENT
+    ---------------------------------------------*/
+
     if (window.localStorage.getItem('searchEngine') != null || window.localStorage.getItem('searchEngine') != undefined) {
       document.getElementById('searchInput').placeholder = "Search with " + window.localStorage.getItem('searchEngine');
     }
@@ -117,474 +190,9 @@
 
     refreshContextMenuEvents();
     refreshMiddlemouseEvents();
-  </script>
 
-  <img id="settingsButton" class="toggle" onclick="openSettings()" src="img/settings.svg">
-  <img id="addButton" class="toggle" onclick="openAddMenu()" src="img/add.svg">
-  <div id="add" class="menu">
-    <img id="closeAddButton" onclick="closeAddMenu()" src="img/close.svg" class="toggle">
-    <h5>add website</h5>
-    <label>Name</label>
-    <input class="u-full-width" type="text" placeholder="google" id="add-name">
-    <label>URL</label>
-    <input class="u-full-width" type="url" placeholder="https://www.google.com/" id="add-url">
-    <button onclick="addWebsite()">Add</button>
-  </div>
-  <div id="remove" class="menu">
-    <h5>are you sure?</h5>
-    <img id="closeRemoveButton" onclick="closeRemoveMenu()" src="img/close.svg" class="toggle">
-    <button id="removeWebsiteButton" onclick="removeWebsite(targetName, targetUrl); closeRemoveMenu()">Remove ...</button>
-  </div>
-  <div id="settings" class="menu">
-    <img id="closeSettingsButton" onclick="closeSettings()" src="img/close.svg" class="toggle">
-    <h5>settings</h5>
-    <div>
-      <label>Background</label>
-      <input id="backgroundInput" class="u-full-width" type="text" placeholder="direct link, color, gradient" onchange="backgroundPreview()">
-    </div>
-    <div>
-      <label>Background Blur</label>
-      <input id="backgroundBlurRange" type="range" min="0" max="100" value="0" class="one-half column" style="height: 24px; margin: 0 0 10px 10px; width: calc(48% - 10px);">
-      <h6 id="blurAmountText" style="margin: 0 0 10px 10px;width: calc(48% - 10px);" class="one-half column">0px</h6>
-    </div>
-    <div>
-      <label>Theme</label>
-      <input id="radioLightTheme" type="radio" name="theme" onchange="themePreview()"> Light Theme<br>
-      <input id="radioDarkTheme" type="radio" name="theme" onchange="themePreview()"> Dark Theme<br>
-    </div>
-    <div>
-      <label>Background Buttons</label>
-      <input id="radioLightBackgroundButtons" type="radio" name="backgroundButtons" onchange="backgroundButtonPreview()"> Light<br>
-      <input id="radioDarkBackgroundButtons" type="radio" name="backgroundButtons" onchange="backgroundButtonPreview()"> Dark<br>
-    </div>
-    <div>
-      <div class="six columns">
-        <label>Search Engine</label>
-        <select class="u-full-width" id="searchEngineSelect">
-          <option value="Google">Google</option>
-          <option value="DuckDuckGo">DuckDuckGo</option>
-          <option value="Bing">Bing</option>
-          <option value="Yahoo">Yahoo</option>
-          <option value="Wikipedia">Wikipedia</option>
-        </select>
-      </div>
-      <div class="six columns">
-        <label>Suggestions Provider</label>
-        <select class="u-full-width" id="suggestionsProviderSelect">
-          <option value="Google">Google</option>
-          <option value="DuckDuckGo">DuckDuckGo</option>
-          <option value="Yahoo">Yahoo</option>
-          <option value="Wikipedia">Wikipedia</option>
-        </select>
-      </div>
-    </div>
-    <button onclick="applySettings(); closeSettings()">Apply</button>
-  </div>
-  <div id="contextMenu">
-    <table class="u-full-width" style="margin: 0;">
-      <tbody>
-        <tr>
-          <td id="contextMenuAdd" onclick="openAddMenu()"><img src="img/add.svg"><bdo>Add New</bdo></td>
-        </tr>
-        <tr>
-          <td id="contextMenuEdit" onclick="openEditMenu()"><img src="img/edit.svg"><bdo>Edit</bdo></td>
-        </tr>
-        <tr>
-          <td id="contextMenuRemove" onclick="openRemoveMenu()"><img src="img/delete.svg"><bdo>Remove</bdo></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <script type="text/javascript">
-
-    /* CONTEXT MENU
+    /* WEBSITE LOGOS
     ---------------------------------------------*/
-
-    document.addEventListener('mouseup', function(ev) {
-      document.getElementById('contextMenu').style.display = "none";
-    }, false);
-
-    /* OPENING AND CLOSING MENUS
-    ---------------------------------------------*/
-
-    var addMenu = document.getElementById("add");
-    var settings = document.getElementById("settings");
-    var removeMenu = document.getElementById('remove');
-    var addMenuOpen = false;
-    var settingsOpen = false;
-
-    function openAddMenu() {
-      if (addMenuOpen) {
-        closeAddMenu();
-      } else {
-        addMenuOpen = true;
-        addMenu.style.animationName = "openMenu";
-        addMenu.style.animationDuration = "0.25s";
-        if (settingsOpen) {
-          closeSettings();
-        }
-      }
-    }
-
-    function closeAddMenu() {
-      addMenu.style.animationName = "closeMenu";
-      addMenu.style.animationDuration = "0.25s";
-      addMenuOpen = false;
-      document.getElementById("add-name").value = "";
-      document.getElementById("add-url").value = "";
-    }
-
-    function openSettings() {
-      if (settingsOpen) {
-        closeSettings();
-      } else {
-        settingsOpen = true;
-        settings.style.animationName = "openSettings";
-        settings.style.animationDuration = "0.25s";
-        if (addMenuOpen) {
-          closeAddMenu();
-        }
-      }
-      if (window.localStorage.getItem('backgroundBlur') != null) {
-        document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
-      }
-      if (window.localStorage.getItem('background') != null) {
-        if (window.localStorage.getItem('background').startsWith('url("')) {
-          document.getElementById('backgroundInput').value = window.localStorage.getItem('background').substr(5, window.localStorage.getItem('background').length - 7);
-        } else {
-          document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
-        }
-      }
-
-      if (window.localStorage.getItem('theme') == 'dark') {
-        document.getElementById('radioDarkTheme').checked = true;
-        document.getElementById('radioLightTheme').checked = false;
-      } else {
-        document.getElementById('radioLightTheme').checked = true;
-        document.getElementById('radioDarkTheme').checked = false;
-      }
-
-      if (window.localStorage.getItem('backgroundButtons') == 'light') {
-        document.getElementById('radioLightBackgroundButtons').checked = true;
-        document.getElementById('radioDarkBackgroundButtons').checked = false;
-      } else {
-        document.getElementById('radioDarkBackgroundButtons').checked = true;
-        document.getElementById('radioLightBackgroundButtons').checked = false;
-      }
-
-      var searchEngine = window.localStorage.getItem('searchEngine');
-
-      if (searchEngine != null || searchEngine != undefined) {
-        document.getElementById('searchEngineSelect').value = searchEngine;
-      }
-
-      var suggestionsProvider = window.localStorage.getItem('suggestionsProvider');
-
-      if (suggestionsProvider != null || suggestionsProvider != undefined) {
-        document.getElementById('suggestionsProviderSelect').value = suggestionsProvider;
-      }
-
-      blurRangeUpdate(document.getElementById('backgroundBlurRange').value);
-      document.getElementById('backgroundBlurRange').addEventListener('mousemove', blurRangeUpdate);
-    }
-
-    function closeSettings() {
-      settings.style.animationName = "closeSettings";
-      settings.style.animationDuration = "0.25s";
-      settingsOpen = false;
-      document.getElementById('backgroundBlurRange').removeEventListener('mousemove', blurRangeUpdate);
-      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
-      if (window.localStorage.getItem('backgroundButtons') == 'light') {
-        displayLightBackgroundButtons();
-      } else {
-        displayDarkBackgroundButtons();
-      }
-      if (window.localStorage.getItem('theme') == 'dark') {
-        displayDarkTheme();
-        refreshImageTiles();
-      } else {
-        displayLightTheme();
-        refreshImageTiles();
-      }
-      document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
-    }
-
-    function applySettings() {
-      if (document.getElementById('radioLightTheme').checked) {
-        window.localStorage.setItem('theme', 'light');
-        displayLightTheme();
-        refreshImageTiles();
-      } else {
-        window.localStorage.setItem('theme', 'dark');
-        displayDarkTheme();
-        refreshImageTiles();
-      }
-
-      if (document.getElementById('backgroundInput').value != '') {
-        var background = document.getElementById('backgroundInput').value;
-        if (background.search('http') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.jpg') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.jpeg') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.png') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.webp') != -1) {
-          background = 'url("' + background + '")';
-        }
-        window.localStorage.setItem('background', background);
-        document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
-      }
-      window.localStorage.setItem('backgroundBlur', document.getElementById('backgroundBlurRange').value + "px");
-      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
-
-      if (document.getElementById('radioDarkBackgroundButtons').checked) {
-        window.localStorage.setItem('backgroundButtons', 'dark');
-        displayDarkBackgroundButtons();
-      } else {
-        window.localStorage.setItem('backgroundButtons', 'light');
-        displayLightBackgroundButtons();
-      }
-
-      window.localStorage.setItem('suggestionsProvider', document.getElementById('suggestionsProviderSelect').value);
-      window.localStorage.setItem('searchEngine', document.getElementById('searchEngineSelect').value);
-      document.getElementById('searchInput').placeholder = "Search with " + window.localStorage.getItem('searchEngine');
-    }
-
-    function blurRangeUpdate() {
-      var blur = document.getElementById('backgroundBlurRange').value + 'px';
-      document.getElementById('blurAmountText').innerText = blur;
-      document.documentElement.style.setProperty('--background-blur', blur);
-    }
-
-    function backgroundPreview() {
-      if (document.getElementById('backgroundInput').value != '') {
-        var background = document.getElementById('backgroundInput').value;
-        if (background.search('http') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.jpg') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.jpeg') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.png') != -1) {
-          background = 'url("' + background + '")';
-        } else if (background.search('.webp') != -1) {
-          background = 'url("' + background + '")';
-        }
-        document.documentElement.style.setProperty('--background', background);
-      }
-    }
-
-    function backgroundButtonPreview() {
-      if (document.getElementById('radioDarkBackgroundButtons').checked) {
-        displayDarkBackgroundButtons();
-      } else {
-        displayLightBackgroundButtons();
-      }
-    }
-
-    function themePreview() {
-      if (document.getElementById('radioDarkTheme').checked) {
-        displayDarkTheme();
-        refreshImageTilesPreview('dark');
-      } else {
-        displayLightTheme();
-        refreshImageTilesPreview('light');
-      }
-    }
-
-    function openRemoveMenu() {
-      removeMenu.style.animationName = "openMenu";
-      removeMenu.style.animationDuration = "0.25s";
-    }
-
-    function closeRemoveMenu() {
-      removeMenu.style.animationName = "closeMenu";
-      removeMenu.style.animationDuration = "0.25s";
-    }
-
-
-
-    /* THEME
-    ---------------------------------------------*/
-
-    function displayDarkTheme() {
-      document.documentElement.style.setProperty('--background-color', "#000b");
-      document.documentElement.style.setProperty('--background-color-popup', "#222");
-      document.documentElement.style.setProperty('--icon-color', "#fff");
-      document.documentElement.style.setProperty('--background-low-contrast', "rgb(40, 40, 40)");
-      document.documentElement.style.setProperty('--background-contrast', "rgb(15, 15, 15)");
-      document.documentElement.style.setProperty('--table-border', "#3e3e3e");
-      document.documentElement.style.setProperty('--text', "#ddd");
-      document.documentElement.style.setProperty('--text-low-contrast', "#ccc");
-      document.documentElement.style.setProperty('--text-contrast', "#aaa");
-
-      document.getElementById('closeSettingsButton').src = 'img/close-dark.svg';
-      document.getElementById('closeAddButton').src = 'img/close-dark.svg';
-      document.getElementById('closeRemoveButton').src = 'img/close-dark.svg';
-      document.getElementById('searchIcon').src = 'img/search-dark.svg';
-
-      document.getElementById('contextMenuAdd').firstElementChild.src = 'img/add-dark.svg';
-      document.getElementById('contextMenuEdit').firstElementChild.src = 'img/edit-dark.svg';
-      document.getElementById('contextMenuRemove').firstElementChild.src = 'img/delete-dark.svg';
-    }
-
-    function displayLightTheme() {
-      document.documentElement.style.setProperty('--background-color', "#fffb");
-      document.documentElement.style.setProperty('--background-color-popup', "#fff");
-      document.documentElement.style.setProperty('--icon-color', "#000");
-      document.documentElement.style.setProperty('--background-low-contrast', "rgb(249, 249, 249)");
-      document.documentElement.style.setProperty('--background-contrast', "rgb(244, 244, 244)");
-      document.documentElement.style.setProperty('--table-border', "#e1e1e1");
-      document.documentElement.style.setProperty('--text', "#222");
-      document.documentElement.style.setProperty('--text-low-contrast', "#333");
-      document.documentElement.style.setProperty('--text-contrast', "#555");
-
-      document.getElementById('closeSettingsButton').src = 'img/close.svg';
-      document.getElementById('closeAddButton').src = 'img/close.svg';
-      document.getElementById('closeRemoveButton').src = 'img/close.svg';
-      document.getElementById('searchIcon').src = 'img/search.svg';
-
-      document.getElementById('contextMenuAdd').firstElementChild.src = 'img/add.svg';
-      document.getElementById('contextMenuEdit').firstElementChild.src = 'img/edit.svg';
-      document.getElementById('contextMenuRemove').firstElementChild.src = 'img/delete.svg';
-    }
-
-    if (window.localStorage.getItem('theme') == 'dark') {
-      displayDarkTheme();
-    }
-
-    function displayDarkBackgroundButtons() {
-      document.getElementById('addButton').src = 'img/add.svg';
-      document.getElementById('settingsButton').src = 'img/settings.svg';
-    }
-
-    function displayLightBackgroundButtons() {
-      document.getElementById('addButton').src = 'img/add-dark.svg';
-      document.getElementById('settingsButton').src = 'img/settings-dark.svg';
-    }
-
-    if (window.localStorage.getItem('backgroundButtons') == 'light') {
-      displayLightBackgroundButtons();
-    }
-
-    /* WEBSITE TILES
-    ---------------------------------------------*/
-
-    function addWebsite() {
-      var name = document.getElementById("add-name").value;
-      var url = document.getElementById("add-url").value;
-      if (localStorage.getItem("websites") != null) {
-        localStorage.setItem('websites', localStorage.getItem('websites') + ',' + name + '=' + url);
-      } else {
-        localStorage.setItem('websites', name + '=' + url);
-      }
-      closeAddMenu();
-      displayWebsiteTile(name, url);
-      tile = document.getElementsByClassName('tile')[document.getElementsByClassName('tile').length - 1];
-      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
-      refreshContextMenuEvents();
-      refreshMiddlemouseEvents();
-    }
-
-    function removeWebsiteTile(name, url) {
-      var tiles = document.getElementsByClassName('tile');
-      for (tile of tiles) {
-        if (tile.children[0].innerText == name) {
-          if (tile.attributes.href.nodeValue == url) {
-            tile.remove();
-            return
-          }
-        }
-      }
-      refreshContextMenuEvents();
-      refreshMiddlemouseEvents();
-    }
-
-    function removeWebsite(name, url) {
-      if (!localStorage.getItem('websites').endsWith((name + '=' + url))) {
-        localStorage.setItem('websites', localStorage.getItem('websites').replace(name + '=' + url + ',', ''));
-        removeWebsiteTile(name, url);
-      } else {
-        if (localStorage.getItem('websites').search(',') > -1) {
-          localStorage.setItem('websites', localStorage.getItem('websites').replace(new RegExp(',' + name + '=' + url + '$'), ''));
-          removeWebsiteTile(name, url);
-        } else if (localStorage.getItem('websites') == name + '=' + url) {
-          localStorage.removeItem('websites');
-          removeWebsiteTile(name, url);
-        }
-      }
-    }
-
-    /* SEARCH
-    ---------------------------------------------*/
-
-    function openUrl(url) {
-      window.open(url, "_self")
-    }
-
-    function openUrlNewTab(url) {
-      var tab = window.open(url, '_blank');
-      tab.focus();
-    }
-
-    function Search(text) {
-      if (text == undefined || text == null || text == "") {
-        return
-      }
-      if (text.replace(/[^+]/g, "").length > 0) {
-        for (i = 0; text.replace(/[^+]/g, "").length > 0; i += 1) {
-          text = text.replace("+", "%2B");
-        }
-        for (i = 0; text.replace(/[^" "]/g, "").length > 0; i += 1) {
-          text = text.replace(" ", "+");
-        }
-      } else {
-        for (i = 0; text.replace(/[^" "]/g, "").length > 0; i += 1) {
-          text = text.replace(" ", "+");
-        }
-        for (var i = 0; i < text.replace("#", "%23").length; i++) {
-          text = text.replace("#", "%23");
-        }
-      }
-
-      var searchEngine = window.localStorage.getItem('searchEngine');
-
-      switch (searchEngine) {
-        case undefined:
-        case null:
-        case 'Google':
-          SearchGoogle(text);
-          break;
-        case 'DuckDuckGo':
-          SearchDuckDuckGo(text);
-          break;
-        case 'Bing':
-          SearchBing(text);
-          break;
-        case 'Yahoo':
-          SearchYahoo(text);
-          break;
-        case 'Wikipedia':
-          SearchWikipedia(text);
-          break;
-        default:
-          console.log('%c Unknown Search Engine: ' + searchEngine, 'background: #222; color: rgb(227, 160, 31)');
-      }
-    }
-
-    function SearchKey(e) {
-      if (document.activeElement === document.getElementById('searchInput') && e.keyCode == 13) {
-          Search(document.getElementById('searchInput').value);
-      } else if (e.keyCode == 13) {
-          document.getElementById("searchInput").focus();
-      } else {
-        document.getElementById('search').style.height = '45px';
-      }
-    }
 
     function getHost(url) {
       var result = url.match(/([^:\/\s]+)/g);
@@ -602,9 +210,6 @@
       }
       return result[1]
     }
-
-    /* WEBSITE LOGOS
-    ---------------------------------------------*/
 
     var themedLogoDatabase = [
                             /*A*/
@@ -702,6 +307,409 @@
     refreshImageTiles();
     document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
     document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+  </script>
+
+  <img id="settingsButton" class="toggle" onclick="openSettings()" src="img/settings.svg">
+  <img id="addButton" class="toggle" onclick="openAddMenu()" src="img/add.svg">
+  <div id="add" class="menu">
+    <img id="closeAddButton" onclick="closeAddMenu()" src="img/close.svg" class="toggle">
+    <h5>add website</h5>
+    <label>Name</label>
+    <input class="u-full-width" type="text" placeholder="google" id="add-name">
+    <label>URL</label>
+    <input class="u-full-width" type="url" placeholder="https://www.google.com/" id="add-url">
+    <button onclick="addWebsite()">Add</button>
+  </div>
+  <div id="remove" class="menu">
+    <h5>are you sure?</h5>
+    <img id="closeRemoveButton" onclick="closeRemoveMenu()" src="img/close.svg" class="toggle">
+    <button id="removeWebsiteButton" onclick="removeWebsite(targetName, targetUrl); closeRemoveMenu()">Remove ...</button>
+  </div>
+  <div id="settings" class="menu">
+    <img id="closeSettingsButton" onclick="closeSettings()" src="img/close.svg" class="toggle">
+    <h5>settings</h5>
+    <div>
+      <label>Background</label>
+      <input id="backgroundInput" class="u-full-width" type="text" placeholder="direct link, color, gradient" onchange="backgroundPreview()">
+    </div>
+    <div>
+      <label>Background Blur</label>
+      <input id="backgroundBlurRange" type="range" min="0" max="100" value="0" class="one-half column" style="height: 24px; margin: 0 0 10px 10px; width: calc(48% - 10px);">
+      <h6 id="blurAmountText" style="margin: 0 0 10px 10px;width: calc(48% - 10px);" class="one-half column">0px</h6>
+    </div>
+    <div>
+      <label>Theme</label>
+      <input id="radioLightTheme" type="radio" name="theme" onchange="themePreview()"> Light Theme<br>
+      <input id="radioDarkTheme" type="radio" name="theme" onchange="themePreview()"> Dark Theme<br>
+    </div>
+    <div>
+      <label>Background Buttons</label>
+      <input id="radioLightBackgroundButtons" type="radio" name="backgroundButtons" onchange="backgroundButtonPreview()"> Light<br>
+      <input id="radioDarkBackgroundButtons" type="radio" name="backgroundButtons" onchange="backgroundButtonPreview()"> Dark<br>
+    </div>
+    <div>
+      <div class="six columns">
+        <label>Search Engine</label>
+        <select class="u-full-width" id="searchEngineSelect">
+          <option value="Google">Google</option>
+          <option value="DuckDuckGo">DuckDuckGo</option>
+          <option value="Bing">Bing</option>
+          <option value="Yahoo">Yahoo</option>
+          <option value="Wikipedia">Wikipedia</option>
+        </select>
+      </div>
+      <div class="six columns">
+        <label>Suggestions Provider</label>
+        <select class="u-full-width" id="suggestionsProviderSelect">
+          <option value="Google">Google</option>
+          <option value="DuckDuckGo">DuckDuckGo</option>
+          <option value="Yahoo">Yahoo</option>
+          <option value="Wikipedia">Wikipedia</option>
+        </select>
+      </div>
+    </div>
+    <button onclick="applySettings(); closeSettings()">Apply</button>
+  </div>
+  <div id="contextMenu">
+    <table class="u-full-width" style="margin: 0;">
+      <tbody>
+        <tr>
+          <td id="contextMenuAdd" onclick="openAddMenu()"><img src="img/add.svg"><bdo>Add New</bdo></td>
+        </tr>
+        <tr>
+          <td id="contextMenuEdit" onclick="openEditMenu()"><img src="img/edit.svg"><bdo>Edit</bdo></td>
+        </tr>
+        <tr>
+          <td id="contextMenuRemove" onclick="openRemoveMenu()"><img src="img/delete.svg"><bdo>Remove</bdo></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script type="text/javascript">
+
+    /* CONTEXT MENU
+    ---------------------------------------------*/
+
+    document.addEventListener('mouseup', function(ev) {
+      document.getElementById('contextMenu').style.display = "none";
+    }, false);
+
+    /* THEME
+    ---------------------------------------------*/
+
+    if (window.localStorage.getItem('theme') == 'dark') {
+      displayDarkTheme(true);
+    }
+
+    /* OPENING AND CLOSING MENUS
+    ---------------------------------------------*/
+
+    var addMenu = document.getElementById("add");
+    var settings = document.getElementById("settings");
+    var removeMenu = document.getElementById('remove');
+    var addMenuOpen = false;
+    var settingsOpen = false;
+
+    function openAddMenu() {
+      if (addMenuOpen) {
+        closeAddMenu();
+      } else {
+        addMenuOpen = true;
+        addMenu.style.animationName = "openMenu";
+        addMenu.style.animationDuration = "0.25s";
+        if (settingsOpen) {
+          closeSettings();
+        }
+      }
+    }
+
+    function closeAddMenu() {
+      addMenu.style.animationName = "closeMenu";
+      addMenu.style.animationDuration = "0.25s";
+      addMenuOpen = false;
+      document.getElementById("add-name").value = "";
+      document.getElementById("add-url").value = "";
+    }
+
+    function openSettings() {
+      if (settingsOpen) {
+        closeSettings();
+      } else {
+        settingsOpen = true;
+        settings.style.animationName = "openSettings";
+        settings.style.animationDuration = "0.25s";
+        if (addMenuOpen) {
+          closeAddMenu();
+        }
+      }
+      if (window.localStorage.getItem('backgroundBlur') != null) {
+        document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
+      }
+      if (window.localStorage.getItem('background') != null) {
+        if (window.localStorage.getItem('background').startsWith('url("')) {
+          document.getElementById('backgroundInput').value = window.localStorage.getItem('background').substr(5, window.localStorage.getItem('background').length - 7);
+        } else {
+          document.getElementById('backgroundInput').value = window.localStorage.getItem('background');
+        }
+      }
+
+      if (window.localStorage.getItem('theme') == 'dark') {
+        document.getElementById('radioDarkTheme').checked = true;
+        document.getElementById('radioLightTheme').checked = false;
+      } else {
+        document.getElementById('radioLightTheme').checked = true;
+        document.getElementById('radioDarkTheme').checked = false;
+      }
+
+      if (window.localStorage.getItem('backgroundButtons') == 'light') {
+        document.getElementById('radioLightBackgroundButtons').checked = true;
+        document.getElementById('radioDarkBackgroundButtons').checked = false;
+      } else {
+        document.getElementById('radioDarkBackgroundButtons').checked = true;
+        document.getElementById('radioLightBackgroundButtons').checked = false;
+      }
+
+      var searchEngine = window.localStorage.getItem('searchEngine');
+
+      if (searchEngine != null || searchEngine != undefined) {
+        document.getElementById('searchEngineSelect').value = searchEngine;
+      }
+
+      var suggestionsProvider = window.localStorage.getItem('suggestionsProvider');
+
+      if (suggestionsProvider != null || suggestionsProvider != undefined) {
+        document.getElementById('suggestionsProviderSelect').value = suggestionsProvider;
+      }
+
+      blurRangeUpdate(document.getElementById('backgroundBlurRange').value);
+      document.getElementById('backgroundBlurRange').addEventListener('mousemove', blurRangeUpdate);
+    }
+
+    function closeSettings() {
+      settings.style.animationName = "closeSettings";
+      settings.style.animationDuration = "0.25s";
+      settingsOpen = false;
+      document.getElementById('backgroundBlurRange').removeEventListener('mousemove', blurRangeUpdate);
+      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+      if (window.localStorage.getItem('backgroundButtons') == 'light') {
+        displayLightBackgroundButtons();
+      } else {
+        displayDarkBackgroundButtons();
+      }
+      if (window.localStorage.getItem('theme') == 'dark') {
+        displayDarkTheme(true);
+        refreshImageTiles();
+      } else {
+        displayLightTheme(true);
+        refreshImageTiles();
+      }
+      document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
+    }
+
+    function applySettings() {
+      if (document.getElementById('radioLightTheme').checked) {
+        window.localStorage.setItem('theme', 'light');
+        displayLightTheme(true);
+        refreshImageTiles();
+      } else {
+        window.localStorage.setItem('theme', 'dark');
+        displayDarkTheme(true);
+        refreshImageTiles();
+      }
+
+      if (document.getElementById('backgroundInput').value != '') {
+        var background = document.getElementById('backgroundInput').value;
+        if (background.search('http') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpeg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.png') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.webp') != -1) {
+          background = 'url("' + background + '")';
+        }
+        window.localStorage.setItem('background', background);
+        document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
+      }
+      window.localStorage.setItem('backgroundBlur', document.getElementById('backgroundBlurRange').value + "px");
+      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+
+      if (document.getElementById('radioDarkBackgroundButtons').checked) {
+        window.localStorage.setItem('backgroundButtons', 'dark');
+        displayDarkBackgroundButtons();
+      } else {
+        window.localStorage.setItem('backgroundButtons', 'light');
+        displayLightBackgroundButtons();
+      }
+
+      window.localStorage.setItem('suggestionsProvider', document.getElementById('suggestionsProviderSelect').value);
+      window.localStorage.setItem('searchEngine', document.getElementById('searchEngineSelect').value);
+      document.getElementById('searchInput').placeholder = "Search with " + window.localStorage.getItem('searchEngine');
+    }
+
+    function blurRangeUpdate() {
+      var blur = document.getElementById('backgroundBlurRange').value + 'px';
+      document.getElementById('blurAmountText').innerText = blur;
+      document.documentElement.style.setProperty('--background-blur', blur);
+    }
+
+    function backgroundPreview() {
+      if (document.getElementById('backgroundInput').value != '') {
+        var background = document.getElementById('backgroundInput').value;
+        if (background.search('http') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.jpeg') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.png') != -1) {
+          background = 'url("' + background + '")';
+        } else if (background.search('.webp') != -1) {
+          background = 'url("' + background + '")';
+        }
+        document.documentElement.style.setProperty('--background', background);
+      }
+    }
+
+    function backgroundButtonPreview() {
+      if (document.getElementById('radioDarkBackgroundButtons').checked) {
+        displayDarkBackgroundButtons();
+      } else {
+        displayLightBackgroundButtons();
+      }
+    }
+
+    function themePreview() {
+      if (document.getElementById('radioDarkTheme').checked) {
+        displayDarkTheme(true);
+        refreshImageTilesPreview('dark');
+      } else {
+        displayLightTheme(true);
+        refreshImageTilesPreview('light');
+      }
+    }
+
+    function openRemoveMenu() {
+      removeMenu.style.animationName = "openMenu";
+      removeMenu.style.animationDuration = "0.25s";
+    }
+
+    function closeRemoveMenu() {
+      removeMenu.style.animationName = "closeMenu";
+      removeMenu.style.animationDuration = "0.25s";
+    }
+
+    /* WEBSITE TILES
+    ---------------------------------------------*/
+
+    function addWebsite() {
+      var name = document.getElementById("add-name").value;
+      var url = document.getElementById("add-url").value;
+      if (localStorage.getItem("websites") != null) {
+        localStorage.setItem('websites', localStorage.getItem('websites') + ',' + name + '=' + url);
+      } else {
+        localStorage.setItem('websites', name + '=' + url);
+      }
+      closeAddMenu();
+      displayWebsiteTile(name, url);
+      tile = document.getElementsByClassName('tile')[document.getElementsByClassName('tile').length - 1];
+      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
+      refreshContextMenuEvents();
+      refreshMiddlemouseEvents();
+    }
+
+    function removeWebsiteTile(name, url) {
+      var tiles = document.getElementsByClassName('tile');
+      for (tile of tiles) {
+        if (tile.children[0].innerText == name) {
+          if (tile.attributes.href.nodeValue == url) {
+            tile.remove();
+            return
+          }
+        }
+      }
+      refreshContextMenuEvents();
+      refreshMiddlemouseEvents();
+    }
+
+    function removeWebsite(name, url) {
+      if (!localStorage.getItem('websites').endsWith((name + '=' + url))) {
+        localStorage.setItem('websites', localStorage.getItem('websites').replace(name + '=' + url + ',', ''));
+        removeWebsiteTile(name, url);
+      } else {
+        if (localStorage.getItem('websites').search(',') > -1) {
+          localStorage.setItem('websites', localStorage.getItem('websites').replace(new RegExp(',' + name + '=' + url + '$'), ''));
+          removeWebsiteTile(name, url);
+        } else if (localStorage.getItem('websites') == name + '=' + url) {
+          localStorage.removeItem('websites');
+          removeWebsiteTile(name, url);
+        }
+      }
+    }
+
+    /* SEARCH
+    ---------------------------------------------*/
+
+    function openUrl(url) {
+      window.open(url, "_self")
+    }
+
+    function openUrlNewTab(url) {
+      var tab = window.open(url, '_blank');
+      tab.focus();
+    }
+
+    function Search(text) {
+      if (text == undefined || text == null || text == "") {
+        return
+      }
+
+      // Percent-encoding
+      var before =  ['[%]', '[!]', '[#]', '[$]', '[&]', "[']", '[(]', '[)]', '[*]', '[+]', '[,]', '[/]', '[:]', '[;]', '[=]', '[?]', '[@]', '[[]', '[]]'];
+      var after =   ['%25', '%21', '%23', '%24', '%26', '%27', '%28', '%29', '%2A', '%2B', '%2C', '%2F', '%3A', '%3B', '%3D', '%3F', '%40', '%5B', '%5D'];
+
+      for (var i = 0; i < before.length; i++) {
+        text = text.replace(new RegExp(before[i], 'g'), after[i]);
+      }
+
+      var searchEngine = window.localStorage.getItem('searchEngine');
+
+      switch (searchEngine) {
+        case undefined:
+        case null:
+        case 'Google':
+          SearchGoogle(text);
+          break;
+        case 'DuckDuckGo':
+          SearchDuckDuckGo(text);
+          break;
+        case 'Bing':
+          SearchBing(text);
+          break;
+        case 'Yahoo':
+          SearchYahoo(text);
+          break;
+        case 'Wikipedia':
+          SearchWikipedia(text);
+          break;
+        default:
+          console.log('%c Unknown Search Engine: ' + searchEngine, 'background: #222; color: rgb(227, 160, 31)');
+      }
+    }
+
+    function SearchKey(e) {
+      if (document.activeElement === document.getElementById('searchInput') && e.keyCode == 13) {
+          Search(document.getElementById('searchInput').value);
+      } else if (e.keyCode == 13) {
+          document.getElementById("searchInput").focus();
+      } else {
+        document.getElementById('search').style.height = '45px';
+      }
+    }
 
     /* SEARCH SUGGESTIONS
     ---------------------------------------------*/
