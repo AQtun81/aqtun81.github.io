@@ -305,8 +305,16 @@
       }
     }
     refreshImageTiles();
+
+    /* BACKGROUND
+    ---------------------------------------------*/
+
     document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
-    document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+    document.documentElement.style.setProperty('--background-image-blur', window.localStorage.getItem('backgroundBlur'));
+    document.documentElement.style.setProperty('--background-image-saturation', window.localStorage.getItem('backgroundSaturation'));
+    document.documentElement.style.setProperty('--background-image-hue', window.localStorage.getItem('backgroundHue'));
+    document.documentElement.style.setProperty('--background-image-contrast', window.localStorage.getItem('backgroundContrast'));
+    document.documentElement.style.setProperty('--background-image-brightness', window.localStorage.getItem('backgroundBrightness'));
   </script>
 
   <img id="settingsButton" class="toggle" onclick="openSettings()" src="img/settings.svg">
@@ -334,8 +342,38 @@
     </div>
     <div>
       <label>Background Blur</label>
-      <input id="backgroundBlurRange" type="range" min="0" max="100" value="0" class="one-half column" style="height: 24px; margin: 0 0 10px 10px; width: calc(48% - 10px);">
-      <h6 id="blurAmountText" style="margin: 0 0 10px 10px;width: calc(48% - 10px);" class="one-half column">0px</h6>
+      <div>
+        <input id="backgroundBlurRange" type="range" min="0" max="100" value="0" onmousemove="rangeUpdate(this, 'px')"
+        onchange="rangeUpdate(this, 'px')" ondblclick="rangeChangeValue(this, 'px', 0)"><span>0px</span>
+      </div>
+    </div>
+    <div>
+      <label>Background Saturation</label>
+      <div>
+        <input id="backgroundSaturationRange" type="range" min="0" max="500" value="100" onmousemove="rangeUpdate(this, '%')"
+        onchange="rangeUpdate(this, '%')" ondblclick="rangeChangeValue(this, '%', 100)"><span>100%</span>
+      </div>
+    </div>
+    <div>
+      <label>Background Hue</label>
+      <div>
+        <input id="backgroundHueRange" type="range" min="0" max="360" value="0" onmousemove="rangeUpdate(this, 'deg')"
+        onchange="rangeUpdate(this, 'deg')" ondblclick="rangeChangeValue(this, 'deg', 0)"><span>0deg</span>
+      </div>
+    </div>
+    <div>
+      <label>Background Contrast</label>
+      <div>
+        <input id="backgroundContrastRange" type="range" min="0" max="500" value="100" onmousemove="rangeUpdate(this, '%')"
+        onchange="rangeUpdate(this, '%')" ondblclick="rangeChangeValue(this, '%', 100)"><span>100%</span>
+      </div>
+    </div>
+    <div>
+      <label>Background Brightness</label>
+      <div>
+        <input id="backgroundBrightnessRange" type="range" min="0" max="500" value="100" onmousemove="rangeUpdate(this, '%')"
+        onchange="rangeUpdate(this, '%')" ondblclick="rangeChangeValue(this, '%', 100)"><span>100%</span>
+      </div>
     </div>
     <div>
       <label>Theme</label>
@@ -447,6 +485,18 @@
       if (window.localStorage.getItem('backgroundBlur') != null) {
         document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
       }
+      if (window.localStorage.getItem('backgroundSaturation') != null) {
+        document.getElementById('backgroundSaturationRange').value = window.localStorage.getItem('backgroundSaturation').substr(0, window.localStorage.getItem('backgroundSaturation').length - 1);
+      }
+      if (window.localStorage.getItem('backgroundHue') != null) {
+        document.getElementById('backgroundHueRange').value = window.localStorage.getItem('backgroundHue').substr(0, window.localStorage.getItem('backgroundHue').length - 3);
+      }
+      if (window.localStorage.getItem('backgroundContrast') != null) {
+        document.getElementById('backgroundContrastRange').value = window.localStorage.getItem('backgroundContrast').substr(0, window.localStorage.getItem('backgroundContrast').length - 1);
+      }
+      if (window.localStorage.getItem('backgroundBrightness') != null) {
+        document.getElementById('backgroundBrightnessRange').value = window.localStorage.getItem('backgroundBrightness').substr(0, window.localStorage.getItem('backgroundBrightness').length - 1);
+      }
       if (window.localStorage.getItem('background') != null) {
         if (window.localStorage.getItem('background').startsWith('url("')) {
           document.getElementById('backgroundInput').value = window.localStorage.getItem('background').substr(5, window.localStorage.getItem('background').length - 7);
@@ -483,8 +533,20 @@
         document.getElementById('suggestionsProviderSelect').value = suggestionsProvider;
       }
 
-      blurRangeUpdate(document.getElementById('backgroundBlurRange').value);
+      rangeUpdate(document.getElementById('backgroundBlurRange'), 'px');
       document.getElementById('backgroundBlurRange').addEventListener('mousemove', blurRangeUpdate);
+
+      rangeUpdate(document.getElementById('backgroundSaturationRange'), '%');
+      document.getElementById('backgroundSaturationRange').addEventListener('mousemove', saturationRangeUpdate);
+
+      rangeUpdate(document.getElementById('backgroundHueRange'), 'deg');
+      document.getElementById('backgroundHueRange').addEventListener('mousemove', hueRangeUpdate);
+
+      rangeUpdate(document.getElementById('backgroundContrastRange'), '%');
+      document.getElementById('backgroundContrastRange').addEventListener('mousemove', contrastRange);
+
+      rangeUpdate(document.getElementById('backgroundBrightnessRange'), '%');
+      document.getElementById('backgroundBrightnessRange').addEventListener('mousemove', brightnessRange);
     }
 
     function closeSettings() {
@@ -492,7 +554,15 @@
       settings.style.animationDuration = "0.25s";
       settingsOpen = false;
       document.getElementById('backgroundBlurRange').removeEventListener('mousemove', blurRangeUpdate);
-      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+      document.getElementById('backgroundSaturationRange').removeEventListener('mousemove', saturationRangeUpdate);
+      document.getElementById('backgroundHueRange').removeEventListener('mousemove', hueRangeUpdate);
+      document.getElementById('backgroundContrastRange').removeEventListener('mousemove', contrastRange);
+      document.getElementById('backgroundBrightnessRange').removeEventListener('mousemove', brightnessRange);
+      document.documentElement.style.setProperty('--background-image-blur', window.localStorage.getItem('backgroundBlur'));
+      document.documentElement.style.setProperty('--background-image-saturation', window.localStorage.getItem('backgroundSaturation'));
+      document.documentElement.style.setProperty('--background-image-hue', window.localStorage.getItem('backgroundHue'));
+      document.documentElement.style.setProperty('--background-image-contrast', window.localStorage.getItem('backgroundContrast'));
+      document.documentElement.style.setProperty('--background-image-brightness', window.localStorage.getItem('backgroundBrightness'));
       if (window.localStorage.getItem('backgroundButtons') == 'light') {
         displayLightBackgroundButtons();
       } else {
@@ -536,7 +606,15 @@
         document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
       }
       window.localStorage.setItem('backgroundBlur', document.getElementById('backgroundBlurRange').value + "px");
-      document.documentElement.style.setProperty('--background-blur', window.localStorage.getItem('backgroundBlur'));
+      window.localStorage.setItem('backgroundSaturation', document.getElementById('backgroundSaturationRange').value + "%");
+      window.localStorage.setItem('backgroundHue', document.getElementById('backgroundHueRange').value + "deg");
+      window.localStorage.setItem('backgroundContrast', document.getElementById('backgroundContrastRange').value + "%");
+      window.localStorage.setItem('backgroundBrightness', document.getElementById('backgroundBrightnessRange').value + "%");
+      document.documentElement.style.setProperty('--background-image-blur', window.localStorage.getItem('backgroundBlur'));
+      document.documentElement.style.setProperty('--background-image-saturation', window.localStorage.getItem('backgroundSaturation'));
+      document.documentElement.style.setProperty('--background-image-hue', window.localStorage.getItem('backgroundHue'));
+      document.documentElement.style.setProperty('--background-image-contrast', window.localStorage.getItem('backgroundContrast'));
+      document.documentElement.style.setProperty('--background-image-brightness', window.localStorage.getItem('backgroundBrightness'));
 
       if (document.getElementById('radioDarkBackgroundButtons').checked) {
         window.localStorage.setItem('backgroundButtons', 'dark');
@@ -553,8 +631,27 @@
 
     function blurRangeUpdate() {
       var blur = document.getElementById('backgroundBlurRange').value + 'px';
-      document.getElementById('blurAmountText').innerText = blur;
-      document.documentElement.style.setProperty('--background-blur', blur);
+      document.documentElement.style.setProperty('--background-image-blur', blur);
+    }
+
+    function saturationRangeUpdate() {
+      var saturation = document.getElementById('backgroundSaturationRange').value + '%';
+      document.documentElement.style.setProperty('--background-image-saturation', saturation);
+    }
+
+    function hueRangeUpdate() {
+      var hue = document.getElementById('backgroundHueRange').value + 'deg';
+      document.documentElement.style.setProperty('--background-image-hue', hue);
+    }
+
+    function contrastRange() {
+      var contrast = document.getElementById('backgroundContrastRange').value + '%';
+      document.documentElement.style.setProperty('--background-image-contrast', contrast);
+    }
+
+    function brightnessRange() {
+      var brightness = document.getElementById('backgroundBrightnessRange').value + '%';
+      document.documentElement.style.setProperty('--background-image-brightness', brightness);
     }
 
     function backgroundPreview() {
@@ -601,6 +698,19 @@
     function closeRemoveMenu() {
       removeMenu.style.animationName = "closeMenu";
       removeMenu.style.animationDuration = "0.25s";
+    }
+
+    function rangeUpdate(range, suffix) {
+      var value = (100 / range.max) * range.value;
+      range.style.background = 'linear-gradient(to right, #44aeeb ' + value + '%, var(--background-contrast) ' + value + '%)';
+      range.nextSibling.innerText = range.value + suffix;
+    }
+
+    function rangeChangeValue(range, suffix, value) {
+      range.value = value;
+      value = (100 / range.max) * range.value;
+      range.style.background = 'linear-gradient(to right, #44aeeb ' + value + '%, var(--background-contrast) ' + value + '%)';
+      range.nextSibling.innerText = range.value + suffix;
     }
 
     /* WEBSITE TILES

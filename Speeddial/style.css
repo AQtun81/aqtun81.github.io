@@ -14,7 +14,11 @@
   --link: #1EAEDB;
   --link-hover: #0FA0CE;
   --background: linear-gradient(to top right, #949bfd 0%, #cff 100%);
-  --background-blur: 0px;
+  --background-image-blur: 0px;
+  --background-image-saturation: 100%;
+  --background-image-hue: 0deg;
+  --background-image-contrast: 100%;
+  --background-image-brightness: 100%;
 }
 
 /* COMMON
@@ -119,6 +123,70 @@ tbody > tr:last-of-type > td {
     padding-top: 10px;
   }
 
+  input[type=range] {
+      -webkit-appearance: none;
+      -moz-apperance: none;
+      border-radius: 5px;
+      height: 30px;
+      width: calc(100% - (90px));
+      background: var(--background-contrast);
+      margin-bottom: 5px;
+  }
+
+  input[type="range"]::-moz-range-track {
+      border: none;
+      background: none;
+      outline: none;
+  }
+
+  input[type=range]:focus {
+      outline: none;
+      border: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none !important;
+      background-color: transparent;
+      height: 14px;
+      width: 14px;
+      border-radius: 7px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+      -moz-appearance: none !important;
+      background-color: transparent;
+      border: none;
+      height: 14px;
+      width: 14px;
+      border-radius: 7px;
+  }
+
+  input[type=range] + span {
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    color: var(--text);
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background: var(--background-contrast);
+    padding: 5px 10px;
+    margin-left: 10px;
+    user-select: none;
+  }
+
+  input[type=range] + span:after {
+    position: absolute;
+    top: 8px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 7px solid var(--background-contrast);
+    border-bottom: 7px solid transparent;
+    content: "";
+  }
+
 /* TOGGLES
 ----------------------------------------------------*/
 
@@ -172,17 +240,17 @@ body {
 body::before {
     content: "";
     position: fixed;
-    left: calc(-1 * var(--background-blur));
-    top: calc(-1 * var(--background-blur));
-    right: calc(-1 * var(--background-blur));
-    bottom: calc(-1 * var(--background-blur));
+    left: calc(-1 * var(--background-image-blur));
+    top: calc(-1 * var(--background-image-blur));
+    right: calc(-1 * var(--background-image-blur));
+    bottom: calc(-1 * var(--background-image-blur));
     z-index: -1;
     display: block;
     background: var(--background);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(var(--background-blur));
+    filter: blur(var(--background-image-blur)) saturate(var(--background-image-saturation)) hue-rotate(var(--background-image-hue)) contrast(var(--background-image-contrast)) brightness(var(--background-image-brightness));
 }
 
 
@@ -254,6 +322,12 @@ body::before {
   max-width: 920px;
   border-radius: 0px;
   animation-name: closeSettings;
+}
+
+.rangeMargin {
+  height: 24px;
+  margin: 0 0 10px 10px;
+  width: calc(48% - 10px);
 }
 
 
