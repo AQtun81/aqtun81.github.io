@@ -212,7 +212,7 @@
     }
 
     var themedLogoDatabase = [
-                            /*A*/
+                            /*A*/'amazon.com',
                             /*B*/
                             /*C*/
                             /*D*/'docs.google.com',
@@ -225,36 +225,36 @@
                             /*K*/
                             /*L*/
                             /*M*/'music.youtube.com',
-                            /*N*/
+                            /*N*/'nexusmods.com',
                             /*O*/
-                            /*P*/
+                            /*P*/'pornhub.com',
                             /*Q*/
                             /*R*/'reddit.com', 'rap.genius.com',
                             /*S*/
                             /*T*/
                             /*U*/
                             /*V*/
-                            /*W*/'wikipedia.org',
+                            /*W*/'wikipedia.org', 'whatsapp.com',
                             /*X*/
                             /*Y*/'youtube.com'
                             /*Z*/
                             ];
 
     var logoDatabase = [
-                            /*A*/
-                            /*B*/
+                            /*A*/'aliexpress.com',
+                            /*B*/'baidu.com',
                             /*C*/
                             /*D*/
                             /*E*/
-                            /*F*/
+                            /*F*/'facebook.com',
                             /*G*/'google.com',
                             /*H*/
-                            /*I*/'imdb.com',
+                            /*I*/'imdb.com', 'instagram.com',
                             /*J*/
                             /*K*/
                             /*L*/
                             /*M*/'mail.google.com', 'morele.net',
-                            /*N*/
+                            /*N*/'netflix.com',
                             /*O*/
                             /*P*/
                             /*Q*/
@@ -264,7 +264,7 @@
                             /*U*/
                             /*V*/
                             /*W*/
-                            /*X*/'xda-developers.com'
+                            /*X*/'xda-developers.com', 'xvideos.com'
                             /*Y*/
                             /*Z*/
                             ];
@@ -727,7 +727,7 @@
       closeAddMenu();
       displayWebsiteTile(name, url);
       tile = document.getElementsByClassName('tile')[document.getElementsByClassName('tile').length - 1];
-      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue));
+      setWebsiteLogo(tile, getHost(tile.attributes.href.nodeValue), window.localStorage.getItem('theme'));
       refreshContextMenuEvents();
       refreshMiddlemouseEvents();
     }
