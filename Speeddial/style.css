@@ -222,7 +222,7 @@ tbody > tr:last-of-type > td {
   transform: scale(2) translateY(2px);
 }
 
-.toggle#closeAddButton:hover, .toggle#closeSettingsButton:hover, .toggle#closeRemoveButton:hover {
+.toggle#closeAddButton:hover, .toggle#closeSettingsButton:hover, .toggle#closeRemoveButton:hover, .toggle#closeEditButton:hover {
   transform: scale(2);
 }
 
@@ -294,6 +294,15 @@ body::before {
 .menu h5 {
   margin-top: 0;
   text-transform: uppercase;
+}
+
+.menu#remove {
+  height: 100px;
+  top: calc(50% - 70px);
+}
+
+.menu#remove button {
+  float: right;
 }
 
 @keyframes openSettings {
