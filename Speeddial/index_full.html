@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Maven+Pro&amp;display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="skeleton.css">
   <link rel="stylesheet" href="style.min.css">
 
   <script type="text/javascript">
@@ -516,18 +516,28 @@
       }
       if (window.localStorage.getItem('backgroundBlur') != null) {
         document.getElementById('backgroundBlurRange').value = window.localStorage.getItem('backgroundBlur').substr(0, window.localStorage.getItem('backgroundBlur').length - 2);
+      } else {
+        window.localStorage.setItem('backgroundBlur', '0px');
       }
       if (window.localStorage.getItem('backgroundSaturation') != null) {
         document.getElementById('backgroundSaturationRange').value = window.localStorage.getItem('backgroundSaturation').substr(0, window.localStorage.getItem('backgroundSaturation').length - 1);
+      } else {
+        window.localStorage.setItem('backgroundSaturation', '100%');
       }
       if (window.localStorage.getItem('backgroundHue') != null) {
         document.getElementById('backgroundHueRange').value = window.localStorage.getItem('backgroundHue').substr(0, window.localStorage.getItem('backgroundHue').length - 3);
+      } else {
+        window.localStorage.setItem('backgroundHue', '0deg');
       }
       if (window.localStorage.getItem('backgroundContrast') != null) {
         document.getElementById('backgroundContrastRange').value = window.localStorage.getItem('backgroundContrast').substr(0, window.localStorage.getItem('backgroundContrast').length - 1);
+      } else {
+        window.localStorage.setItem('backgroundContrast', '100%');
       }
       if (window.localStorage.getItem('backgroundBrightness') != null) {
         document.getElementById('backgroundBrightnessRange').value = window.localStorage.getItem('backgroundBrightness').substr(0, window.localStorage.getItem('backgroundBrightness').length - 1);
+      } else {
+        window.localStorage.setItem('backgroundBrightness', '100%');
       }
       if (window.localStorage.getItem('background') != null) {
         if (window.localStorage.getItem('background').startsWith('url("')) {
