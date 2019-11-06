@@ -1,0 +1,153 @@
+HTML, body, .container, header {
+  background-color: #282828;
+  font-family: 'Maven Pro', Helvetica, Arial;
+  color: #DDD;
+}
+
+body {
+  margin: 0;
+}
+
+.title.big {
+  text-align: center;
+  color: #DDD;
+  font-size: 8rem;
+  font-family: 'Maven Pro';
+  font-variant: all-petite-caps;
+  background: -webkit-gradient(linear, left top, right top, from(cyan), to(orange));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.flex {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.container.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex: 1;
+  margin: 15px;
+  margin-top: 5px;
+}
+
+input {
+  display: flex;
+  flex: 1;
+  border-right: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  height: 58px !important;
+  font-size: 50px !important;
+  background-color: #1D1D1D !important;
+  border: 0px !important;
+  color: #DDD !important;
+  font-family: 'Maven Pro' !important;
+  min-width: 250px !important;
+}
+
+select {
+  border-left: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  height: 70px !important;
+  font-size: 30px !important;
+  background-color: #1D1D1D !important;
+  border: 0px !important;
+  color: #DDD !important;
+}
+
+select:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input h6 {
+  margin: 0 15px;
+  font-size: 2.5rem;
+  font-variant: all-petite-caps;
+  line-height: 64px;
+}
+
+h6 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
+}
+
+.title.small {
+  text-align: center;
+  margin: 0;
+  font-variant: all-petite-caps;
+  background: -webkit-gradient(linear, left top, right top, from(cyan), to(orange));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 64px;
+}
+
+.container {
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 6px 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .container.input {
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+
+  input {
+    height: 26px !important;
+    font-size: 15px !important;
+  }
+
+  select {
+    height: 38px !important;
+    font-size: 15px !important;
+  }
+
+  .title.big {
+    font-size: 3rem;
+  }
+
+  .title.small {
+    line-height: 32px;
+  }
+
+  h6 {
+    font-size: 1.25rem !important;
+    line-height: 32px !important;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+}
