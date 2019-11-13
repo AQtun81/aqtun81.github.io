@@ -90,7 +90,7 @@
   </script>
 
 </head>
-<body onkeypress="return SearchKey(event)">
+<body onkeyup="return SearchKey(event)">
   <header style="position: fixed; width: 100%;">
     <div id="searchBody">
       <div id="search">
@@ -98,7 +98,7 @@
           <tbody>
             <tr>
               <td style="padding: 0px;">
-                <input id="searchInput" onkeyup="getQuery(this.value)" type="text" placeholder="Search with Google">
+                <input id="searchInput" onkeyup="getQuery(event, this.value)" type="text" placeholder="Search with Google">
                 <img id="searchIcon" src="img/search.svg" onclick="SearchGoogle(document.getElementById('searchInput').value)">
               </td>
             </tr>
@@ -840,8 +840,8 @@
     }
 
     function Search(text) {
-      if (text == undefined || text == null || text == "") {
-        return
+      if (text == undefined || text == null) {
+        text = '';
       }
 
       // Percent-encoding
@@ -880,15 +880,30 @@
     function SearchKey(e) {
       if (document.activeElement === document.getElementById('searchInput') && e.keyCode == 13) {
           Search(document.getElementById('searchInput').value);
+      } else if (selectedSuggestion != -2 && e.keyCode == 40) {
+          if (selectedSuggestion != suggestionCount) {
+            selectedSuggestion += 1;
+          }
+          selectedSuggestion %= suggestionCount;
+          selectSuggestion();
+      } else if (selectedSuggestion != -2 && e.keyCode == 38) {
+          if (selectedSuggestion > 0) {
+            selectedSuggestion -= 1;
+          } else {
+            selectedSuggestion = suggestionCount - 1;
+          }
+          selectedSuggestion %= suggestionCount;
+          selectSuggestion();
       } else if (e.keyCode == 13) {
           document.getElementById("searchInput").focus();
-      } else {
-        document.getElementById('search').style.height = '45px';
       }
     }
 
     /* SEARCH SUGGESTIONS
     ---------------------------------------------*/
+
+    var suggestionCount = 0;
+    var selectedSuggestion = -2;
 
     function SearchSuggestion(text) {
       document.getElementById('searchInput').value = text;
@@ -905,6 +920,11 @@
         }
       }
       document.getElementById('search').style.height = (46 + total * 49) + 'px';
+      if (total) {
+        suggestionCount = total;
+        selectedSuggestion = -1;
+        removeSuggestionClasses();
+      }
     }
 
     function hideSuggestions() {
@@ -912,15 +932,19 @@
         return
       }
       document.getElementById('search').style.height = '45px';
+      suggestionCount = 0;
+      selectedSuggestion = -2;
     }
     document.onmouseup = hideSuggestions;
 
     var searchLastKeyStroke = Date.now();
+    var lastQuery;
 
-    function getQuery(q) {
-      if (q == '') {
+    function getQuery(e, q) {
+      if (q == '' || q == lastQuery || e.keyCode == 38 || e.keyCode == 40) {
         return
       }
+      lastQuery = q;
       searchLastKeyStroke = Date.now();
 
       setTimeout(function() {
@@ -954,6 +978,22 @@
         }
 
       }, 200);
+    }
+
+    function removeSuggestionClasses() {
+      var elements = document.getElementById('search').firstElementChild.firstElementChild.children;
+      for (var i = 1; i < suggestionCount + 1; i++) {
+        if (elements[i].classList.item('selected')) {
+          elements[i].classList.remove('selected');
+        }
+      }
+    }
+
+    function selectSuggestion() {
+      removeSuggestionClasses();
+      var elements = document.getElementById('search').firstElementChild.firstElementChild.children;
+      elements[selectedSuggestion + 1].classList.add('selected');
+      document.getElementById('searchInput').value = elements[selectedSuggestion + 1].innerText;
     }
 
     /* SEARCH ENGINES

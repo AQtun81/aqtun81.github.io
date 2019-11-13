@@ -472,3 +472,7 @@ body::before {
 #search td:not(td:first-of-type) {
   cursor: pointer;
 }
+
+.selected {
+  background-color: var(--background-color-popup);
+}
