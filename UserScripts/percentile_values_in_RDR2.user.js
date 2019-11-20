@@ -13,19 +13,21 @@ window.sleep = function(ms) {
 };
 
 window.displayPercentileValuesLoop = async function() {
-  while (displayPercentileValues() == 0) {
+  while (true) {
     await sleep(500);
+    var stats = document.getElementsByClassName('ProductStats__fill__3c0ZP');
+    var rows = document.querySelectorAll('.ProductStats__row__UwQnZ .ProductStats__cell__1h1Mi:first-child');
+    if (stats.length == 0 || rows.length == 0) continue;
+    if (rows[0].innerText.substr(-1) != "%") {
+      displayPercentileValues(rows, stats);
+    }
   }
 };
 
-window.displayPercentileValues = function() {
-  var stats = document.getElementsByClassName('ProductStats__fill__3c0ZP');
-  var rows = document.querySelectorAll('.ProductStats__row__UwQnZ .ProductStats__cell__1h1Mi:first-child');
-  if (stats.length == 0 || rows.length == 0) return 0;
+window.displayPercentileValues = function(rows, stats) {
   for (var i = 0; i < rows.length; i++) {
     rows[i].innerText = rows[i].innerText + " " + stats[i].attributes.width.value;
   }
-  return 1
 };
 
 (function() {
