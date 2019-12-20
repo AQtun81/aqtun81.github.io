@@ -154,7 +154,8 @@ body::after {
 .recentlyPlayedContainer-2F3MqS,
 .tile-QA_yMc,
 .folderIconWrapper-226oVY,
-.expandedFolderBackground-2sPsd- {
+.expandedFolderBackground-2sPsd-,
+.embedFull-2tM8-- {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
