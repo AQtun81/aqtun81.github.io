@@ -158,7 +158,7 @@ body::after {
 .folderIconWrapper-226oVY,
 .expandedFolderBackground-2sPsd-,
 .embedFull-2tM8--,
-.inset-3sAvek:hover {
+.itemCard-v9viV7 {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -340,7 +340,8 @@ body::after {
   .running-ol_ES1,
   .acronym-2mOFsV:hover,
   .acronym-2mOFsV.selected-bZ3Lue,
-  .button-OhfaWu.selected-wSa2KV {
+  .button-OhfaWu.selected-wSa2KV,
+  .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9 {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
