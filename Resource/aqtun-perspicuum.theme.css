@@ -497,9 +497,9 @@ body::after {
     --background-tertiary: #00000000;
     --background-accent: #00000000;
     --background-floating: var(--color-flat-popup);
-    --background-modifier-hover: rgba(79,84,92,0.16);
-    --background-modifier-active: rgba(79,84,92,0.24);
-    --background-modifier-selected: rgba(79,84,92,0.32);
+    --background-modifier-hover: var(--color-main);
+    --background-modifier-active: var(--color-main-hover);
+    --background-modifier-selected: var(--color-main-hover);
     --background-modifier-accent: hsla(0,0%,100%,0.06);
     --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
     --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
