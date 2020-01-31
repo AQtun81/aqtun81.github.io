@@ -118,7 +118,9 @@ body::after {
 .children-19S4PO:after,
 .container-1r6BKw,
 .container-3baos1,
-.container-1giJp5 {
+.container-1giJp5,
+.container-1D34oG,
+.inset-3sAvek {
   background: 0 !important;
   background-color: transparent !important;
 }
@@ -155,7 +157,8 @@ body::after {
 .tile-QA_yMc,
 .folderIconWrapper-226oVY,
 .expandedFolderBackground-2sPsd-,
-.embedFull-2tM8-- {
+.embedFull-2tM8--,
+.inset-3sAvek:hover {
   background: var(--color-main) !important;
   background-color: var(--color-main) !important;
 }
@@ -261,8 +264,18 @@ body::after {
   .messagesPopoutWrap-1MQ1bW,
   .messageGroupWrapper-o-Zw7G,
   .quickMessage-1yeL4E,
-  .container-1giJp5 {
+  .container-1giJp5,
+  .peopleListItem-2nzedh {
     border-color: transparent !important;
+  }
+
+  .tabBody-3YRQ8W:before,
+  .container-19hC9u:before,
+  .container-xm7Ad0:before,
+  .content-yTz4x3:before {
+    content: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 
   /* --- REMOVE DIVIDERS --- */
