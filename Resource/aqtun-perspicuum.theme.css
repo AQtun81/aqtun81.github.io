@@ -208,7 +208,8 @@ body::after {
 .footer-1fjuF6,
 .searchBox-3Y2Vi7,
 .wrapper-39oAo3,
-.popout-3G62UL {
+.popout-3G62UL,
+.emojiPicker-3m1S-j {
   background-color: var(--color-flat-popup) !important;
   background: var(--color-flat-popup) !important;
   -webkit-backdrop-filter: blur(var(--blur-flat-popup));
@@ -352,7 +353,8 @@ body::after {
   }
 
   .lookOutlined-3sRXeN.colorBrand-3pXr91,
-  .wrapper-3jrx9n {
+  .wrapper-3jrx9n,
+  .emojiPicker-3m1S-j .categories-1feg4n .selected-39BZ4S {
     color: var(--color-accent) !important;
     border-color: var(--color-accent) !important;
   }
