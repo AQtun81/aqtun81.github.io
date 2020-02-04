@@ -480,9 +480,9 @@ body::after {
     color: #ababab !important;
   }
 
-    /* --- TEMPORARY FIX --- */
+    /* --- CSS VARIABLES --- */
 
-  .theme-dark {
+  .theme-dark, .theme-light {
     --header-primary: #fff;
     --header-secondary: #b9bbbe;
     --text-normal: var(--color-friend-text);
@@ -497,6 +497,13 @@ body::after {
     --background-secondary: #00000000;
     --background-tertiary: #00000000;
     --background-accent: #00000000;
+    --background-secondary-alt: #00000000;
+    --background-message-hover: #00000000;
+    --textbox-markdown-syntax: #00000000;
+    --background-mentioned: rgba(250,166,26,0.05);
+    --background-mentioned-hover: rgba(250,166,26,0.08);
+    --elevation-stroke: none;
+    --elevation-medium: none;
     --background-floating: var(--color-flat-popup);
     --background-modifier-hover: var(--color-main);
     --background-modifier-active: var(--color-main-hover);
