@@ -128,7 +128,7 @@ tbody > tr:last-of-type > td {
       -moz-apperance: none;
       border-radius: 5px;
       height: 30px;
-      width: calc(100% - (90px));
+      width: calc(100% - 90px);
       background: var(--background-contrast);
       margin-bottom: 5px;
   }
