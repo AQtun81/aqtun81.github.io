@@ -123,6 +123,7 @@ header.separator::before {
     width: 64px;
     float: left;
     margin: 5px;
+    cursor: pointer;
   }
 
   .skill > img {

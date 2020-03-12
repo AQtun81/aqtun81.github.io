@@ -10,7 +10,7 @@ for (var e of elements) {
     continue;
   }
   name = e.getElementsByClassName('header -single')[0].innerText;
-  img = name.replace(" ", "_").replace(" ", "_").replace(" ", "_").replace(" ", "_").replace(" ", "_");
+  img = name.replace(/ /g, '_');;
   elementTags = e.getElementsByTagName('a');
   tagstext = '';
   for (var tag of elementTags) {

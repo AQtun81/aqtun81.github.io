@@ -203,7 +203,7 @@
         return;
       }
       for (var i = 0; i < skills.skills.length; i++) {
-        result += "<div class='skill'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></div>"
+        result += "<div class='skill' onclick='wikiLink(this)'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></div>"
       }
       skillListElement.innerHTML = result;
     }
@@ -218,6 +218,11 @@
       };
       xmlhttp.open("GET", "data.json", true);
       xmlhttp.send();
+    }
+
+    function wikiLink(skill) {
+      skillname = skill.getElementsByTagName('p')[0].innerText.replace(/ /g, '_');
+      window.open('https://pathofexile.gamepedia.com/' + skillname);
     }
   </script>
 </html>
