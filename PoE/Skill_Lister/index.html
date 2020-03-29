@@ -192,6 +192,10 @@
         result += "<div class='skill' onclick='wikiLink(this)'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></div>"
       }
       skillListElement.innerHTML = result;
+
+      for (var skill of document.getElementsByClassName('skill')) {
+        addMiddlemouseEvent(skill);
+      }
     }
 
     function getAndDisplaySkills() {
@@ -206,7 +210,25 @@
       xmlhttp.send();
     }
 
+    function addMiddlemouseEvent(element) {
+      element.addEventListener('mouseup', e => {
+        if (e.button == 1) {
+          wikiLinkNewTab(element);
+        }
+      });
+      element.addEventListener('mousedown', e => {
+        if (e.button == 1) {
+          e.preventDefault();
+        }
+      });
+    }
+
     function wikiLink(skill) {
+      skillname = skill.getElementsByTagName('p')[0].innerText.replace(/ /g, '_');
+      window.open('https://pathofexile.gamepedia.com/' + skillname, "_self");
+    }
+
+    function wikiLinkNewTab(skill) {
       skillname = skill.getElementsByTagName('p')[0].innerText.replace(/ /g, '_');
       window.open('https://pathofexile.gamepedia.com/' + skillname);
     }
