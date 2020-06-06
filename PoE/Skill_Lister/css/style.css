@@ -113,6 +113,7 @@ header.separator::before {
 
   button.chip:hover {
     cursor: pointer;
+    text-decoration: underline;
   }
 
   button.chip.selected {
@@ -124,6 +125,12 @@ header.separator::before {
     float: left;
     margin: 5px;
     cursor: pointer;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .skill:hover {
+    color: var(--text);
   }
 
   .skill > img {

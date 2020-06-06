@@ -79,7 +79,7 @@
       <button class="chip" onclick="toggleType(this);">Staff</button>
       <button class="chip" onclick="toggleType(this);">Wand</button>
       <button class="chip" onclick="toggleType(this);">Bow</button>
-      <button class="chip" onclick="toggleType(this);">Spectre</button>
+      <button class="chip" onclick="toggleType(this);">Sceptre</button>
       <button class="chip" onclick="toggleType(this);">Unarmed</button>
     </div>
     <div class="container">
@@ -189,13 +189,9 @@
         return;
       }
       for (var i = 0; i < skills.skills.length; i++) {
-        result += "<div class='skill' onclick='wikiLink(this)'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></div>"
+        result += "<a class='skill' href='" + 'https://pathofexile.gamepedia.com/' + skills.skills[i].name.replace(/ /g, '_') + "'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></a>"
       }
       skillListElement.innerHTML = result;
-
-      for (var skill of document.getElementsByClassName('skill')) {
-        addMiddlemouseEvent(skill);
-      }
     }
 
     function getAndDisplaySkills() {
@@ -208,29 +204,6 @@
       };
       xmlhttp.open("GET", "data.json", true);
       xmlhttp.send();
-    }
-
-    function addMiddlemouseEvent(element) {
-      element.addEventListener('mouseup', e => {
-        if (e.button == 1) {
-          wikiLinkNewTab(element);
-        }
-      });
-      element.addEventListener('mousedown', e => {
-        if (e.button == 1) {
-          e.preventDefault();
-        }
-      });
-    }
-
-    function wikiLink(skill) {
-      skillname = skill.getElementsByTagName('p')[0].innerText.replace(/ /g, '_');
-      window.open('https://pathofexile.gamepedia.com/' + skillname, "_self");
-    }
-
-    function wikiLinkNewTab(skill) {
-      skillname = skill.getElementsByTagName('p')[0].innerText.replace(/ /g, '_');
-      window.open('https://pathofexile.gamepedia.com/' + skillname);
     }
   </script>
 </html>
