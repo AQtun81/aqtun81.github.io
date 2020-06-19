@@ -374,7 +374,7 @@
   }, {
     "name": "Earthquake",
     "image": "Earthquake.png",
-    "tags": ["ATTACK", "AOE", "DURATION", "MELEE", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
+    "tags": ["ATTACK", "AOE", "DURATION", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
   }, {
     "name": "Enduring Cry",
     "image": "Enduring_Cry.png",
@@ -390,7 +390,7 @@
   }, {
     "name": "Ground Slam",
     "image": "Ground_Slam.png",
-    "tags": ["ATTACK", "AOE", "PHYSICAL", "MELEE", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
+    "tags": ["ATTACK", "AOE", "PHYSICAL", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
   }, {
     "name": "Heavy Strike",
     "image": "Heavy_Strike.png",
@@ -410,7 +410,7 @@
   }, {
     "name": "Ice Crash",
     "image": "Ice_Crash.png",
-    "tags": ["ATTACK", "AOE", "COLD", "MELEE", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
+    "tags": ["ATTACK", "AOE", "COLD", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
   }, {
     "name": "Immortal Call",
     "image": "Immortal_Call.png",
@@ -434,7 +434,7 @@
   }, {
     "name": "Perforate",
     "image": "Perforate.png",
-    "tags": ["ATTACK", "AOE", "MELEE", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD"]
+    "tags": ["ATTACK", "AOE", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD"]
   }, {
     "name": "Pride",
     "image": "Pride.png",
@@ -494,7 +494,7 @@
   }, {
     "name": "Sunder",
     "image": "Sunder.png",
-    "tags": ["ATTACK", "AOE", "MELEE", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
+    "tags": ["ATTACK", "AOE", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
   }, {
     "name": "Sweep",
     "image": "Sweep.png",
@@ -502,7 +502,7 @@
   }, {
     "name": "Tectonic Slam",
     "image": "Tectonic_Slam.png",
-    "tags": ["FIRE", "ATTACK", "AOE", "MELEE", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
+    "tags": ["FIRE", "ATTACK", "AOE", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
   }, {
     "name": "Vengeance",
     "image": "Vengeance.png",
@@ -883,5 +883,37 @@
     "name": "Portal",
     "image": "Portal.png",
     "tags": ["SPELL"]
+  }, {
+    "name": "Ancestral Cry",
+    "image": "Ancestral_Cry.png",
+    "tags": ["WARCRY", "AOE", "DURATION"]
+  }, {
+    "name": "General's Cry",
+    "image": "Ancestral_Cry.png",
+    "tags": ["WARCRY", "AOE", "DURATION"]
+  }, {
+    "name": "Intimidating Cry",
+    "image": "Intimidating_Cry.png",
+    "tags": ["WARCRY", "AOE", "DURATION", "PHYSICAL"]
+  }, {
+    "name": "Seismic Cry",
+    "image": "Seismic_Cry.png",
+    "tags": ["WARCRY", "AOE", "DURATION"]
+  }, {
+    "name": "Earthshatter",
+    "image": "Earthshatter.png",
+    "tags": ["ATTACK", "AOE", "SLAM", "DURATION", "MELEE"]
+  }, {
+    "name": "Arcanist Brand",
+    "image": "Arcanist_Brand.png",
+    "tags": ["SPELL", "DURATION", "BRAND"]
+  }, {
+    "name": "Penance Brand",
+    "image": "Penance_Brand.png",
+    "tags": ["SPELL", "AOE", "PHYSICAL", "LIGHTNING", "DURATION", "BRAND"]
+  }, {
+    "name": "Wintertide Brand",
+    "image": "Wintertide_Brand.png",
+    "tags": ["SPELL", "AOE", "COLD", "DURATION", "BRAND"]
   }]
 }

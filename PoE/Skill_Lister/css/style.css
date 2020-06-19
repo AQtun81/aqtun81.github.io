@@ -106,9 +106,9 @@ header.separator::before {
   }
 
   button.chip {
-    border-radius: 19px;
+    border-radius: 8px;
     border-color: transparent;
-    background-color: var(--background-low-contrast);
+    background-color: var(--background-contrast);
   }
 
   button.chip:hover {
@@ -116,8 +116,12 @@ header.separator::before {
     text-decoration: underline;
   }
 
-  button.chip.selected {
-    background-color: var(--background-contrast);
+  button.chip.\31 {
+    background-color: #69DF58A1;
+  }
+
+  button.chip.\32 {
+    background-color: #FF000082;
   }
 
   .skill {

@@ -5,7 +5,7 @@
     <title>PoE skill lister</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script type="text/javascript">
       function lightTheme() {
         document.documentElement.style.setProperty('--background-color', "rgb(255, 255, 255)");
@@ -25,7 +25,7 @@
         document.documentElement.style.setProperty('--background-color-50', "rgba(45, 45, 45, 0.5)");
         document.documentElement.style.setProperty('--background-color-30', "rgba(45, 45, 45, 0.3)");
         document.documentElement.style.setProperty('--background-low-contrast', "rgb(42, 42, 42)");
-        document.documentElement.style.setProperty('--background-contrast', "rgb(35, 35, 35)");
+        document.documentElement.style.setProperty('--background-contrast', "rgb(38, 38, 38)");
         document.documentElement.style.setProperty('--text', "#dfdfdf");
         document.documentElement.style.setProperty('--link', "#1EAEDB");
         document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
@@ -107,13 +107,12 @@
       <button class="chip" onclick="toggleType(this);">Movement</button>
       <button class="chip" onclick="toggleType(this);">Projectile</button>
       <button class="chip" onclick="toggleType(this);">Strike</button>
-      <button class="chip" onclick="toggleType(this);">Support</button>
       <button class="chip" onclick="toggleType(this);">Totem</button>
       <button class="chip" onclick="toggleType(this);">Trap</button>
       <button class="chip" onclick="toggleType(this);">Travel</button>
       <button class="chip" onclick="toggleType(this);">Trigger</button>
-      <button class="chip" onclick="toggleType(this);">Vaal</button>
       <button class="chip" onclick="toggleType(this);">Warcry</button>
+      <button class="chip" onclick="toggleType(this);">Slam</button>
     </div>
     <header>
       <div class="container">
@@ -132,21 +131,50 @@
     skillListElement = document.getElementById('skilllist');
     var skills;
     getAndDisplaySkills();
-    toggledTypes = [];
+    enabledTypes = [];
+    disabledTypes = [];
     function toggleType(button) {
-      button.classList.toggle('selected');
-      for (var i = 0; i < toggledTypes.length; i++) {
-        if (toggledTypes[i] == button.innerText) {
-          console.log('removed ' + toggledTypes[i]);
-          toggledTypes.splice(i, 1);
-          filterSkills();
-          return;
-        }
+      if (!button.classList.contains('chip')) return;
+      var state;
+
+      if (button.classList[1] == undefined) {
+        state = 0;
+      } else {
+        state = parseInt(button.classList[1]);
       }
 
-      console.log('added ' + button.innerText);
-      toggledTypes.push(button.innerText);
+      switch (state) {
+        case 0:
+          add(enabledTypes);
+          button.classList.add("1");
+          break;
+        case 1:
+          remove(enabledTypes);
+          add(disabledTypes);
+          button.classList.remove("1");
+          button.classList.add("2");
+          break;
+        case 2:
+          remove(disabledTypes);
+          button.classList.remove("2");
+          break;
+      }
+
       filterSkills();
+
+
+      function add(array) {
+        array.push(button.innerText);
+      }
+
+      function remove(array) {
+        for (var i = 0; i < array.length; i++) {
+          if (array[i] == button.innerText) {
+            array.splice(i, 1);
+            return;
+          }
+        }
+      }
     }
 
     function filterSkills() {
@@ -155,15 +183,30 @@
         if (this.readyState == 4 && this.status == 200) {
           skills = JSON.parse(this.responseText);
 
-          if (toggledTypes.length == 0) {
+          if (enabledTypes.length == 0 && disabledTypes.length == 0) {
             displaySkills();
             return;
           }
 
-          for (var i = 0; i < toggledTypes.length; i++) {
+          for (var i = 0; i < disabledTypes.length; i++) {
             for (var o = 0; o < skills.skills.length; o++) {
               for (var p = 0; p < skills.skills[o].tags.length; p++) {
-                if (skills.skills[o].tags[p] == toggledTypes[i]) {
+                if (skills.skills[o].tags[p] == disabledTypes[i]) {
+                  skills.skills.splice(o, 1);
+                  o--;
+                  break;
+                }
+                if (p == skills.skills[o].tags.length - 1) {
+                  break;
+                }
+              }
+            }
+          }
+
+          for (var i = 0; i < enabledTypes.length; i++) {
+            for (var o = 0; o < skills.skills.length; o++) {
+              for (var p = 0; p < skills.skills[o].tags.length; p++) {
+                if (skills.skills[o].tags[p] == enabledTypes[i]) {
                   break;
                 }
                 if (p == skills.skills[o].tags.length - 1) {
@@ -189,7 +232,7 @@
         return;
       }
       for (var i = 0; i < skills.skills.length; i++) {
-        result += "<a class='skill' href='" + 'https://pathofexile.gamepedia.com/' + skills.skills[i].name.replace(/ /g, '_') + "'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></a>"
+        result += "<a class='skill' href='" + 'https://pathofexile.gamepedia.com/' + skills.skills[i].name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></a>"
       }
       skillListElement.innerHTML = result;
     }
