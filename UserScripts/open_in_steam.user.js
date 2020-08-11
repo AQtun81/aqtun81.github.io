@@ -5,13 +5,16 @@
 // @description  Adds "Open in steam" buttons to steam workshop pages
 // @author       AQtun81
 // @match        https://steamcommunity.com/sharedfiles/filedetails*
+// @match        https://steamcommunity.com/workshop/filedetails*
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-
-    document.getElementById("SubscribeItemBtn").parentElement.innerHTML += '<a onclick="ViewOnSteam();" class="btn_green_white_innerfade btn_border_2px btn_medium " style="right: 156px;width: 130px;"><span class="subscribeText" style="padding-left: 15px;"><div id="SubscribeItemOptionAdd" class="subscribeOption subscribe selected">Open in steam</div></span></a>';
+    
+    var buttonArea = document.getElementById("SubscribeItemBtn").parentElement;
+    buttonArea.style.width = "0px";
+    buttonArea.innerHTML += '<a onclick="ViewOnSteam();" class="btn_green_white_innerfade btn_border_2px btn_medium " style="right: 156px;width: 135px;"><span class="subscribeText" style="padding-left: 15px;"><div id="SubscribeItemOptionAdd" class="subscribeOption subscribe selected">Open in Steam</div></span></a>';
 
 })();
 
