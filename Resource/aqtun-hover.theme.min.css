@@ -1,1 +1,0 @@
-[class*=channelTextArea-]::after{content:'';width:0;height:2px;background-color:var(--color-accent);display:block;position:relative;transition-duration:.5s;transition-timing-function:ease-in-out}[class*=channelTextArea-]:hover:after{width:100%}[class*=channelTextArea-] [class*=inner-]{background:0!important}
