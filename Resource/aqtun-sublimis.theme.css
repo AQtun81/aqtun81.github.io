@@ -1,51 +1,57 @@
 @import url('https://aqtun81.github.io/Resource/aqtun-perspicuum.theme.css');
 @import url('https://aqtun81.github.io/Resource/aqtun-wide-settings.theme.css');
 @import url('https://aqtun81.github.io/Resource/aqtun-material-icons.theme.css');
-@import url('https://aqtun81.github.io/Resource/aqtun-multicolumn-serverlist.theme.css');
 @import url('https://aqtun81.github.io/Resource/aqtun-fonts.theme.css');
 @import url('https://aqtun81.github.io/Resource/aqtun-youtube-embed.theme.css');
 
 :root {
-  /* Custom Settings */
-  --serverlist-column-count: 1;
-  --color-accent: #78909c;
-  /* Background Settings */
-  --background-color: #1d1d1d;
-  --background-image: url("https://i.imgur.com/M7CBl8S.png");
+  /* --- background colors --- */
+  --background-color: linear-gradient(to bottom right, #397fc5 0%, #669999 100%);
+  --background-color: #000;
+  --background-image: url("https://images.unsplash.com/photo-1556139930-c23fa4a4f934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
   --background-image-opacity: 1;
   --background-image-blur: 0px;
-  /* Serverlist Text Settings */
-  --color-serverlist-text: rgba(255, 255, 255, 0.5);
-  --color-serverlist-text-hover: rgba(255, 255, 255, 0.75);
-  --color-serverlist-text-muted: rgba(125, 125, 125, 0.4);
+  --background-image-saturation: 100%;
+  --background-image-hue: 0deg;
+  --background-image-contrast: 70%;
+  --background-image-brightness: 45%;
+  --color-accent: #009688;
+  --color-accent-hover: #00897b;
+  --color-positive: #43b581;
+  --color-negative: #e94f4f;
+  --color-main: rgba(0, 0, 0, 0.2);
+  --color-flat-main: rgb(35, 35, 36);
+  --color-main-hover: rgba(0, 0, 0, 0.3);
+  --color-flat-popup: rgb(45, 45, 46);
+  --blur-flat-popup: 0px;
+  /* Server Channel List Text Settings */
+  --color-channel-text: rgba(255, 255, 255, 0.65);
+  --color-channel-text-selected: rgba(255, 255, 255, 0.9);
+  --color-channel-text-hover: rgba(255, 255, 255, 0.75);
+  --color-channel-text-muted: rgba(125, 125, 125, 0.4);
   /* Chat Text Settings */
-  --color-chat-text: rgba(255, 255, 255, 0.5);
-  --color-chat-text-link: #0096cf;
-  --color-chat-text-muted: rgba(125, 125, 125, 0.4);
-  /* Other Text Settings */
-  --color-text-big-divider: rgba(255, 255, 255, 0.5);
-  --color-text-main: rgba(255, 255, 255, 0.75);
-  --color-text-secondary: rgba(255, 255, 255, 0.5);
-  /* Various Background Settings */
-  --color-main: rgba(20, 20, 20, 0.3);
-  --color-main-hover: rgba(20, 20, 20, 0.5);
-  --color-flat-text: rgba(255, 255, 255, 0.75);
-  --color-flat-main: rgb(31, 30, 32);
-  /* Various Settings */
+  --color-chat-text: rgba(255, 255, 255, 0.85);
+  --color-chat-text-link: #1dbcf9;
+  /* Friends Text */
+  --color-friend-text: rgba(255, 255, 255, 0.6);
+  --color-friend-text-hover: rgba(255, 255, 255, 1);
+  /* --- divider colors --- */
+  --color-text-big-divider: rgba(255, 255, 255, 0.75);
   --color-divider: rgba(0, 0, 0, 0);
-  --color-big-divider: rgb(31, 30, 32);
+  --color-big-divider: rgba(0, 0, 0, 0);
 }
+
 body::after {
-  width: calc(240px + 58px * var(--serverlist-column-count) + 30px + var(--background-image-blur));
+  width: calc(328px + var(--background-image-blur));
 }
-.theme-dark .chat-3bRxxu,
-.theme-dark .container-3gCOGc,
-.theme-dark .headerBar-UHpsPw,
-.theme-dark .header-39GIC8,
-.theme-dark .contentRegion-3nDuYy,
-.theme-dark .activityFeed-28jde9 .scrollerWrap-2lJEkd,
-.theme-dark .gameLibrary-TTDw4Y .scroller-2FKFPG,
-.theme-dark .applicationStore-1pNvnv .scrollerWrap-2lJEkd {
+.chat-3bRxxu,
+.container-3gCOGc,
+.headerBar-UHpsPw,
+.header-39GIC8,
+.contentRegion-3nDuYy,
+.activityFeed-28jde9 .scrollerWrap-2lJEkd,
+.gameLibrary-TTDw4Y .scroller-2FKFPG,
+.applicationStore-1pNvnv .scrollerWrap-2lJEkd {
     background-color: var(--color-flat-main) !important;
 }
 .titleBar-AC4pGV::before {
@@ -55,11 +61,11 @@ body::after {
   top: 0;
   right: 0;
   bottom: calc(100% - 22px);
-  left: calc(240px + 58px * var(--serverlist-column-count) + 20px );
+  left: 312px;
   background-color: var(--color-flat-main);
 }
 .sidebarRegion-VFTUkN {
-    padding-left: calc(92px + 58px * (var(--serverlist-column-count) - 1));
+    padding-left: 86px;
 }
 #app-mount {
     background-color: rgba(0, 0, 0, 0.4);
