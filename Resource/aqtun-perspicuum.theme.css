@@ -343,7 +343,8 @@ body::after {
   .acronym-2mOFsV:hover,
   .acronym-2mOFsV.selected-bZ3Lue,
   .button-OhfaWu.selected-wSa2KV,
-  .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9 {
+  .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9,
+  .colorDefault-2K3EoJ.focused-3afm-j {
     background-color: var(--color-accent) !important;
     background: var(--color-accent) !important;
   }
@@ -388,7 +389,10 @@ body::after {
     stroke: var(--color-accent) !important;
   }
 
-  .hasMore-3e72_v button {
+  .hasMore-3e72_v button,
+  .colorDefault-2K3EoJ .checkbox-3s5GYZ,
+  .colorDefault-2K3EoJ .radioSelection-1HmrQS,
+  .colorBrand-ROmMP1 {
     color: var(--color-accent) !important;
   }
 
@@ -426,7 +430,8 @@ body::after {
 
   .lookFilled-1Gx00P.colorRed-1TFJan,
   .lookFilled-1Gx00P.colorRed-1TFJan:hover,
-  .friendsTable-133bsv .friendsRow-2yicud .friendsColumnActions-1LT3_M .friendsAction-__WNE9.friendsActionRemove-qu8nnl:hover {
+  .friendsTable-133bsv .friendsRow-2yicud .friendsColumnActions-1LT3_M .friendsAction-__WNE9.friendsActionRemove-qu8nnl:hover,
+  .colorDanger-2qLCe1.focused-3afm-j {
     background-color: var(--color-negative) !important;
   }
 
@@ -484,6 +489,11 @@ body::after {
     color: #d0d0d0 !important;
   }
 
+  .colorDefault-2K3EoJ.focused-3afm-j .radioSelection-1HmrQS,
+  .colorDefault-2K3EoJ.focused-3afm-j {
+    color: #fff !important;
+  }
+
   svg[name="Checkmark"] g polyline {
     stroke: #d0d0d0 !important;
   }
@@ -492,50 +502,3 @@ body::after {
     border-color: #ababab !important;
     color: #ababab !important;
   }
-
-    /* --- CSS VARIABLES --- */
-
-  .theme-dark, .theme-light {
-    --header-primary: #fff;
-    --header-secondary: #b9bbbe;
-    --text-normal: var(--color-friend-text);
-    --text-muted: var(--color-channel-text-muted);
-    --text-link: var(--color-chat-text-link);
-    --channels-default: var(--color-channel-text);
-    --interactive-normal: #999;
-    --interactive-hover: #dcddde;
-    --interactive-active: #fff;
-    --interactive-muted: #4f545c;
-    --background-primary: #00000000;
-    --background-secondary: #00000000;
-    --background-tertiary: #00000000;
-    --background-accent: #00000000;
-    --background-secondary-alt: #00000000;
-    --background-message-hover: #00000000;
-    --textbox-markdown-syntax: #00000000;
-    --background-mentioned: rgba(250,166,26,0.05);
-    --background-mentioned-hover: rgba(250,166,26,0.08);
-    --elevation-stroke: none;
-    --elevation-medium: none;
-    --background-floating: var(--color-flat-popup);
-    --background-modifier-hover: var(--color-main);
-    --background-modifier-active: var(--color-main-hover);
-    --background-modifier-selected: var(--color-main-hover);
-    --background-modifier-accent: hsla(0,0%,100%,0.06);
-    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
-    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
-    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
-    --channeltextarea-background: var(--color-main);
-    --activity-card-background: var(--color-main);
-    --deprecated-panel-background: #00000000;
-    --deprecated-card-bg: #00000000;
-    --deprecated-card-editable-bg: #00000000;
-    --deprecated-store-bg: #00000000;
-    --deprecated-quickswitcher-input-background: #00000000;
-    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
-    --deprecated-text-input-bg: rgba(0,0,0,0.1);
-    --deprecated-text-input-border: rgba(0,0,0,0.3);
-    --deprecated-text-input-border-hover: #040405;
-    --deprecated-text-input-border-disabled: #202225;
-    --deprecated-text-input-prefix: #dcddde;
-}
