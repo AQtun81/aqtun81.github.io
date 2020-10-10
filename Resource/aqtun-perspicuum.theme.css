@@ -273,7 +273,8 @@ body::after {
   .tabBody-3YRQ8W:before,
   .container-19hC9u:before,
   .container-xm7Ad0:before,
-  .content-yTz4x3:before {
+  .content-yTz4x3:before,
+  .libraryHeader-3g95kE:before {
     content: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
