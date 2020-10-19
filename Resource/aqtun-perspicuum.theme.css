@@ -209,7 +209,9 @@ body::after {
 .searchBox-3Y2Vi7,
 .wrapper-39oAo3,
 .popout-3G62UL,
-.emojiPicker-3m1S-j {
+.emojiPicker-3m1S-j.
+.problems-3mgf6w,
+.content-1-zrf2 {
   background-color: var(--color-flat-popup) !important;
   background: var(--color-flat-popup) !important;
   -webkit-backdrop-filter: blur(var(--blur-flat-popup));
@@ -395,7 +397,8 @@ body::after {
   .colorDefault-2K3EoJ .checkbox-3s5GYZ,
   .colorDefault-2K3EoJ .radioSelection-1HmrQS,
   .colorBrand-ROmMP1,
-  .partnered-3nJayh {
+  .partnered-3nJayh,
+  .tipTitle-GL9qAt {
     color: var(--color-accent) !important;
   }
 
@@ -487,6 +490,16 @@ body::after {
 .avatarSmall-2CW6I1 {
   height: 22px;
   width: 22px;
+}
+
+.content-1-zrf2 {
+  border-radius: 5px;
+}
+
+.problems-3mgf6w {
+    margin: 40px calc(50% - 150px);
+    padding-top: 30px;
+    border-radius: 5px;
 }
 
   /* --- STATIC COLORS --- */
