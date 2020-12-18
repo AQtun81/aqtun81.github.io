@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         Twitch Automatic Points Collector
 // @namespace    https://www.twitch.tv
-// @version      1.0
+// @version      1.1
 // @description  Read Title :)
 // @author       AQtun81
+
+// @history      1.1 updated css query to work on current site
+// @history      1.0 initial release
 
 // @include		http://twitch.tv/*
 // @include		https://twitch.tv/*
@@ -18,7 +21,7 @@
 // ==/UserScript==
 
 window.getPoints = function() {
-  element = document.querySelector(".tw-button.tw-button--success.tw-interactive");
+  element = document.querySelector('span.tw-button__text[data-a-target="tw-core-button-label-text"]');
   if (element != null) {
     var evObj = document.createEvent('Events');
     evObj.initEvent('click', true, false);
