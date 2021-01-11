@@ -238,7 +238,7 @@
       for (var i = 0; i < skills.skills.length; i++) {
         // 0 = match, -1 = no match
         var string = skills.skills[i].name.toLowerCase();
-        if (string.search(query.toLowerCase()) != 0) {
+        if (string.search(query.toLowerCase()) == -1) {
           skills.skills.splice(i, 1);
           i--;
         }
