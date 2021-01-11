@@ -204,8 +204,8 @@
     "image": "Precision.png",
     "tags": ["AURA", "SPELL", "AOE"]
   }, {
-    "name": "Projectile Weakness",
-    "image": "Projectile_Weakness.png",
+    "name": "Sniper's Mark",
+    "image": "Sniper's_Mark.png",
     "tags": ["SPELL", "AOE", "DURATION", "CURSE"]
   }, {
     "name": "Puncture",
@@ -540,8 +540,8 @@
     "image": "Arcane_Cloak.png",
     "tags": ["SPELL", "DURATION", "GUARD", "LIGHTNING"]
   }, {
-    "name": "Arctic Breath",
-    "image": "Arctic_Breath.png",
+    "name": "Creeping Frost",
+    "image": "Creeping_Frost.png",
     "tags": ["SPELL", "PROJECTILE", "DURATION", "AOE", "COLD"]
   }, {
     "name": "Armageddon Brand",
@@ -921,7 +921,7 @@
     "tags": ["WARCRY", "AOE", "DURATION"]
   }, {
     "name": "General's Cry",
-    "image": "General%27s_Cry.png",
+    "image": "General's_Cry.png",
     "tags": ["WARCRY", "AOE", "DURATION"]
   }, {
     "name": "Intimidating Cry",
@@ -947,5 +947,9 @@
     "name": "Wintertide Brand",
     "image": "Wintertide_Brand.png",
     "tags": ["SPELL", "AOE", "COLD", "DURATION", "BRAND"]
+  }, {
+    "name": "Vaal Breach",
+    "image": "Vaal_Breach.png",
+    "tags": ["VAAL", "SPELL"]
   }]
 }
