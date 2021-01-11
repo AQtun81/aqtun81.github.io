@@ -124,6 +124,22 @@ header.separator::before {
     background-color: #FF000082;
   }
 
+  input.chip {
+    border-radius: 8px;
+    border-color: transparent;
+    background-color: var(--background-contrast);
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    width: 520px;
+    margin: 20px 200px 0;
+    border: 0;
+  }
+
+  input.chip:focus {
+    outline: none;
+  }
+
   .skill {
     width: 64px;
     float: left;

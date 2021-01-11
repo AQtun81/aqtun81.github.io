@@ -308,9 +308,9 @@
     "image": "Withering_Step.png",
     "tags": ["TRAVEL", "AOE", "CHAOS", "MOVEMENT", "BLINK", "SPELL", "DURATION"]
   }, {
-    "name": "Abyssal Cry",
-    "image": "Abyssal_Cry.png",
-    "tags": ["WARCRY", "AOE", "DURATION", "CHAOS"]
+    "name": "Infernal Cry",
+    "image": "Infernal_Cry.png",
+    "tags": ["WARCRY", "AOE", "DURATION", "FIRE", "ATTACK", "MELEE"]
   }, {
     "name": "Ancestral Protector",
     "image": "Ancestral_Protector.png",
@@ -476,6 +476,10 @@
     "image": "Smite.png",
     "tags": ["LIGHTNING", "ATTACK", "AOE", "DURATION", "MELEE", "STRIKE", "AURA", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
   }, {
+    "name": "Splitting Steel",
+    "image": "Splitting_Steel.png",
+    "tags": ["ATTACK", "PROJECTILE", "AOE", "PHYSICAL", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD"]
+  }, {
     "name": "Static Strike",
     "image": "Static_Strike.png",
     "tags": ["ATTACK", "MELEE", "STRIKE", "AOE", "DURATION", "LIGHTNING", "CHAINING", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "SWORD", "MACE", "CLAW", "DAGGER", "STAFF", "SCEPTRE"]
@@ -556,6 +560,10 @@
     "image": "Bane.png",
     "tags": ["CHAOS", "TRIGGER", "SPELL", "AOE", "DURATION", "CURSE"]
   }, {
+    "name": "Blazing Salvo",
+    "image": "Blazing_Salvo.png",
+    "tags": ["SPELL", "AOE", "FIRE", "PROJECTILE"]
+  }, {
     "name": "Blight",
     "image": "Blight.png",
     "tags": ["SPELL", "CHAOS", "AOE", "CHANNELLING", "DURATION"]
@@ -595,6 +603,10 @@
     "name": "Convocation",
     "image": "Convocation.png",
     "tags": ["MINION", "SPELL", "DURATION"]
+  }, {
+    "name": "Crackling Lance",
+    "image": "Crackling_Lance.png",
+    "tags": ["SPELL", "AOE", "LIGHTNING"]
   }, {
     "name": "Dark Pact",
     "image": "Dark_Pact.png",
@@ -644,6 +656,10 @@
     "image": "Flame_Surge.png",
     "tags": ["SPELL", "AOE", "FIRE"]
   }, {
+    "name": "Flame Wall",
+    "image": "Flame_Wall.png",
+    "tags": ["SPELL", "AOE", "DURATION", "FIRE"]
+  }, {
     "name": "Flameblast",
     "image": "Flameblast.png",
     "tags": ["SPELL", "AOE", "FIRE", "CHANNELLING"]
@@ -662,6 +678,10 @@
   }, {
     "name": "Frost Bomb",
     "image": "Frost_Bomb.png",
+    "tags": ["SPELL", "AOE", "DURATION", "COLD"]
+  }, {
+    "name": "Frost Shield",
+    "image": "Frost_Shield.png",
     "tags": ["SPELL", "AOE", "DURATION", "COLD"]
   }, {
     "name": "Frost Wall",
@@ -687,6 +707,10 @@
     "name": "Herald of Thunder",
     "image": "Herald_of_Thunder.png",
     "tags": ["SPELL", "AOE", "DURATION", "LIGHTNING", "HERALD"]
+  }, {
+    "name": "Hexblast",
+    "image": "Hexblast.png",
+    "tags": ["SPELL", "AOE", "CHAOS", "HEX"]
   }, {
     "name": "Ice Nova",
     "image": "Ice_Nova.png",
@@ -780,6 +804,10 @@
     "image": "Shock_Nova.png",
     "tags": ["SPELL", "AOE", "LIGHTNING", "NOVA"]
   }, {
+    "name": "Sigil of Power",
+    "image": "Sigil_of_Power.png",
+    "tags": ["SPELL", "AOE", "DURATION", "LIGHTNING"]
+  }, {
     "name": "Siphoning Trap",
     "image": "Siphoning_Trap.png",
     "tags": ["TRAP", "SPELL", "DURATION", "AOE", "COLD"]
@@ -851,6 +879,10 @@
     "name": "Tempest Shield",
     "image": "Tempest_Shield.png",
     "tags": ["SPELL", "LIGHTNING", "CHAINING", "DURATION"]
+  }, {
+    "name": "Void Sphere",
+    "image": "Void_Sphere.png",
+    "tags": ["SPELL", "AOE", "DURATION", "PHYSICAL", "CHAOS"]
   }, {
     "name": "Vortex",
     "image": "Vortex.png",

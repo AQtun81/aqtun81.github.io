@@ -114,6 +114,9 @@
       <button class="chip" onclick="toggleType(this);">Warcry</button>
       <button class="chip" onclick="toggleType(this);">Slam</button>
     </div>
+    <div class="container">
+      <input class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)"></input>
+    </div>
     <header>
       <div class="container">
         <h4>Matching Skills:</h4>
@@ -129,7 +132,9 @@
   </body>
   <script type="text/javascript">
     skillListElement = document.getElementById('skilllist');
-    var skills;
+    var skills,
+        skillsFetch,
+        previousSearch = "";
     getAndDisplaySkills();
     enabledTypes = [];
     disabledTypes = [];
@@ -161,6 +166,7 @@
       }
 
       filterSkills();
+      displaySkills();
 
 
       function add(array) {
@@ -178,51 +184,65 @@
     }
 
     function filterSkills() {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          skills = JSON.parse(this.responseText);
+      skills = JSON.parse(skillsFetch);
 
-          if (enabledTypes.length == 0 && disabledTypes.length == 0) {
-            displaySkills();
-            return;
-          }
+      if (enabledTypes.length == 0 && disabledTypes.length == 0) {
+        return;
+      }
 
-          for (var i = 0; i < disabledTypes.length; i++) {
-            for (var o = 0; o < skills.skills.length; o++) {
-              for (var p = 0; p < skills.skills[o].tags.length; p++) {
-                if (skills.skills[o].tags[p] == disabledTypes[i]) {
-                  skills.skills.splice(o, 1);
-                  o--;
-                  break;
-                }
-                if (p == skills.skills[o].tags.length - 1) {
-                  break;
-                }
-              }
+      for (var i = 0; i < disabledTypes.length; i++) {
+        for (var o = 0; o < skills.skills.length; o++) {
+          for (var p = 0; p < skills.skills[o].tags.length; p++) {
+            if (skills.skills[o].tags[p] == disabledTypes[i]) {
+              skills.skills.splice(o, 1);
+              o--;
+              break;
+            }
+            if (p == skills.skills[o].tags.length - 1) {
+              break;
             }
           }
-
-          for (var i = 0; i < enabledTypes.length; i++) {
-            for (var o = 0; o < skills.skills.length; o++) {
-              for (var p = 0; p < skills.skills[o].tags.length; p++) {
-                if (skills.skills[o].tags[p] == enabledTypes[i]) {
-                  break;
-                }
-                if (p == skills.skills[o].tags.length - 1) {
-                  skills.skills.splice(o, 1);
-                  o--;
-                  break;
-                }
-              }
-            }
-          }
-          displaySkills();
-
         }
-      };
-      xmlhttp.open("GET", "data.json", true);
-      xmlhttp.send();
+      }
+
+      for (var i = 0; i < enabledTypes.length; i++) {
+        for (var o = 0; o < skills.skills.length; o++) {
+          for (var p = 0; p < skills.skills[o].tags.length; p++) {
+            if (skills.skills[o].tags[p] == enabledTypes[i]) {
+              break;
+            }
+            if (p == skills.skills[o].tags.length - 1) {
+              skills.skills.splice(o, 1);
+              o--;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    function searchChange(text) {
+      if (previousSearch.length < text.length) {
+        previousSearch = text;
+        searchSkills(text);
+        displaySkills();
+      } else {
+        previousSearch = text;
+        filterSkills();
+        searchSkills(text);
+        displaySkills();
+      }
+    }
+
+    function searchSkills(query) {
+      for (var i = 0; i < skills.skills.length; i++) {
+        // 0 = match, -1 = no match
+        var string = skills.skills[i].name.toLowerCase();
+        if (string.search(query.toLowerCase()) != 0) {
+          skills.skills.splice(i, 1);
+          i--;
+        }
+      }
     }
 
     function displaySkills() {
@@ -241,7 +261,8 @@
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          skills = JSON.parse(this.responseText);
+          skillsFetch = this.responseText;
+          skills = JSON.parse(skillsFetch);
           displaySkills();
         }
       };

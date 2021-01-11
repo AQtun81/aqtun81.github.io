@@ -9,15 +9,15 @@ for (var e of elements) {
   if (e.getElementsByClassName('image').length == 0) {
     continue;
   }
-  name = e.getElementsByClassName('header -single')[0].innerText;
+  name = e.getElementsByClassName('header -single')[0].childNodes[1].nodeValue;
   img = name.replace(/ /g, '_');;
   elementTags = e.getElementsByTagName('a');
   tagstext = '';
   for (var tag of elementTags) {
-    if (tag.innerText == '') {
+    if (tag.textContent == '') {
       continue;
     }
-    tagstext += '"' + tag.innerText.toUpperCase() + '",';
+    tagstext += '"' + tag.textContent.toUpperCase() + '",';
   }
   tagstext = tagstext.slice(0, -1);
   //console.log('{"name": "' + name + '", "image": "'+ img +'.png' + '", "tags": [' + tagstext + ']},');
