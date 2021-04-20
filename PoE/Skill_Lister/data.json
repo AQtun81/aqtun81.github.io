@@ -374,7 +374,7 @@
   }, {
     "name": "Earthquake",
     "image": "Earthquake.png",
-    "tags": ["ATTACK", "AOE", "DURATION", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
+    "tags": ["ATTACK", "AOE", "DURATION", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
   }, {
     "name": "Enduring Cry",
     "image": "Enduring_Cry.png",
@@ -390,7 +390,7 @@
   }, {
     "name": "Ground Slam",
     "image": "Ground_Slam.png",
-    "tags": ["ATTACK", "AOE", "PHYSICAL", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
+    "tags": ["ATTACK", "AOE", "PHYSICAL", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
   }, {
     "name": "Heavy Strike",
     "image": "Heavy_Strike.png",
@@ -498,7 +498,7 @@
   }, {
     "name": "Sunder",
     "image": "Sunder.png",
-    "tags": ["ATTACK", "AOE", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE"]
+    "tags": ["ATTACK", "AOE", "MELEE", "SLAM", "TWO-HANDED", "ONE-HANDED", "DUAL-WIELDING", "AXE", "MACE", "STAFF", "SCEPTRE", "UNARMED"]
   }, {
     "name": "Sweep",
     "image": "Sweep.png",
@@ -934,7 +934,7 @@
   }, {
     "name": "Earthshatter",
     "image": "Earthshatter.png",
-    "tags": ["ATTACK", "AOE", "SLAM", "DURATION", "MELEE"]
+    "tags": ["ATTACK", "AOE", "SLAM", "DURATION", "MELEE", "UNARMED"]
   }, {
     "name": "Arcanist Brand",
     "image": "Arcanist_Brand.png",
