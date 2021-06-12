@@ -55,7 +55,8 @@ body::after {
 .pageWrapper-1PgVDX,
 .container-3Mxszk,
 .container-1D34oG,
-.applicationStore-1pNvnv {
+.applicationStore-1pNvnv,
+.container-1a3EgQ {
     background-color: var(--color-flat-main) !important;
 }
 .titleBar-AC4pGV::before {
