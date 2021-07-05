@@ -90,19 +90,23 @@
     </div>
     <div class="container">
       <h6>Weapon Type</h6>
-      <button class="chip" onclick="toggleType(this);">Two-Handed</button>
-      <button class="chip" onclick="toggleType(this);">One-Handed</button>
-      <button class="chip" onclick="toggleType(this);">Dual-Wielding</button>
-      <button class="chip" onclick="toggleType(this);">Axe</button>
-      <button class="chip" onclick="toggleType(this);">Sword</button>
-      <button class="chip" onclick="toggleType(this);">Mace</button>
-      <button class="chip" onclick="toggleType(this);">Claw</button>
-      <button class="chip" onclick="toggleType(this);">Dagger</button>
-      <button class="chip" onclick="toggleType(this);">Staff</button>
-      <button class="chip" onclick="toggleType(this);">Wand</button>
-      <button class="chip" onclick="toggleType(this);">Bow</button>
-      <button class="chip" onclick="toggleType(this);">Sceptre</button>
-      <button class="chip" onclick="toggleType(this);">Unarmed</button>
+      <button class="chip" weaponTag="6" onclick="toggleWeaponType(this);">Claw</button>
+      <button class="chip" weaponTag="7" onclick="toggleWeaponType(this);">Dagger</button>
+      <button class="chip" weaponTag="8" onclick="toggleWeaponType(this);">Wand</button>
+      <button class="chip" weaponTag="9" onclick="toggleWeaponType(this);">One Hand Sword</button>
+      <button class="chip" weaponTag="10" onclick="toggleWeaponType(this);">Thrusting One Hand Sword</button>
+      <button class="chip" weaponTag="11" onclick="toggleWeaponType(this);">One Hand Axe</button>
+      <button class="chip" weaponTag="12" onclick="toggleWeaponType(this);">One Hand Mace</button>
+      <button class="chip" weaponTag="13" onclick="toggleWeaponType(this);">Bow</button>
+      <button class="chip" weaponTag="14" onclick="toggleWeaponType(this);">Staff</button>
+      <button class="chip" weaponTag="15" onclick="toggleWeaponType(this);">Two Hand Sword</button>
+      <button class="chip" weaponTag="16" onclick="toggleWeaponType(this);">Two Hand Axe</button>
+      <button class="chip" weaponTag="17" onclick="toggleWeaponType(this);">Two Hand Mace</button>
+      <button class="chip" weaponTag="26" onclick="toggleWeaponType(this);">Shield</button>
+      <button class="chip" weaponTag="32" onclick="toggleWeaponType(this);">Sceptre</button>
+      <button class="chip" weaponTag="36" onclick="toggleWeaponType(this);">Unarmed</button>
+      <button class="chip" weaponTag="56" onclick="toggleWeaponType(this);">Rune Dagger</button>
+      <button class="chip" weaponTag="57" onclick="toggleWeaponType(this);">Warstaff</button>
     </div>
     <div class="container">
       <h6>Element</h6>
@@ -139,7 +143,7 @@
       <button class="chip" skillTag="92" onclick="toggleType(this);">Slam</button>
     </div>
     <div class="container">
-      <input class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)"></input>
+      <input id="skillNameSearch" class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)">
     </div>
     <header style="min-height: 100%;">
       <div class="container">
@@ -161,6 +165,8 @@
     getAndDisplaySkills();
     enabledTypes = [];
     disabledTypes = [];
+    enabledWeaponTypes = [];
+    disabledWeaponTypes = [];
     function toggleType(button) {
       if (!button.classList.contains('chip')) return;
       var state;
@@ -206,42 +212,120 @@
       }
     }
 
+    function toggleWeaponType(button) {
+      if (!button.classList.contains('chip')) return;
+      var state;
+
+      if (button.classList[1] == undefined) {
+        state = 0;
+      } else {
+        state = parseInt(button.classList[1]);
+      }
+
+      switch (state) {
+        case 0:
+          add(enabledWeaponTypes);
+          button.classList.add("1");
+          break;
+        case 1:
+          remove(enabledWeaponTypes);
+          add(disabledWeaponTypes);
+          button.classList.remove("1");
+          button.classList.add("2");
+          break;
+        case 2:
+          remove(disabledWeaponTypes);
+          button.classList.remove("2");
+          break;
+      }
+
+      filterSkills();
+      displaySkills();
+
+
+      function add(array) {
+        array.push(button.attributes.weapontag.value);
+      }
+
+      function remove(array) {
+        for (var i = 0; i < array.length; i++) {
+          if (array[i] == button.attributes.weapontag.value) {
+            array.splice(i, 1);
+            return;
+          }
+        }
+      }
+    }
+
     function filterSkills() {
       skills = JSON.parse(skillsFetch);
 
-      if (enabledTypes.length == 0 && disabledTypes.length == 0) {
-        return;
-      }
-
-      for (var i = 0; i < disabledTypes.length; i++) {
-        for (var o = 0; o < skills.length; o++) {
-          for (var p = 0; p < skills[o].Tags.length; p++) {
-            if (skills[o].Tags[p] == disabledTypes[i]) {
-              skills.splice(o, 1);
-              o--;
-              break;
+      // skills
+      if (enabledTypes.length != 0 || disabledTypes.length != 0) {
+        for (var i = 0; i < disabledTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].Tags.length; p++) {
+              if (skills[o].Tags[p] == disabledTypes[i]) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
+              if (p == skills[o].Tags.length - 1) {
+                break;
+              }
             }
-            if (p == skills[o].Tags.length - 1) {
-              break;
+          }
+        }
+
+        for (var i = 0; i < enabledTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].Tags.length; p++) {
+              if (skills[o].Tags[p] == enabledTypes[i]) {
+                break;
+              }
+              if (p == skills[o].Tags.length - 1) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
             }
           }
         }
       }
 
-      for (var i = 0; i < enabledTypes.length; i++) {
-        for (var o = 0; o < skills.length; o++) {
-          for (var p = 0; p < skills[o].Tags.length; p++) {
-            if (skills[o].Tags[p] == enabledTypes[i]) {
-              break;
+      // weapons
+      if (enabledWeaponTypes.length != 0 || disabledWeaponTypes.length != 0) {
+        for (var i = 0; i < disabledWeaponTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].WeaponTags.length; p++) {
+              if (skills[o].WeaponTags[p] == disabledWeaponTypes[i]) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
+              if (p == skills[o].WeaponTags.length - 1) {
+                break;
+              }
             }
-            if (p == skills[o].Tags.length - 1) {
-              skills.splice(o, 1);
-              o--;
-              break;
+          }
+        }
+
+        for (var i = 0; i < enabledWeaponTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].WeaponTags.length; p++) {
+              if (skills[o].WeaponTags[p] == enabledWeaponTypes[i]) {
+                break;
+              }
+              if (p == skills[o].WeaponTags.length - 1) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
             }
           }
         }
       }
+
     }
 
     function searchChange(text) {
@@ -316,7 +400,7 @@
           menu.style.display = "block";
           menu.style.left = ev.pageX + 20 + 'px';
           menu.style.left = element.getBoundingClientRect().x + 74 + "px";
-          if (ev.clientY > window.innerHeight - 200) {
+          if (ev.clientY > window.innerHeight - 200) { // - menu.getBoundingClientRect().y
             menu.style.top = ev.pageY - 155 + 'px';
             menu.style.top = element.getBoundingClientRect().y - document.body.getBoundingClientRect().y - menu.getBoundingClientRect().height + "px";
           } else {

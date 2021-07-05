@@ -234,3 +234,11 @@ header.separator::before {
   margin-right: 10px;
   margin-bottom: 2px;
 }
+
+#skillMenu > table {
+  border-spacing: 0px;
+}
+
+#skillMenu tr:last-child > td {
+  border-bottom-width: 0px;
+}
