@@ -34,9 +34,9 @@
       }
 
       if (window.localStorage.getItem('theme') == null) {
-        window.localStorage.setItem('theme', 'light');
-      } else if (window.localStorage.getItem('theme') == 'dark') {
-        darkTheme();
+        window.localStorage.setItem('theme', 'dark');
+      } else if (window.localStorage.getItem('theme') == 'light') {
+        lightTheme();
       }
 
       function switchTheme() {
@@ -147,7 +147,7 @@
     </div>
     <header style="min-height: 100%;">
       <div class="container">
-        <h4>Matching Skills:</h4>
+        <h4 id="matchingSkillsHeader">460 Matching Skills:</h4>
         <div id="skilllist">
           <div class="skill">
             <img src="img/skill/Cyclone.png">
@@ -161,7 +161,8 @@
     skillListElement = document.getElementById('skilllist');
     var skills,
         skillsFetch,
-        previousSearch = "";
+        previousSearch = "",
+        skillCountDisplay = 460;
     getAndDisplaySkills();
     enabledTypes = [];
     disabledTypes = [];
@@ -195,7 +196,9 @@
       }
 
       filterSkills();
+      searchSkills(previousSearch);
       displaySkills();
+      updateSkillCount();
 
 
       function add(array) {
@@ -262,6 +265,7 @@
 
       // skills
       if (enabledTypes.length != 0 || disabledTypes.length != 0) {
+
         for (var i = 0; i < disabledTypes.length; i++) {
           for (var o = 0; o < skills.length; o++) {
             for (var p = 0; p < skills[o].Tags.length; p++) {
@@ -291,10 +295,12 @@
             }
           }
         }
+
       }
 
       // weapons
       if (enabledWeaponTypes.length != 0 || disabledWeaponTypes.length != 0) {
+
         for (var i = 0; i < disabledWeaponTypes.length; i++) {
           for (var o = 0; o < skills.length; o++) {
             for (var p = 0; p < skills[o].WeaponTags.length; p++) {
@@ -324,7 +330,9 @@
             }
           }
         }
+
       }
+
 
     }
 
@@ -333,11 +341,13 @@
         previousSearch = text;
         searchSkills(text);
         displaySkills();
+        updateSkillCount();
       } else {
         previousSearch = text;
         filterSkills();
         searchSkills(text);
         displaySkills();
+        updateSkillCount();
       }
     }
 
@@ -381,7 +391,7 @@
           displaySkills();
         }
       };
-      xmlhttp.open("GET", "data.json", true);
+      xmlhttp.open("GET", "Data.json", true);
       xmlhttp.send();
     }
 
@@ -607,6 +617,24 @@
       }
       result = result.substring(0, result.length - 2);
       return result;
+    }
+
+    function updateSkillCount() {
+      var quantity = document.getElementsByClassName("skill").length;
+
+      if (quantity != skillCountDisplay) {
+        element = document.getElementById("matchingSkillsHeader");
+        if (skillCountDisplay > quantity)
+        {
+          skillCountDisplay -= Math.ceil((skillCountDisplay - quantity) * 0.05);
+        }
+        else
+        {
+          skillCountDisplay += Math.ceil((quantity - skillCountDisplay) * 0.05);
+        }
+        element.innerText = skillCountDisplay + " Matching Skills:";
+        requestAnimationFrame(updateSkillCount);
+      }
     }
 
   </script>
