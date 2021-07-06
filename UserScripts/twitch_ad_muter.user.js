@@ -15,6 +15,8 @@
 // @exclude		http://api.twitch.tv/*
 // @exclude		https://api.twitch.tv/*
 
+// @icon         https://www.google.com/s2/favicons?domain=twitch.tv
+
 // @grant        none
 
 // ==/UserScript==

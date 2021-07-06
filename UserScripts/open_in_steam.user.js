@@ -1,11 +1,16 @@
 // ==UserScript==
 // @name         Open in Steam
 // @namespace    https://steamcommunity.com/
+
 // @version      1.0
+
+// @history      1.0 initial release
+
 // @description  Adds "Open in steam" buttons to steam workshop pages
 // @author       AQtun81
 // @match        https://steamcommunity.com/sharedfiles/filedetails*
 // @match        https://steamcommunity.com/workshop/filedetails*
+// @icon         https://www.google.com/s2/favicons?domain=steamcommunity.com
 // @grant        none
 // ==/UserScript==
 
