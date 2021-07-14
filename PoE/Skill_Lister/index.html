@@ -17,6 +17,7 @@
         document.documentElement.style.setProperty('--text', "#222");
         document.documentElement.style.setProperty('--link', "#1EAEDB");
         document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
+        document.documentElement.style.setProperty('--table-border', "#E1E1E1");
       }
 
       function darkTheme() {
@@ -29,12 +30,13 @@
         document.documentElement.style.setProperty('--text', "#dfdfdf");
         document.documentElement.style.setProperty('--link', "#1EAEDB");
         document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
+        document.documentElement.style.setProperty('--table-border', "#3E3E3E");
       }
 
       if (window.localStorage.getItem('theme') == null) {
-        window.localStorage.setItem('theme', 'light');
-      } else if (window.localStorage.getItem('theme') == 'dark') {
-        darkTheme();
+        window.localStorage.setItem('theme', 'dark');
+      } else if (window.localStorage.getItem('theme') == 'light') {
+        lightTheme();
       }
 
       function switchTheme() {
@@ -53,6 +55,26 @@
   </script>
   </head>
   <body style="height: 100%">
+
+    <div id="skillMenu">
+      <table class="u-full-width" style="margin: 0;">
+        <tbody>
+          <tr>
+            <td id="skillMenuName">Name</td>
+          </tr>
+          <tr>
+            <td id="skillMenuSkillTags">Skill Tags</td>
+          </tr>
+          <tr>
+            <td id="skillMenuWeaponTags">Usable Weapons</td>
+          </tr>
+          <tr>
+            <td id="skillMenuDescription">Description</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="theme-toggle" onclick="switchTheme()">
       <img id="toDarkTheme" src="img/dark-theme.svg" style="display: none;">
       <img id="toLightTheme" src="img/light-theme.svg" style="display: block;">
@@ -62,68 +84,74 @@
     </header>
     <div class="container">
       <h6>Basic</h6>
-      <button class="chip" onclick="toggleType(this);">Attack</button>
-      <button class="chip" onclick="toggleType(this);">Melee</button>
-      <button class="chip" onclick="toggleType(this);">Spell</button>
+      <button class="chip" skillTag="1" onclick="toggleType(this);">Attack</button>
+      <button class="chip" skillTag="20" onclick="toggleType(this);">Melee</button>
+      <button class="chip" skillTag="2" onclick="toggleType(this);">Spell</button>
     </div>
     <div class="container">
       <h6>Weapon Type</h6>
-      <button class="chip" onclick="toggleType(this);">Two-Handed</button>
-      <button class="chip" onclick="toggleType(this);">One-Handed</button>
-      <button class="chip" onclick="toggleType(this);">Dual-Wielding</button>
-      <button class="chip" onclick="toggleType(this);">Axe</button>
-      <button class="chip" onclick="toggleType(this);">Sword</button>
-      <button class="chip" onclick="toggleType(this);">Mace</button>
-      <button class="chip" onclick="toggleType(this);">Claw</button>
-      <button class="chip" onclick="toggleType(this);">Dagger</button>
-      <button class="chip" onclick="toggleType(this);">Staff</button>
-      <button class="chip" onclick="toggleType(this);">Wand</button>
-      <button class="chip" onclick="toggleType(this);">Bow</button>
-      <button class="chip" onclick="toggleType(this);">Sceptre</button>
-      <button class="chip" onclick="toggleType(this);">Unarmed</button>
+      <button class="chip" weaponTag="6" onclick="toggleWeaponType(this);">Claw</button>
+      <button class="chip" weaponTag="7" onclick="toggleWeaponType(this);">Dagger</button>
+      <button class="chip" weaponTag="8" onclick="toggleWeaponType(this);">Wand</button>
+      <button class="chip" weaponTag="9" onclick="toggleWeaponType(this);">One Hand Sword</button>
+      <button class="chip" weaponTag="10" onclick="toggleWeaponType(this);">Thrusting One Hand Sword</button>
+      <button class="chip" weaponTag="11" onclick="toggleWeaponType(this);">One Hand Axe</button>
+      <button class="chip" weaponTag="12" onclick="toggleWeaponType(this);">One Hand Mace</button>
+      <button class="chip" weaponTag="13" onclick="toggleWeaponType(this);">Bow</button>
+      <button class="chip" weaponTag="14" onclick="toggleWeaponType(this);">Staff</button>
+      <button class="chip" weaponTag="15" onclick="toggleWeaponType(this);">Two Hand Sword</button>
+      <button class="chip" weaponTag="16" onclick="toggleWeaponType(this);">Two Hand Axe</button>
+      <button class="chip" weaponTag="17" onclick="toggleWeaponType(this);">Two Hand Mace</button>
+      <button class="chip" weaponTag="26" onclick="toggleWeaponType(this);">Shield</button>
+      <button class="chip" weaponTag="32" onclick="toggleWeaponType(this);">Sceptre</button>
+      <button class="chip" weaponTag="36" onclick="toggleWeaponType(this);">Unarmed</button>
+      <button class="chip" weaponTag="56" onclick="toggleWeaponType(this);">Rune Dagger</button>
+      <button class="chip" weaponTag="57" onclick="toggleWeaponType(this);">Warstaff</button>
     </div>
     <div class="container">
       <h6>Element</h6>
-      <button class="chip" onclick="toggleType(this);">Chaos</button>
-      <button class="chip" onclick="toggleType(this);">Cold</button>
-      <button class="chip" onclick="toggleType(this);">Fire</button>
-      <button class="chip" onclick="toggleType(this);">Physical</button>
-      <button class="chip" onclick="toggleType(this);">Lightning</button>
+      <button class="chip" skillTag="42" onclick="toggleType(this);">Chaos</button>
+      <button class="chip" skillTag="30" onclick="toggleType(this);">Cold</button>
+      <button class="chip" skillTag="29" onclick="toggleType(this);">Fire</button>
+      <button class="chip" skillTag="28" onclick="toggleType(this);">Physical</button>
+      <button class="chip" skillTag="31" onclick="toggleType(this);">Lightning</button>
     </div>
     <div class="container">
       <h6>Gem Tag</h6>
-      <button class="chip" onclick="toggleType(this);">AoE</button>
-      <button class="chip" onclick="toggleType(this);">Aura</button>
-      <button class="chip" onclick="toggleType(this);">Blink</button>
-      <button class="chip" onclick="toggleType(this);">Brand</button>
-      <button class="chip" onclick="toggleType(this);">Chaining</button>
-      <button class="chip" onclick="toggleType(this);">Channelling</button>
-      <button class="chip" onclick="toggleType(this);">Curse</button>
-      <button class="chip" onclick="toggleType(this);">Duration</button>
-      <button class="chip" onclick="toggleType(this);">Golem</button>
-      <button class="chip" onclick="toggleType(this);">Guard</button>
-      <button class="chip" onclick="toggleType(this);">Mine</button>
-      <button class="chip" onclick="toggleType(this);">Minion</button>
-      <button class="chip" onclick="toggleType(this);">Movement</button>
-      <button class="chip" onclick="toggleType(this);">Projectile</button>
-      <button class="chip" onclick="toggleType(this);">Strike</button>
-      <button class="chip" onclick="toggleType(this);">Totem</button>
-      <button class="chip" onclick="toggleType(this);">Trap</button>
-      <button class="chip" onclick="toggleType(this);">Travel</button>
-      <button class="chip" onclick="toggleType(this);">Trigger</button>
-      <button class="chip" onclick="toggleType(this);">Warcry</button>
-      <button class="chip" onclick="toggleType(this);">Slam</button>
+      <button class="chip" skillTag="8" onclick="toggleType(this);">AoE</button>
+      <button class="chip" skillTag="39" onclick="toggleType(this);">Aura</button>
+      <button class="chip" skillTag="80" onclick="toggleType(this);">Blink</button>
+      <button class="chip" skillTag="65" onclick="toggleType(this);">Brand</button>
+      <button class="chip" skillTag="19" onclick="toggleType(this);">Chaining</button>
+      <button class="chip" skillTag="48" onclick="toggleType(this);">Channelling</button>
+      <button class="chip" skillTag="98" onclick="toggleType(this);">Mark</button>
+      <button class="chip" skillTag="97" onclick="toggleType(this);">Curse/Hex</button>
+      <button class="chip" skillTag="9" onclick="toggleType(this);">Duration</button>
+      <button class="chip" skillTag="51" onclick="toggleType(this);">Golem</button>
+      <button class="chip" skillTag="78" onclick="toggleType(this);">Guard</button>
+      <button class="chip" skillTag="36" onclick="toggleType(this);">Mine</button>
+      <button class="chip" skillTag="6" onclick="toggleType(this);">Minion</button>
+      <button class="chip" skillTag="34" onclick="toggleType(this);">Movement</button>
+      <button class="chip" skillTag="3" onclick="toggleType(this);">Projectile</button>
+      <button class="chip" skillTag="21" onclick="toggleType(this);">Strike</button>
+      <button class="chip" skillTag="26" onclick="toggleType(this);">Totem</button>
+      <button class="chip" skillTag="33" onclick="toggleType(this);">Trap</button>
+      <button class="chip" skillTag="79" onclick="toggleType(this);">Travel</button>
+      <button class="chip" skillTag="37" onclick="toggleType(this);">Trigger</button>
+      <button class="chip" skillTag="63" onclick="toggleType(this);">Warcry</button>
+      <button class="chip" skillTag="84" onclick="toggleType(this);">Nova</button>
+      <button class="chip" skillTag="92" onclick="toggleType(this);">Slam</button>
     </div>
     <div class="container">
-      <input class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)"></input>
+      <input id="skillNameSearch" class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)">
     </div>
     <header style="min-height: 100%;">
       <div class="container">
-        <h4>Matching Skills:</h4>
+        <h4 id="matchingSkillsHeader">423 Matching Skills:</h4>
         <div id="skilllist">
           <div class="skill">
-            <img src="img/skill/Cyclone.png">
-            <p>Cyclone</p>
+            <img src="img/Unknown.png">
+            <p>Loding Skills...</p>
           </div>
         </div>
       </div>
@@ -133,10 +161,13 @@
     skillListElement = document.getElementById('skilllist');
     var skills,
         skillsFetch,
-        previousSearch = "";
+        previousSearch = "",
+        skillCountDisplay = 460;
     getAndDisplaySkills();
     enabledTypes = [];
     disabledTypes = [];
+    enabledWeaponTypes = [];
+    disabledWeaponTypes = [];
     function toggleType(button) {
       if (!button.classList.contains('chip')) return;
       var state;
@@ -165,16 +196,63 @@
       }
 
       filterSkills();
+      searchSkills(previousSearch);
       displaySkills();
+      updateSkillCount();
 
 
       function add(array) {
-        array.push(button.innerText);
+        array.push(button.attributes.skilltag.value);
       }
 
       function remove(array) {
         for (var i = 0; i < array.length; i++) {
-          if (array[i] == button.innerText) {
+          if (array[i] == button.attributes.skilltag.value) {
+            array.splice(i, 1);
+            return;
+          }
+        }
+      }
+    }
+
+    function toggleWeaponType(button) {
+      if (!button.classList.contains('chip')) return;
+      var state;
+
+      if (button.classList[1] == undefined) {
+        state = 0;
+      } else {
+        state = parseInt(button.classList[1]);
+      }
+
+      switch (state) {
+        case 0:
+          add(enabledWeaponTypes);
+          button.classList.add("1");
+          break;
+        case 1:
+          remove(enabledWeaponTypes);
+          add(disabledWeaponTypes);
+          button.classList.remove("1");
+          button.classList.add("2");
+          break;
+        case 2:
+          remove(disabledWeaponTypes);
+          button.classList.remove("2");
+          break;
+      }
+
+      filterSkills();
+      displaySkills();
+
+
+      function add(array) {
+        array.push(button.attributes.weapontag.value);
+      }
+
+      function remove(array) {
+        for (var i = 0; i < array.length; i++) {
+          if (array[i] == button.attributes.weapontag.value) {
             array.splice(i, 1);
             return;
           }
@@ -185,39 +263,77 @@
     function filterSkills() {
       skills = JSON.parse(skillsFetch);
 
-      if (enabledTypes.length == 0 && disabledTypes.length == 0) {
-        return;
-      }
+      // skills
+      if (enabledTypes.length != 0 || disabledTypes.length != 0) {
 
-      for (var i = 0; i < disabledTypes.length; i++) {
-        for (var o = 0; o < skills.skills.length; o++) {
-          for (var p = 0; p < skills.skills[o].tags.length; p++) {
-            if (skills.skills[o].tags[p] == disabledTypes[i]) {
-              skills.skills.splice(o, 1);
-              o--;
-              break;
-            }
-            if (p == skills.skills[o].tags.length - 1) {
-              break;
+        for (var i = 0; i < disabledTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].Tags.length; p++) {
+              if (skills[o].Tags[p] == disabledTypes[i]) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
+              if (p == skills[o].Tags.length - 1) {
+                break;
+              }
             }
           }
         }
-      }
 
-      for (var i = 0; i < enabledTypes.length; i++) {
-        for (var o = 0; o < skills.skills.length; o++) {
-          for (var p = 0; p < skills.skills[o].tags.length; p++) {
-            if (skills.skills[o].tags[p] == enabledTypes[i]) {
-              break;
-            }
-            if (p == skills.skills[o].tags.length - 1) {
-              skills.skills.splice(o, 1);
-              o--;
-              break;
+        for (var i = 0; i < enabledTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].Tags.length; p++) {
+              if (skills[o].Tags[p] == enabledTypes[i]) {
+                break;
+              }
+              if (p == skills[o].Tags.length - 1) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
             }
           }
         }
+
       }
+
+      // weapons
+      if (enabledWeaponTypes.length != 0 || disabledWeaponTypes.length != 0) {
+
+        for (var i = 0; i < disabledWeaponTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].WeaponTags.length; p++) {
+              if (skills[o].WeaponTags[p] == disabledWeaponTypes[i]) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
+              if (p == skills[o].WeaponTags.length - 1) {
+                break;
+              }
+            }
+          }
+        }
+
+        for (var i = 0; i < enabledWeaponTypes.length; i++) {
+          for (var o = 0; o < skills.length; o++) {
+            for (var p = 0; p < skills[o].WeaponTags.length; p++) {
+              if (skills[o].WeaponTags[p] == enabledWeaponTypes[i]) {
+                break;
+              }
+              if (p == skills[o].WeaponTags.length - 1) {
+                skills.splice(o, 1);
+                o--;
+                break;
+              }
+            }
+          }
+        }
+
+      }
+
+
     }
 
     function searchChange(text) {
@@ -225,20 +341,22 @@
         previousSearch = text;
         searchSkills(text);
         displaySkills();
+        updateSkillCount();
       } else {
         previousSearch = text;
         filterSkills();
         searchSkills(text);
         displaySkills();
+        updateSkillCount();
       }
     }
 
     function searchSkills(query) {
-      for (var i = 0; i < skills.skills.length; i++) {
+      for (var i = 0; i < skills.length; i++) {
         // 0 = match, -1 = no match
-        var string = skills.skills[i].name.toLowerCase();
+        var string = skills[i].Name.toLowerCase();
         if (string.search(query.toLowerCase()) == -1) {
-          skills.skills.splice(i, 1);
+          skills.splice(i, 1);
           i--;
         }
       }
@@ -246,14 +364,22 @@
 
     function displaySkills() {
       result = '';
-      if (skills.skills.length == 0) {
+      if (skills.length == 0) {
         skillListElement.innerHTML = result;
         return;
       }
-      for (var i = 0; i < skills.skills.length; i++) {
-        result += "<a class='skill' href='" + 'https://pathofexile.gamepedia.com/' + skills.skills[i].name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "img/skill/" + skills.skills[i].image + '"' + "><p>" + skills.skills[i].name + "</p></a>"
+      for (var i = 0; i < skills.length; i++) {
+        if (!skills[i].Enabled) {
+          continue;
+        }
+        result += "<a class='skill' i='" + i + "' href='" + 'https://pathofexile.gamepedia.com/' + skills[i].Name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "SkillIcons/" + skills[i].Name.replace(/'/g, '%27') + ".png" + '"' + "><p>" + skills[i].Name + "</p></a>"
       }
       skillListElement.innerHTML = result;
+
+      for (var element of document.getElementsByClassName('skill')) {
+        addSkillMenuEvents(element);
+      }
+
     }
 
     function getAndDisplaySkills() {
@@ -268,5 +394,248 @@
       xmlhttp.open("GET", "data.json", true);
       xmlhttp.send();
     }
+
+    function addSkillMenuEvents(element) {
+      element.addEventListener('mouseover', function(ev) {
+
+          var menu = document.getElementById('skillMenu');
+          targetName = element.lastChild.innerText;
+          targetDescription = this.attributes.href.nodeValue;
+
+          document.getElementById('skillMenuName').innerText = targetName;
+          document.getElementById('skillMenuDescription').innerText = skills[element.attributes.i.value].Description;
+          document.getElementById('skillMenuSkillTags').innerText = skillTagsToString(skills[element.attributes.i.value].Tags);
+          document.getElementById('skillMenuWeaponTags').innerText = weaponTagsToString(skills[element.attributes.i.value].WeaponTags);
+
+          menu.style.display = "block";
+          menu.style.left = ev.pageX + 20 + 'px';
+          menu.style.left = element.getBoundingClientRect().x + 74 + "px";
+          if (ev.clientY > window.innerHeight - 200) { // - menu.getBoundingClientRect().y
+            menu.style.top = ev.pageY - 155 + 'px';
+            menu.style.top = element.getBoundingClientRect().y - document.body.getBoundingClientRect().y - menu.getBoundingClientRect().height + "px";
+          } else {
+            menu.style.top = ev.pageY + 'px';
+            menu.style.top = element.getBoundingClientRect().y - document.body.getBoundingClientRect().y + "px";
+          }
+          return false;
+      }, false);
+
+      element.addEventListener('mouseout', function(ev) {
+          var menu = document.getElementById('skillMenu');
+          menu.style.display = "none";
+          return false;
+      }, false);
+
+    }
+
+    function skillTagsToString(SkillTags) {
+      var result = "";
+
+      if (SkillTags.length == 0) return "No Skill Tags"
+
+      for (var SkillTag of SkillTags) {
+        switch (SkillTag) {
+          case 1:
+            result += "Attack, ";
+            break;
+          case 2:
+            result += "Spell, ";
+            break;
+          case 3:
+            result += "Projectile, ";
+            break;
+          case 5:
+            result += "Buff, ";
+            break;
+          case 6:
+            result += "Minion, ";
+            break;
+          case 8:
+            result += "Area, ";
+            break;
+          case 9:
+            result += "Duration, ";
+            break;
+          case 10:
+            result += "Shield, ";
+            break;
+          case 19:
+            result += "Chaining, ";
+            break;
+          case 20:
+            result += "Melee, ";
+            break;
+          case 21:
+            result += "Strike, ";
+            break;
+          case 26:
+            result += "Totem, ";
+            break;
+          case 28:
+            result += "Physical, ";
+            break;
+          case 29:
+            result += "Fire, ";
+            break;
+          case 30:
+            result += "Cold, ";
+            break;
+          case 31:
+            result += "Lightning, ";
+            break;
+          case 33:
+            result += "Trap, ";
+            break;
+          case 34:
+            result += "Movement, ";
+            break;
+          case 35:
+            result += "Damage Over Time, ";
+            break;
+          case 36:
+            result += "Mine, ";
+            break;
+          case 37:
+            result += "Trigger, ";
+            break;
+          case 38:
+            result += "Vaal, ";
+            break;
+          case 39:
+            result += "Aura, ";
+            break;
+          case 42:
+            result += "Chaos, ";
+            break;
+          case 48:
+            result += "Channelling, ";
+            break;
+          case 51:
+            result += "Golem, ";
+            break;
+          case 63:
+            result += "Warcry, ";
+            break;
+          case 64:
+            result += "Instant, ";
+            break;
+          case 65:
+            result += "Brand, ";
+            break;
+          case 69:
+            result += "Curse, ";
+            break;
+          case 78:
+            result += "Guard, ";
+            break;
+          case 79:
+            result += "Travel, ";
+            break;
+          case 80:
+            result += "Blink, ";
+            break;
+          case 84:
+            result += "Nova, ";
+            break;
+          case 92:
+            result += "Slam, ";
+            break;
+          case 97:
+            result += "Hex, ";
+            break;
+          case 98:
+            result += "Mark, ";
+            break;
+          default:
+            break;
+            result += "Tag_" + SkillTag + ", ";
+        }
+      }
+      result = result.substring(0, result.length - 2);
+      return result;
+    }
+
+    function weaponTagsToString(WeaponTags) {
+      var result = "";
+
+      if (WeaponTags.length == 0) return "Any Weapon";
+
+      for (var WeaponTag of WeaponTags) {
+        switch (WeaponTag) {
+          case 6:
+            result += "Claw, ";
+            break;
+          case 7:
+            result += "Dagger, ";
+            break;
+          case 8:
+            result += "Wand, ";
+            break;
+          case 9:
+            result += "One Hand Sword, ";
+            break;
+          case 10:
+            result += "Thrusting One Hand Sword, ";
+            break;
+          case 11:
+            result += "One Hand Axe, ";
+            break;
+          case 12:
+            result += "One Hand Mace, ";
+            break;
+          case 13:
+            result += "Bow, ";
+            break;
+          case 14:
+            result += "Staff, ";
+            break;
+          case 15:
+            result += "Two Hand Sword, ";
+            break;
+          case 16:
+            result += "Two Hand Axe, ";
+            break;
+          case 17:
+            result += "Two Hand Mace, ";
+            break;
+          case 26:
+            result += "Shield, ";
+            break;
+          case 32:
+            result += "Sceptre, ";
+            break;
+          case 36:
+            result += "Unarmed, ";
+            break;
+          case 56:
+            result += "Rune Dagger, ";
+            break;
+          case 57:
+            result += "Warstaff, ";
+            break;
+        }
+      }
+      result = result.substring(0, result.length - 2);
+      return result;
+    }
+
+    function updateSkillCount() {
+      var quantity = document.getElementsByClassName("skill").length;
+
+      if (quantity != skillCountDisplay) {
+        element = document.getElementById("matchingSkillsHeader");
+        if (skillCountDisplay > quantity)
+        {
+          skillCountDisplay -= Math.ceil((skillCountDisplay - quantity) * 0.05);
+        }
+        else
+        {
+          skillCountDisplay += Math.ceil((quantity - skillCountDisplay) * 0.05);
+        }
+        element.innerText = skillCountDisplay + " Matching Skills:";
+        requestAnimationFrame(updateSkillCount);
+      }
+    }
+
   </script>
 </html>
