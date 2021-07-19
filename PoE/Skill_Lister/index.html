@@ -137,7 +137,7 @@
       <button class="chip" skillTag="26" onclick="toggleType(this);">Totem</button>
       <button class="chip" skillTag="33" onclick="toggleType(this);">Trap</button>
       <button class="chip" skillTag="79" onclick="toggleType(this);">Travel</button>
-      <button class="chip" skillTag="37" onclick="toggleType(this);">Trigger</button>
+      <button class="chip 2" skillTag="37" onclick="toggleType(this);">Trigger</button>
       <button class="chip" skillTag="63" onclick="toggleType(this);">Warcry</button>
       <button class="chip" skillTag="84" onclick="toggleType(this);">Nova</button>
       <button class="chip" skillTag="92" onclick="toggleType(this);">Slam</button>
@@ -147,7 +147,7 @@
     </div>
     <header style="min-height: 100%;">
       <div class="container">
-        <h4 id="matchingSkillsHeader">423 Matching Skills:</h4>
+        <h4 id="matchingSkillsHeader">321 Matching Skills:</h4>
         <div id="skilllist">
           <div class="skill">
             <img src="img/Unknown.png">
@@ -162,10 +162,10 @@
     var skills,
         skillsFetch,
         previousSearch = "",
-        skillCountDisplay = 460;
+        skillCountDisplay = 321;
     getAndDisplaySkills();
     enabledTypes = [];
-    disabledTypes = [];
+    disabledTypes = [37];
     enabledWeaponTypes = [];
     disabledWeaponTypes = [];
     function toggleType(button) {
@@ -209,7 +209,7 @@
         for (var i = 0; i < array.length; i++) {
           if (array[i] == button.attributes.skilltag.value) {
             array.splice(i, 1);
-            return;
+            break;
           }
         }
       }
