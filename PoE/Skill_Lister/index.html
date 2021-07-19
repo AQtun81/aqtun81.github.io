@@ -143,6 +143,10 @@
       <button class="chip" skillTag="92" onclick="toggleType(this);">Slam</button>
     </div>
     <div class="container">
+      <h6>Dataset</h6>
+      <button class="chip" onclick="toggleDataset(this);">Use unfiltered dataset</button>
+    </div>
+    <div class="container">
       <input id="skillNameSearch" class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)">
     </div>
     <header style="min-height: 100%;">
@@ -161,6 +165,8 @@
     skillListElement = document.getElementById('skilllist');
     var skills,
         skillsFetch,
+        skillsFetchFull,
+        bDataset = false,
         previousSearch = "",
         skillCountDisplay = 321;
     getAndDisplaySkills();
@@ -261,7 +267,11 @@
     }
 
     function filterSkills() {
-      skills = JSON.parse(skillsFetch);
+      if (bDataset) {
+        skills = skillsFetchFull.slice();
+      } else {
+        skills = skillsFetch.slice();
+      }
 
       // skills
       if (enabledTypes.length != 0 || disabledTypes.length != 0) {
@@ -352,6 +362,7 @@
     }
 
     function searchSkills(query) {
+      if (query == "") return;
       for (var i = 0; i < skills.length; i++) {
         // 0 = match, -1 = no match
         var string = skills[i].Name.toLowerCase();
@@ -369,9 +380,6 @@
         return;
       }
       for (var i = 0; i < skills.length; i++) {
-        if (!skills[i].Enabled) {
-          continue;
-        }
         result += "<a class='skill' i='" + i + "' href='" + 'https://pathofexile.gamepedia.com/' + skills[i].Name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "SkillIcons/" + skills[i].Name.replace(/'/g, '%27') + ".png" + '"' + "><p>" + skills[i].Name + "</p></a>"
       }
       skillListElement.innerHTML = result;
@@ -383,16 +391,22 @@
     }
 
     function getAndDisplaySkills() {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          skillsFetch = this.responseText;
-          skills = JSON.parse(skillsFetch);
+      fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+          skillsFetch = data;
+          skills = data;
+          filterSkills();
+          searchSkills(previousSearch);
           displaySkills();
-        }
-      };
-      xmlhttp.open("GET", "data.json", true);
-      xmlhttp.send();
+          updateSkillCount();
+      });
+
+      fetch("data_full.json")
+      .then(response => response.json())
+      .then(data => {
+          skillsFetchFull = data;
+      });
     }
 
     function addSkillMenuEvents(element) {
@@ -637,5 +651,31 @@
       }
     }
 
+    function toggleDataset(button) {
+      if (!button.classList.contains('chip')) return;
+      var state;
+
+      if (button.classList[1] == undefined) {
+        state = 0;
+      } else {
+        state = 1;
+      }
+
+      switch (state) {
+        case 0:
+          bDataset = true;
+          button.classList.add("1");
+          break;
+        case 1:
+          bDataset = false;
+          button.classList.remove("1");
+          break;
+      }
+
+      filterSkills();
+      searchSkills(previousSearch);
+      displaySkills();
+      updateSkillCount();
+    }
   </script>
 </html>
