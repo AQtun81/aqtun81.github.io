@@ -27,6 +27,10 @@ body {
   color: var(--text);
 }
 
+.container {
+  max-width: 962px;
+}
+
 button, button:hover, button:focus {
   color: var(--text);
 }
