@@ -114,6 +114,7 @@ header.separator::before {
     border-radius: 8px;
     border-color: transparent;
     background-color: var(--background-contrast);
+    /* border: 2px solid transparent; */
   }
 
   button.chip:hover {
@@ -123,10 +124,14 @@ header.separator::before {
 
   button.chip.\31 {
     background-color: #69DF58A1;
+/*     border-color: #69DF58A1;
+    color: #69DF58A1; */
   }
 
   button.chip.\32 {
     background-color: #FF000082;
+/*     border-color: #FF000082;
+    color: #FF000082; */
   }
 
   input.chip {
@@ -218,6 +223,33 @@ header.separator::before {
   cursor: pointer;
   user-select: none;
   z-index: 1000;
+}
+
+/* REFRESH BUTTON
+----------------------------------------------------*/
+
+.refresh-toggle {
+  position: fixed;
+  display: flex;
+  background: var(--background-contrast);
+  right: 0px;
+  bottom: 0px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.refresh-toggle > h6 {
+  margin: 0;
+  padding-right: 5px;
+  font-size: 19px;
+}
+
+.refresh-toggle > img {
+  padding-right: 5px;
 }
 
 /* SKILL MENU
