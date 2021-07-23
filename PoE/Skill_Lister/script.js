@@ -4,7 +4,7 @@ var skills,
     skillsFetchFull,
     bDataset = false,
     previousSearch = "",
-    skillCountDisplay = 432;
+    skillCountDisplay = 449;
 getAndDisplaySkills();
 enabledTypes = [];
 disabledTypes = [];
@@ -421,6 +421,12 @@ function skillTagsToString(SkillTags) {
         break;
       case 98:
         result += "Mark, ";
+        break;
+      case 102:
+        result += "Prismatic, ";
+        break;
+      case 104:
+        result += "Arcane, ";
         break;
       default:
         break;
