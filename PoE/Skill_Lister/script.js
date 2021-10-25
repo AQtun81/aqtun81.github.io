@@ -311,121 +311,121 @@ function skillTagsToString(SkillTags) {
 
   for (var SkillTag of SkillTags) {
     switch (SkillTag) {
-      case 1:
+      case 0:
         result += "Attack, ";
         break;
-      case 2:
+      case 1:
         result += "Spell, ";
         break;
-      case 3:
+      case 2:
         result += "Projectile, ";
         break;
-      case 5:
+      case 4:
         result += "Buff, ";
         break;
-      case 6:
+      case 5:
         result += "Minion, ";
         break;
-      case 8:
+      case 7:
         result += "Area, ";
         break;
-      case 9:
+      case 8:
         result += "Duration, ";
         break;
-      case 10:
+      case 9:
         result += "Shield, ";
         break;
-      case 19:
+      case 18:
         result += "Chaining, ";
         break;
-      case 20:
+      case 19:
         result += "Melee, ";
         break;
-      case 21:
+      case 20:
         result += "Strike, ";
         break;
-      case 26:
+      case 25:
         result += "Totem, ";
         break;
-      case 28:
+      case 27:
         result += "Physical, ";
         break;
-      case 29:
+      case 28:
         result += "Fire, ";
         break;
-      case 30:
+      case 29:
         result += "Cold, ";
         break;
-      case 31:
+      case 30:
         result += "Lightning, ";
         break;
-      case 33:
+      case 32:
         result += "Trap, ";
         break;
-      case 34:
+      case 33:
         result += "Movement, ";
         break;
-      case 35:
+      case 34:
         result += "Damage Over Time, ";
         break;
-      case 36:
+      case 35:
         result += "Mine, ";
         break;
-      case 37:
+      case 36:
         result += "Trigger, ";
         break;
-      case 38:
+      case 37:
         result += "Vaal, ";
         break;
-      case 39:
+      case 38:
         result += "Aura, ";
         break;
-      case 42:
+      case 41:
         result += "Chaos, ";
         break;
-      case 48:
+      case 47:
         result += "Channelling, ";
         break;
-      case 51:
+      case 50:
         result += "Golem, ";
         break;
-      case 63:
+      case 62:
         result += "Warcry, ";
         break;
-      case 64:
+      case 63:
         result += "Instant, ";
         break;
-      case 65:
+      case 64:
         result += "Brand, ";
         break;
-      case 69:
+      case 68:
         result += "Curse, ";
         break;
-      case 78:
+      case 77:
         result += "Guard, ";
         break;
-      case 79:
+      case 78:
         result += "Travel, ";
         break;
-      case 80:
+      case 79:
         result += "Blink, ";
         break;
-      case 84:
+      case 83:
         result += "Nova, ";
         break;
-      case 92:
+      case 91:
         result += "Slam, ";
         break;
-      case 97:
+      case 96:
         result += "Hex, ";
         break;
-      case 98:
+      case 97:
         result += "Mark, ";
         break;
-      case 102:
+      case 101:
         result += "Prismatic, ";
         break;
-      case 104:
+      case 103:
         result += "Arcane, ";
         break;
       default:
