@@ -422,11 +422,17 @@ function skillTagsToString(SkillTags) {
       case 97:
         result += "Mark, ";
         break;
+      case 99:
+        result += "Orb, ";
+        break;
       case 101:
         result += "Prismatic, ";
         break;
       case 103:
         result += "Arcane, ";
+        break;
+      case 106:
+        result += "Link, ";
         break;
       default:
         break;
