@@ -315,6 +315,9 @@
     ---------------------------------------------*/
 
     document.documentElement.style.setProperty('--background', window.localStorage.getItem('background'));
+    if (window.localStorage.getItem('backgroundBlur') == null) {
+      window.localStorage.setItem('backgroundBlur', '0px');
+    }
     document.documentElement.style.setProperty('--background-image-blur', window.localStorage.getItem('backgroundBlur'));
     document.documentElement.style.setProperty('--background-image-saturation', window.localStorage.getItem('backgroundSaturation'));
     document.documentElement.style.setProperty('--background-image-hue', window.localStorage.getItem('backgroundHue'));
