@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>AQtun's Utilities</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -38,6 +38,7 @@
       document.documentElement.style.setProperty('--text', "#222");
       document.documentElement.style.setProperty('--link', "#1EAEDB");
       document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
+      document.documentElement.style.setProperty('--main-gradient', "linear-gradient(to top right, #ffb933 0%, #57ffef 100%)");
     }
 
     function darkTheme() {
@@ -50,12 +51,13 @@
       document.documentElement.style.setProperty('--text', "#dfdfdf");
       document.documentElement.style.setProperty('--link', "#1EAEDB");
       document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
+      document.documentElement.style.setProperty('--main-gradient', "linear-gradient(to top right, #ff5933 0%, #00ffe7 100%)");
     }
 
     if (window.localStorage.getItem('theme') == null) {
-      window.localStorage.setItem('theme', 'light');
-    } else if (window.localStorage.getItem('theme') == 'dark') {
-      darkTheme();
+      window.localStorage.setItem('theme', 'dark');
+    } else if (window.localStorage.getItem('theme') == 'light') {
+      lightTheme();
     }
 
     function switchTheme() {
@@ -75,14 +77,14 @@
 </head>
 <body>
   <div class="theme-toggle" onclick="switchTheme()">
-    <img id="toDarkTheme" src="img/dark-theme.svg">
-    <img id="toLightTheme" src="img/light-theme.svg" style="display:none">
+    <img id="toDarkTheme" src="img/dark-theme.svg" style="display:none">
+    <img id="toLightTheme" src="img/light-theme.svg">
   </div>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <header style="background: linear-gradient(to top right, #3399ff 0%, #00ffcc 100%);padding: 0;margin: 0;line-height: 0;">
-    <h1 class="separator title">separator title</h1>
+  <header style="background: var(--main-gradient);padding: 0;margin: 0;line-height: 0;">
+    <h1 class="separator title">AQtun's Utilities</h1>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
       <defs>
       <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" style="transition-duration: unset;"></path>
@@ -95,40 +97,17 @@
       </g>
       </svg>
   </header>
-  <header class="separatorborder">
-    <h1 class="separator border">separator border</h1>
-  </header>
-  <header class="low contrast">
+  <header>
     <div class="container">
       <div class="row">
-        <h4>Lorem Ipsum</h4>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Oops dropped a <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+        <h4>Links</h4>
+        <button onclick="window.location.href = 'PoE/Skill_Lister'" >Path of Exile Skill Lister</button>
+        <button onclick="window.location.href = 'Speeddial'" >Speeddial</button>
+        <button onclick="window.location.href = 'DownloadCalculator'" >Download Calculator</button>
       </div>
     </div>
   </header>
-  <header class="contrast">
-    <div class="container">
-        <h3 class="section-heading">Skeleton Images</h3>
-        <p class="section-description">section-description</p>
-        <div class="row">
-          <div class="one-half column category">
-            <img class="u-max-full-width" src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-          </div>
-          <div class="one-half column category">
-            <img class="u-max-full-width" src="https://images.unsplash.com/photo-1508387150737-7ce104ed3b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1368&q=80">
-          </div>
-        </div>
-        <div class="row">
-          <div class="one-half column category">
-            <img class="u-max-full-width" src="https://images.unsplash.com/photo-1561719212-e93400068e06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
-          </div>
-          <div class="one-half column category">
-            <img class="u-max-full-width" src="https://images.unsplash.com/photo-1476370648495-3533f64427a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="contrast"><div class="container" style="padding-top: 25%;"></div></header>
+  <header><div class="container" style="padding-top: 25%;"></div></header>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

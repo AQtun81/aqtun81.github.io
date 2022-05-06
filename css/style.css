@@ -2,15 +2,16 @@
 ----------------------------------------------------*/
 
 :root {
-  --background-color: rgb(255, 255, 255);
-  --background-color-70: rgba(255, 255, 255, 0.7);
-  --background-color-50: rgba(255, 255, 255, 0.5);
-  --background-color-30: rgba(255, 255, 255, 0.3);
-  --background-low-contrast: rgb(249, 249, 249);
-  --background-contrast: rgb(244, 244, 244);
-  --text: #222;
+  --background-color: rgb(45, 45, 45);
+  --background-color-70: rgba(45, 45, 45, 0.7);
+  --background-color-50: rgba(45, 45, 45, 0.5);
+  --background-color-30: rgba(45, 45, 45, 0.3);
+  --background-low-contrast: rgb(42, 42, 42);
+  --background-contrast: rgb(35, 35, 35);
+  --text: #dfdfdf;
   --link: #1EAEDB;
   --link-hover: #0FA0CE;
+  --main-gradient: linear-gradient(to top right, #ff5933 0%, #00ffe7 100%);
 }
 
 /* COMMON
@@ -36,6 +37,19 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
+}
+
+button {
+  border-radius: 0;
+  color: var(--text);
+  border-color: var(--text);
+  opacity: 0.6;
+}
+
+button:hover {
+  color: var(--text);
+  border-color: var(--text);
+  opacity: 1;
 }
 
 header.separatorborder {
