@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" style="height: 100%">
   <head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
     <title>PoE skill lister</title>
+    <meta name="description" content="Tool that searches trough all available active skills in Path of Exile.">
+    <meta name="author" content="AQtun">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
     <script type="text/javascript">
       function lightTheme() {
         document.documentElement.style.setProperty('--background-color', "rgb(255, 255, 255)");
@@ -18,6 +39,7 @@
         document.documentElement.style.setProperty('--link', "#1EAEDB");
         document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
         document.documentElement.style.setProperty('--table-border', "#E1E1E1");
+        document.documentElement.style.setProperty('--main-gradient', "linear-gradient(to top right, #ffb933 0%, #57ffef 100%)");
       }
 
       function darkTheme() {
@@ -31,6 +53,7 @@
         document.documentElement.style.setProperty('--link', "#1EAEDB");
         document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
         document.documentElement.style.setProperty('--table-border', "#3E3E3E");
+        document.documentElement.style.setProperty('--main-gradient', "linear-gradient(to top right, #ff5933 0%, #00ffe7 100%)");
       }
 
       if (window.localStorage.getItem('theme') == null) {
@@ -83,17 +106,20 @@
       <img src="img/refresh.svg" style="display: block;">
       <h6>Reset</h6>
     </div>
-    <header style="background: linear-gradient(to top right, #3399ff 0%, #00ffcc 100%);padding: 0;margin: 0;line-height: 0;">
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <header style="background: var(--main-gradient);padding: 0;margin: 0;line-height: 0;">
       <h1 class="separator title">Path of Exile Skill Lister</h1>
     </header>
     <div class="container">
-      <h6>Basic</h6>
+      <h5>Basic</h5>
       <button class="chip" skillTag="0" onclick="toggleType(this);">Attack</button>
       <button class="chip" skillTag="19" onclick="toggleType(this);">Melee</button>
       <button class="chip" skillTag="1" onclick="toggleType(this);">Spell</button>
     </div>
     <div class="container">
-      <h6>Weapon Type</h6>
+      <h5>Weapon Type</h5>
       <button class="chip" weaponTag="6" onclick="toggleWeaponType(this);">Claw</button>
       <button class="chip" weaponTag="7" onclick="toggleWeaponType(this);">Dagger</button>
       <button class="chip" weaponTag="8" onclick="toggleWeaponType(this);">Wand</button>
@@ -113,7 +139,7 @@
       <button class="chip" weaponTag="57" onclick="toggleWeaponType(this);">Warstaff</button>
     </div>
     <div class="container">
-      <h6>Element</h6>
+      <h5>Element</h5>
       <button class="chip" skillTag="41" onclick="toggleType(this);">Chaos</button>
       <button class="chip" skillTag="29" onclick="toggleType(this);">Cold</button>
       <button class="chip" skillTag="28" onclick="toggleType(this);">Fire</button>
@@ -121,7 +147,7 @@
       <button class="chip" skillTag="30" onclick="toggleType(this);">Lightning</button>
     </div>
     <div class="container">
-      <h6>Skill Tag</h6>
+      <h5>Skill Tag</h5>
       <button class="chip" skillTag="7" onclick="toggleType(this);">AoE</button>
       <button class="chip" skillTag="103" onclick="toggleType(this);">Arcane</button>
       <button class="chip" skillTag="38" onclick="toggleType(this);">Aura</button>
@@ -153,7 +179,7 @@
       <button class="chip" skillTag="62" onclick="toggleType(this);">Warcry</button>
     </div>
     <div class="container">
-      <h6>Dataset</h6>
+      <h5>Dataset</h5>
       <button class="chip" onclick="toggleDataset(this);">Use unfiltered dataset</button>
     </div>
     <div class="container">
@@ -170,6 +196,15 @@
         </div>
       </div>
     </header>
+    
+    <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript">
+      if (window.localStorage.getItem('theme') == 'light') {
+        document.getElementById("toDarkTheme").style.display = "block";
+        document.getElementById("toLightTheme").style.display = "none";
+      }
+    </script>
   </body>
   <script type="text/javascript" src="script.min.js"></script>
 </html>

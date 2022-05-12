@@ -12,6 +12,7 @@
   --text: #dfdfdf;
   --link: #1EAEDB;
   --link-hover: #0FA0CE;
+  --main-gradient: linear-gradient(to top right, #ff5933 0%, #00ffe7 100%);
 }
 
 /* COMMON
@@ -25,6 +26,7 @@ body {
   transition-duration: 0.25s;
   background-color: var(--background-color);
   color: var(--text);
+  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container {
@@ -111,10 +113,25 @@ header.separator::before {
   }
 
   button.chip {
-    border-radius: 8px;
+    border-radius: 0;
     border-color: transparent;
     background-color: var(--background-contrast);
+    display: inline-flex;
+    align-items: center; 
+    margin: 0 1px 6px 0;
+    font-weight: normal;
     /* border: 2px solid transparent; */
+  }
+
+  button.chip::before {
+    display: inline-block;
+    position: relative;
+    content:' ';
+    background-image: url('../img/checkbox-blank.svg');
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+    right: 13px;
   }
 
   button.chip:hover {
@@ -123,19 +140,37 @@ header.separator::before {
   }
 
   button.chip.\31 {
-    background-color: #69DF58A1;
-/*     border-color: #69DF58A1;
-    color: #69DF58A1; */
+    border-color: #459539;
+  }
+
+  button.chip.\31::before {
+    display: inline-block;
+    position: relative;
+    content:' ';
+    background-image: url('../img/checkbox-on.svg');
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+    right: 13px;
   }
 
   button.chip.\32 {
-    background-color: #FF000082;
-/*     border-color: #FF000082;
-    color: #FF000082; */
+    border-color: #FF000082;
+  }
+
+  button.chip.\32::before {
+    display: inline-block;
+    position: relative;
+    content:' ';
+    background-image: url('../img/checkbox-off.svg');
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+    right: 13px;
   }
 
   input.chip {
-    border-radius: 8px;
+    border-radius: 0;
     border-color: transparent;
     background-color: var(--background-contrast);
     color: white;
@@ -144,6 +179,7 @@ header.separator::before {
     width: 520px;
     margin: 20px 200px 0;
     border: 0;
+    font-weight: lighter;
   }
 
   input.chip:focus {
@@ -206,6 +242,7 @@ header.separator::before {
     padding: 110px 0 110px 0;
     height: 80px;
     color: #222;
+    font-weight: normal;
   }
 
   .title.separator::before {
@@ -239,7 +276,7 @@ header.separator::before {
   cursor: pointer;
   user-select: none;
   z-index: 1000;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .refresh-toggle > h6 {
