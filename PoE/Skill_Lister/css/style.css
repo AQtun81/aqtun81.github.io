@@ -177,9 +177,14 @@ header.separator::before {
     padding: 10px 20px;
     font-size: 20px;
     width: 520px;
-    margin: 20px 200px 0;
+    /* margin: 20px 200px 0; */
     border: 0;
     font-weight: lighter;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-grow: 1;
+    max-width: 520px;
   }
 
   input.chip:focus {
