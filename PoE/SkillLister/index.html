@@ -9,9 +9,18 @@
     <meta name="description" content="Tool that searches trough all available active skills in Path of Exile.">
     <meta name="author" content="AQtun">
 
-    <!-- Mobile Specific Metas
+    <!-- Metadata
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#2d2d2d">
 
     <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -98,12 +107,17 @@
       </table>
     </div>
 
+
+    <a class="go-back" href="../..">
+      <img src="img/arrow-left.svg">
+      Landing page
+    </a>
     <div class="theme-toggle" onclick="switchTheme();">
       <img id="toDarkTheme" src="img/dark-theme.svg" style="display: none;">
       <img id="toLightTheme" src="img/light-theme.svg" style="display: block;">
     </div>
     <div class="refresh-toggle" onclick="resetFilter();">
-      <img src="img/refresh.svg" style="display: block;">
+      <img src="img/refresh.svg">
       <h6>Reset</h6>
     </div>
 
@@ -187,7 +201,7 @@
     </div>
     <header style="min-height: 100%;">
       <div class="container">
-        <h4 id="matchingSkillsHeader">449 Matching Skills:</h4>
+        <h4 id="matchingSkillsHeader">460 Matching Skills:</h4>
         <div id="skilllist">
           <div class="skill">
             <img src="img/Unknown.png">

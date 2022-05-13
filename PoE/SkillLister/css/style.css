@@ -267,6 +267,32 @@ header.separator::before {
   z-index: 1000;
 }
 
+/* BACK TO LANDING PAGE
+----------------------------------------------------*/
+
+.go-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+  color: #222;
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+}
+
+.go-back:hover {
+  color: #222;
+}
+
+.go-back img {
+  display: flex;
+  padding-right: 10px;
+}
+
 /* REFRESH BUTTON
 ----------------------------------------------------*/
 
