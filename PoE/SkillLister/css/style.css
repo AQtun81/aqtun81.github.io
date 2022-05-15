@@ -112,6 +112,9 @@ header.separator::before {
     padding-top: 10px;
   }
 
+  /* CHIP
+  ----------------------------------------------------*/
+
   button.chip {
     border-radius: 0;
     border-color: transparent;
@@ -191,12 +194,51 @@ header.separator::before {
     outline: none;
   }
 
+  /* SKILL TOGGLES
+  ----------------------------------------------------*/
+
+  .container.toggles {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  .container.toggles > * {
+    flex: 0 1 140px;
+    margin: 2px;
+  }
+
+  /* mobile */
+  .container.toggles > * {
+    flex: 1 1 210px;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  /* desktop */
+  @media (min-width: 550px) {
+    .container.toggles > * {
+      flex: 0 1 140px;
+    }
+    
+    h5 {
+      text-align: left;
+    }
+  }
+
 /* SKILL
 ----------------------------------------------------*/
 
+  #skilllist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(72px, 1fr));
+  }
+
   .skill {
-    width: 64px;
-    float: left;
+    display: flex;
+    flex-direction: column;
     margin: 5px;
     cursor: pointer;
     color: var(--text);
@@ -213,6 +255,7 @@ header.separator::before {
   .skill > img {
     width: 64px;
     height: 64px;
+    align-self: center;
   }
 
   .skill > p {
@@ -221,6 +264,7 @@ header.separator::before {
     height: 80px;
     overflow: hidden;
     word-break: break-word;
+    padding-top: 8px;
   }
 
   th, td {
