@@ -1,0 +1,67 @@
+:root {
+/* Server Channel List Text Settings */
+--color-channel-text: rgba(255, 255, 255, 0.5);
+--color-channel-text-selected: rgba(255, 255, 255, 0.9);
+--color-channel-text-hover: rgba(255, 255, 255, 0.75);
+--color-channel-text-muted: rgba(125, 125, 125, 0.4);
+/* Chat Text Settings */
+--color-chat-text: rgba(255, 255, 255, 0.85);
+--color-chat-text-link: #1dbcf9;
+/* Friends Text */
+--color-friend-text: rgba(255, 255, 255, 0.6);
+--color-friend-text-hover: rgba(255, 255, 255, 1);
+}
+
+.nameDefaultText-24KCy5,
+.nameDefaultVoice-3WUH7s,
+.nameLockedText-3pqQcL,
+.nameLockedVoice-26MhB1,
+.nameDefault-2s3kbY,
+.iconCollapsed-3hFp_8,
+.iconDefault-3Gr8d2,
+.nameCollapsed-34uFWo,
+.nameDefault-2DI02H {
+  color: var(--color-channel-text) !important;
+}
+
+.nameConnectedText-3CzNQn, .nameConnectedVoice-MHUX5F, .nameSelectedText-sp_EUw, .nameSelectedVoice-1qSph5 {
+  color: var(--color-channel-text-selected) !important;
+}
+
+.nameHoveredText-1uO31y,
+.nameHovered-21k1eo,
+.nameHovered-1gxhWH,
+.nameSpeaking-3UhoEZ {
+  color: var(--color-channel-text-hover) !important;
+}
+
+.nameMutedText-3Vj4bM, .nameMutedVoice-3oxyQZ {
+  color: var(--color-channel-text-muted) !important;
+}
+
+.embedDescription-1Cuq9a,
+.embedFieldValue-nELq2s,
+.embedFooterText-28V_Wb,
+.embedProvider-3k5pfl,
+.markup-2BOw-j,
+.embedFieldName-NFrena {
+  color: var(--color-chat-text) !important;
+}
+
+.markup-2BOw-j a {
+  color: var(--color-chat-text-link) !important;
+}
+
+.name-2WpE7M,
+.icon-1IKq3C,
+.textCell-1aBIUP,
+.friendsColumnStatus-ZH4ho2,
+.friendsColumnName-1zBOKm,
+.friendsColumn-eVHFqJ,
+.header-39GIC8 {
+  color: var(--color-friend-text) !important;
+}
+
+.channel-2QD9_O:hover .name-2WpE7M {
+  color: var(--color-friend-text-hover !important);
+}
