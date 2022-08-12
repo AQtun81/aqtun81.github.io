@@ -222,7 +222,7 @@ function displaySkills() {
     return;
   }
   for (var i = 0; i < skills.length; i++) {
-    result += "<a class='skill' i='" + i + "' href='" + 'https://www.poewiki.net/wiki/' + skills[i].Name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "SkillIcons/" + skills[i].Name.replace(/'/g, '%27').toLowerCase() + ".png" + '"' + ' onerror=this.src="img/unknown.png"' + "><p>" + skills[i].Name + "</p></a>"
+    result += "<a class='skill' i='" + i + "' href='" + 'https://www.poewiki.net/wiki/' + skills[i].Name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "SkillIcons/" + skills[i].Name.replace(/'/g, '%27').toLowerCase() + ".png" + '"' + "><p>" + skills[i].Name + "</p></a>"
   }
   skillListElement.innerHTML = result;
 
