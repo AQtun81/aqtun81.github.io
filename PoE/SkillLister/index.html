@@ -59,8 +59,8 @@
         document.documentElement.style.setProperty('--background-low-contrast', "rgb(42, 42, 42)");
         document.documentElement.style.setProperty('--background-contrast', "rgb(38, 38, 38)");
         document.documentElement.style.setProperty('--text', "#dfdfdf");
-        document.documentElement.style.setProperty('--link', "#1EAEDB");
-        document.documentElement.style.setProperty('--link-hover', "#0FA0CE");
+        document.documentElement.style.setProperty('--link', "#2AA7EF");
+        document.documentElement.style.setProperty('--link-hover', "#108DD5");
         document.documentElement.style.setProperty('--table-border', "#3E3E3E");
         document.documentElement.style.setProperty('--main-gradient', "linear-gradient(to top right, #ff5933 0%, #00ffe7 100%)");
       }
@@ -199,6 +199,7 @@
       <button class="chip" skillTag="78" onclick="toggleType(this);">Travel</button>
       <button class="chip" skillTag="36" onclick="toggleType(this);">Trigger</button>
       <button class="chip" skillTag="62" onclick="toggleType(this);">Warcry</button>
+      <button class="chip" skillTag="51" onclick="toggleType(this);">Herald</button>
     </div>
     <div class="container">
       <h5>Dataset</h5>
@@ -211,15 +212,19 @@
     </div>
     <header style="min-height: 100%;">
       <div class="container">
-        <h4 id="matchingSkillsHeader">460 Matching Skills:</h4>
+        <h4 id="matchingSkillsHeader">459 Matching Skills:</h4>
         <div id="skilllist">
           <div class="skill">
-            <img src="img/Unknown.png">
+            <img src="img/unknown.png">
             <p>Loding Skills...</p>
           </div>
         </div>
       </div>
     </header>
+    <div id="footer" class="container">
+      Possible thanks to <a href="https://github.com/aianlinb/LibGGPK2">LibGGPK2</a> by <a href="https://github.com/aianlinb">aianlinb</a>.<br>
+      Updated for PoE version 3.18.
+    </div>
     
     <!-- End Document
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->

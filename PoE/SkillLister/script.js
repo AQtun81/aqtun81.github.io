@@ -4,7 +4,7 @@ var skills,
     skillsFetchFull,
     bDataset = false,
     previousSearch = "",
-    skillCountDisplay = 449;
+    skillCountDisplay = 459;
 getAndDisplaySkills();
 enabledTypes = [];
 disabledTypes = [];
@@ -222,7 +222,7 @@ function displaySkills() {
     return;
   }
   for (var i = 0; i < skills.length; i++) {
-    result += "<a class='skill' i='" + i + "' href='" + 'https://www.poewiki.net/wiki/' + skills[i].Name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "SkillIcons/" + skills[i].Name.replace(/'/g, '%27') + ".png" + '"' + "><p>" + skills[i].Name + "</p></a>"
+    result += "<a class='skill' i='" + i + "' href='" + 'https://www.poewiki.net/wiki/' + skills[i].Name.replace(/ /g, '_').replace(/'/g, '%27') + "'><img src=" + '"' + "SkillIcons/" + skills[i].Name.replace(/'/g, '%27').toLowerCase() + ".png" + '"' + ' onerror=this.src="img/unknown.png"' + "><p>" + skills[i].Name + "</p></a>"
   }
   skillListElement.innerHTML = result;
 
@@ -649,4 +649,19 @@ function resetFilter() {
   displaySkills();
   updateSkillCount();
   storeSearchParams();
+}
+
+function collapseTagSection(element) {
+  var current = getComputedStyle(element).height;
+  element.style.height = current;
+  element.offsetWidth; // force repaint
+  element.style.height = "0px";
+}
+
+function expandTagSection(element) {
+  element.style.height = "initial";
+  var target = getComputedStyle(element).height;
+  element.style.height = "0px";
+  element.offsetWidth; // force repaint
+  element.style.height = target;
 }

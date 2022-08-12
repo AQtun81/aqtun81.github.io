@@ -201,6 +201,8 @@ header.separator::before {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    overflow: hidden;
+    transition-duration: 0.15s;
   }
 
   .container.toggles > * {
@@ -407,4 +409,26 @@ header.separator::before {
 
 #skillMenu tr:last-child > td {
   border-bottom-width: 0px;
+}
+
+/* FOOTER
+----------------------------------------------------*/
+
+#footer {
+  background-color: var(--background-contrast);
+  padding: 40px;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+
+  /* mobile */
+  padding-bottom: 80px;
+}
+
+@media (min-width: 550px) {
+  #footer {
+    padding: 40px;
+  }
 }
