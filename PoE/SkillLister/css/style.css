@@ -31,6 +31,8 @@ body {
 
 .container {
   max-width: 962px;
+  padding: 5px;
+  padding-top: 10px;
 }
 
 button, button:hover, button:focus {
@@ -106,10 +108,6 @@ header.separator::before {
 
   .contrast.low {
     background-color: var(--background-low-contrast);
-  }
-
-  .container {
-    padding-top: 10px;
   }
 
   /* CHIP
@@ -194,10 +192,26 @@ header.separator::before {
     outline: none;
   }
 
+  /* SKILL TOGGLES SECTION
+  ----------------------------------------------------*/
+  .collapsible > h5 {
+    margin: 0;
+    padding: 10px 5px;
+    user-select: none;
+    transition-duration: 0.15s;
+  }
+
+  .container.collapsible {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    background: var(--background-low-contrast);
+    border: 2px solid var(--background-contrast);
+  }
+
   /* SKILL TOGGLES
   ----------------------------------------------------*/
 
-  .container.toggles {
+  .toggles {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
@@ -205,13 +219,13 @@ header.separator::before {
     transition-duration: 0.15s;
   }
 
-  .container.toggles > * {
+  .toggles > * {
     flex: 0 1 140px;
-    margin: 2px;
+    margin: 2px !important;
   }
 
   /* mobile */
-  .container.toggles > * {
+  .toggles > * {
     flex: 1 1 210px;
   }
 
@@ -221,7 +235,7 @@ header.separator::before {
 
   /* desktop */
   @media (min-width: 550px) {
-    .container.toggles > * {
+    .toggles > * {
       flex: 0 1 140px;
     }
     

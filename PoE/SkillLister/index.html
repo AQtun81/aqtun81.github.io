@@ -126,86 +126,105 @@
     <header style="background: var(--main-gradient);padding: 0;margin: 0;line-height: 0;">
       <h1 class="separator title">Path of Exile Skill Lister</h1>
     </header>
-    <div class="container">
-      <h5>Basic</h5>
+    <div class="container collapsible">
+      <h5 onclick="collapse(this)">Basic</h5>
+      <div class="toggles">
+        <button class="chip" skillTag="0" onclick="toggleType(this);">Attack</button>
+        <button class="chip" skillTag="19" onclick="toggleType(this);">Melee</button>
+        <button class="chip" skillTag="1" onclick="toggleType(this);">Spell</button>
+      </div>
     </div>
-    <div class="container toggles">
-      <button class="chip" skillTag="0" onclick="toggleType(this);">Attack</button>
-      <button class="chip" skillTag="19" onclick="toggleType(this);">Melee</button>
-      <button class="chip" skillTag="1" onclick="toggleType(this);">Spell</button>
+    <div class="container collapsible">
+      <h5 onclick="collapse(this)">Weapon Type</h5>
+      <div class="toggles">
+        <button class="chip" weaponTag="6" onclick="toggleWeaponType(this);">Claw</button>
+        <button class="chip" weaponTag="7" onclick="toggleWeaponType(this);">Dagger</button>
+        <button class="chip" weaponTag="8" onclick="toggleWeaponType(this);">Wand</button>
+        <button class="chip" weaponTag="9" onclick="toggleWeaponType(this);">One Hand Sword</button>
+        <button class="chip" weaponTag="10" onclick="toggleWeaponType(this);">Thrusting One Hand Sword</button>
+        <button class="chip" weaponTag="11" onclick="toggleWeaponType(this);">One Hand Axe</button>
+        <button class="chip" weaponTag="12" onclick="toggleWeaponType(this);">One Hand Mace</button>
+        <button class="chip" weaponTag="13" onclick="toggleWeaponType(this);">Bow</button>
+        <button class="chip" weaponTag="14" onclick="toggleWeaponType(this);">Staff</button>
+        <button class="chip" weaponTag="15" onclick="toggleWeaponType(this);">Two Hand Sword</button>
+        <button class="chip" weaponTag="16" onclick="toggleWeaponType(this);">Two Hand Axe</button>
+        <button class="chip" weaponTag="17" onclick="toggleWeaponType(this);">Two Hand Mace</button>
+        <button class="chip" weaponTag="26" onclick="toggleWeaponType(this);">Shield</button>
+        <button class="chip" weaponTag="32" onclick="toggleWeaponType(this);">Sceptre</button>
+        <button class="chip" weaponTag="36" onclick="toggleWeaponType(this);">Unarmed</button>
+        <button class="chip" weaponTag="56" onclick="toggleWeaponType(this);">Rune Dagger</button>
+        <button class="chip" weaponTag="57" onclick="toggleWeaponType(this);">Warstaff</button>
+      </div>
     </div>
-    <div class="container">
-      <h5>Weapon Type</h5>
+    <div class="container collapsible">
+      <h5 onclick="collapse(this)">Damage Type</h5>
+      <div class="toggles">
+        <button class="chip" skillTag="41" onclick="toggleType(this);">Chaos</button>
+        <button class="chip" skillTag="29" onclick="toggleType(this);">Cold</button>
+        <button class="chip" skillTag="28" onclick="toggleType(this);">Fire</button>
+        <button class="chip" skillTag="27" onclick="toggleType(this);">Physical</button>
+        <button class="chip" skillTag="30" onclick="toggleType(this);">Lightning</button>
+      </div>
     </div>
-    <div class="container toggles">
-      <button class="chip" weaponTag="6" onclick="toggleWeaponType(this);">Claw</button>
-      <button class="chip" weaponTag="7" onclick="toggleWeaponType(this);">Dagger</button>
-      <button class="chip" weaponTag="8" onclick="toggleWeaponType(this);">Wand</button>
-      <button class="chip" weaponTag="9" onclick="toggleWeaponType(this);">One Hand Sword</button>
-      <button class="chip" weaponTag="10" onclick="toggleWeaponType(this);">Thrusting One Hand Sword</button>
-      <button class="chip" weaponTag="11" onclick="toggleWeaponType(this);">One Hand Axe</button>
-      <button class="chip" weaponTag="12" onclick="toggleWeaponType(this);">One Hand Mace</button>
-      <button class="chip" weaponTag="13" onclick="toggleWeaponType(this);">Bow</button>
-      <button class="chip" weaponTag="14" onclick="toggleWeaponType(this);">Staff</button>
-      <button class="chip" weaponTag="15" onclick="toggleWeaponType(this);">Two Hand Sword</button>
-      <button class="chip" weaponTag="16" onclick="toggleWeaponType(this);">Two Hand Axe</button>
-      <button class="chip" weaponTag="17" onclick="toggleWeaponType(this);">Two Hand Mace</button>
-      <button class="chip" weaponTag="26" onclick="toggleWeaponType(this);">Shield</button>
-      <button class="chip" weaponTag="32" onclick="toggleWeaponType(this);">Sceptre</button>
-      <button class="chip" weaponTag="36" onclick="toggleWeaponType(this);">Unarmed</button>
-      <button class="chip" weaponTag="56" onclick="toggleWeaponType(this);">Rune Dagger</button>
-      <button class="chip" weaponTag="57" onclick="toggleWeaponType(this);">Warstaff</button>
+    <div class="container collapsible">
+      <h5 onclick="collapse(this)">Skill Tag</h5>
+      <div class="toggles">
+        <button class="chip" skillTag="7" onclick="toggleType(this);">AoE</button>
+        <button class="chip" skillTag="103" onclick="toggleType(this);">Arcane</button>
+        <button class="chip" skillTag="38" onclick="toggleType(this);">Aura</button>
+        <button class="chip" skillTag="79" onclick="toggleType(this);">Blink</button>
+        <button class="chip" skillTag="64" onclick="toggleType(this);">Brand</button>
+        <button class="chip" skillTag="4" onclick="toggleType(this);">Buff</button>
+        <button class="chip" skillTag="18" onclick="toggleType(this);">Chaining</button>
+        <button class="chip" skillTag="47" onclick="toggleType(this);">Channelling</button>
+        <button class="chip" skillTag="96" onclick="toggleType(this);">Curse/Hex</button>
+        <button class="chip" skillTag="34" onclick="toggleType(this);">Damage Over Time</button>
+        <button class="chip" skillTag="8" onclick="toggleType(this);">Duration</button>
+        <button class="chip" skillTag="50" onclick="toggleType(this);">Golem</button>
+        <button class="chip" skillTag="77" onclick="toggleType(this);">Guard</button>
+        <button class="chip" skillTag="106" onclick="toggleType(this);">Link</button>
+        <button class="chip" skillTag="97" onclick="toggleType(this);">Mark</button>
+        <button class="chip" skillTag="35" onclick="toggleType(this);">Mine</button>
+        <button class="chip" skillTag="5" onclick="toggleType(this);">Minion</button>
+        <button class="chip" skillTag="33" onclick="toggleType(this);">Movement</button>
+        <button class="chip" skillTag="83" onclick="toggleType(this);">Nova</button>
+        <button class="chip" skillTag="99" onclick="toggleType(this);">Orb</button>
+        <button class="chip" skillTag="101" onclick="toggleType(this);">Prismatic</button>
+        <button class="chip" skillTag="2" onclick="toggleType(this);">Projectile</button>
+        <button class="chip" skillTag="91" onclick="toggleType(this);">Slam</button>
+        <button class="chip" skillTag="20" onclick="toggleType(this);">Strike</button>
+        <button class="chip" skillTag="25" onclick="toggleType(this);">Totem</button>
+        <button class="chip" skillTag="32" onclick="toggleType(this);">Trap</button>
+        <button class="chip" skillTag="78" onclick="toggleType(this);">Travel</button>
+        <button class="chip" skillTag="36" onclick="toggleType(this);">Trigger</button>
+        <button class="chip" skillTag="62" onclick="toggleType(this);">Warcry</button>
+        <button class="chip" skillTag="51" onclick="toggleType(this);">Herald</button>
+      </div>
     </div>
-    <div class="container">
-      <h5>Damage Type</h5>
+    <div class="container collapsible">
+      <h5 onclick="collapse(this)">Miscellaneous Tags</h5>
+      <div class="toggles">
+        <button class="chip" skillTag="13" onclick="toggleType(this);">Can Trap</button>
+        <button class="chip" skillTag="14" onclick="toggleType(this);">Can Totem</button>
+        <button class="chip" skillTag="15" onclick="toggleType(this);">Can Mine</button>
+        <button class="chip" skillTag="55" onclick="toggleType(this);">Can Cascade</button>
+        <button class="chip" skillTag="56" onclick="toggleType(this);">Can Volley</button>
+        <button class="chip" skillTag="57" onclick="toggleType(this);">Can Mirage Archer</button>
+        <button class="chip" skillTag="21" onclick="toggleType(this);">Spell Can Repeat</button>
+        <button class="chip" skillTag="23" onclick="toggleType(this);">Attack Can Repeat</button>
+        <button class="chip" skillTag="67" onclick="toggleType(this);">Chilling Area</button>
+        <button class="chip" skillTag="24" onclick="toggleType(this);">Causes Burning</button>
+        <button class="chip" skillTag="69" onclick="toggleType(this);">Can Rapid Fire</button>
+        <button class="chip" skillTag="66" onclick="toggleType(this);">Non-Hit Chill</button>
+        <button class="chip" skillTag="31" onclick="toggleType(this);">Triggerable</button>
+        <button class="chip" skillTag="63" onclick="toggleType(this);">Instant</button>
+      </div>
     </div>
-    <div class="container toggles">
-      <button class="chip" skillTag="41" onclick="toggleType(this);">Chaos</button>
-      <button class="chip" skillTag="29" onclick="toggleType(this);">Cold</button>
-      <button class="chip" skillTag="28" onclick="toggleType(this);">Fire</button>
-      <button class="chip" skillTag="27" onclick="toggleType(this);">Physical</button>
-      <button class="chip" skillTag="30" onclick="toggleType(this);">Lightning</button>
-    </div>
-    <div class="container">
-      <h5>Skill Tag</h5>
-    </div>
-    <div class="container toggles">
-      <button class="chip" skillTag="7" onclick="toggleType(this);">AoE</button>
-      <button class="chip" skillTag="103" onclick="toggleType(this);">Arcane</button>
-      <button class="chip" skillTag="38" onclick="toggleType(this);">Aura</button>
-      <button class="chip" skillTag="79" onclick="toggleType(this);">Blink</button>
-      <button class="chip" skillTag="64" onclick="toggleType(this);">Brand</button>
-      <button class="chip" skillTag="4" onclick="toggleType(this);">Buff</button>
-      <button class="chip" skillTag="18" onclick="toggleType(this);">Chaining</button>
-      <button class="chip" skillTag="47" onclick="toggleType(this);">Channelling</button>
-      <button class="chip" skillTag="96" onclick="toggleType(this);">Curse/Hex</button>
-      <button class="chip" skillTag="34" onclick="toggleType(this);">Damage Over Time</button>
-      <button class="chip" skillTag="8" onclick="toggleType(this);">Duration</button>
-      <button class="chip" skillTag="50" onclick="toggleType(this);">Golem</button>
-      <button class="chip" skillTag="77" onclick="toggleType(this);">Guard</button>
-      <button class="chip" skillTag="106" onclick="toggleType(this);">Link</button>
-      <button class="chip" skillTag="97" onclick="toggleType(this);">Mark</button>
-      <button class="chip" skillTag="35" onclick="toggleType(this);">Mine</button>
-      <button class="chip" skillTag="5" onclick="toggleType(this);">Minion</button>
-      <button class="chip" skillTag="33" onclick="toggleType(this);">Movement</button>
-      <button class="chip" skillTag="83" onclick="toggleType(this);">Nova</button>
-      <button class="chip" skillTag="99" onclick="toggleType(this);">Orb</button>
-      <button class="chip" skillTag="101" onclick="toggleType(this);">Prismatic</button>
-      <button class="chip" skillTag="2" onclick="toggleType(this);">Projectile</button>
-      <button class="chip" skillTag="91" onclick="toggleType(this);">Slam</button>
-      <button class="chip" skillTag="20" onclick="toggleType(this);">Strike</button>
-      <button class="chip" skillTag="25" onclick="toggleType(this);">Totem</button>
-      <button class="chip" skillTag="32" onclick="toggleType(this);">Trap</button>
-      <button class="chip" skillTag="78" onclick="toggleType(this);">Travel</button>
-      <button class="chip" skillTag="36" onclick="toggleType(this);">Trigger</button>
-      <button class="chip" skillTag="62" onclick="toggleType(this);">Warcry</button>
-      <button class="chip" skillTag="51" onclick="toggleType(this);">Herald</button>
-    </div>
-    <div class="container">
-      <h5>Dataset</h5>
-    </div>
-    <div class="container toggles">
-      <button class="chip" onclick="toggleDataset(this);">Use unfiltered dataset</button>
+    <div class="container collapsible">
+      <h5 onclick="collapse(this)">Dataset</h5>
+      <div class="toggles">
+        <button class="chip" onclick="toggleDataset(this);">Use unfiltered dataset</button>
+      </div>
     </div>
     <div class="container" style="display: flex;justify-content: center;">
       <input id="skillNameSearch" class="chip" placeholder="Search skills by name" oninput="searchChange(this.value)">

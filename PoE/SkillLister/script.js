@@ -664,4 +664,22 @@ function expandTagSection(element) {
   element.style.height = "0px";
   element.offsetWidth; // force repaint
   element.style.height = target;
+  setTimeout(function() { removeHeight(element); }, 150);
+}
+
+function removeHeight(element) {
+  if (element.style.height == "0px") return
+  element.style.height = null;
+}
+
+function collapse(element) {
+  collapseTagSection(element.parentElement.lastElementChild);
+  element.onclick = function(){expand(element)};
+  element.style.opacity = 0.5;
+}
+
+function expand(element) {
+  expandTagSection(element.parentElement.lastElementChild);
+  element.onclick = function(){collapse(element)};
+  element.style.opacity = 1;
 }
