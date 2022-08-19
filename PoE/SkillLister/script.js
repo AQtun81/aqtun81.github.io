@@ -231,26 +231,6 @@ function displaySkills() {
   }
 }
 
-/* function getAndDisplaySkills() {
-  fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-      skillsFetch = data;
-      skills = data;
-      applySearchParams();
-      filterSkills();
-      searchSkills(previousSearch);
-      displaySkills();
-      updateSkillCount();
-  });
-
-  fetch("data_full.json")
-  .then(response => response.json())
-  .then(data => {
-      skillsFetchFull = data;
-  });
-} */
-
 function getAndDisplaySkills() {
   fetch('data.json')
   .then(response => response.json())
