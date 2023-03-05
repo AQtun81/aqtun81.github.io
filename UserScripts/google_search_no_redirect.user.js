@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name         No Google Search Redirect
-// @namespace    https://www.google.com
+// @name         No Google Redirect
+// @namespace    http://tampermonkey.net/
 
-// @version      1.0
+// @version      1.1
 
+// @history      1.1 Updated to work on current website
 // @history      1.0 initial release
 
 // @description  Removes Google redirect from Google searches improving page load time and removing tracking. Requires CSP disabled (security.csp.enable). More on CSP: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -16,8 +17,8 @@
 (function() {
     'use strict';
     window.removeRedirect = function() {
-        if (window.rwt.toString().length == 672) {
-            window.rwt = function(a, b, c, d, e, f, g, h, k, l, m, n) {console.log("Redirecting directly to: " + a)};
+        if (window.rwt.toString().length == 535 || window.rwt.toString().length != 20) {
+            window.rwt = function(a, b, c, d, e, f, g, h, k, l, m, n) {console.log("Moving directly to: " + a)};
             console.log("Successfully removed Google redirect function");
         } else {
             window.requestAnimationFrame(window.removeRedirect);
